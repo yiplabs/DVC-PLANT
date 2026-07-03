@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useTheme } from "@/components/ThemeProvider";
 import { HeroPlant, MiniPlant, TIER_NAMES, type HeroStage } from "@/components/plants";
 import {
@@ -16,7 +16,6 @@ import {
   GlobeIcon,
   PlayIcon,
   StarIcon,
-  VideoCamIcon,
   XSocialIcon,
   YoutubeIcon,
 } from "@/components/icons";
@@ -26,7 +25,10 @@ import {
   type LinkKind,
   type PlantKind,
   type Project,
+  type ProjectLink,
 } from "@/lib/data";
+import { loadOverrides } from "@/lib/overrides";
+import { youTubeThumb, youTubeWatch } from "@/lib/video";
 
 const DOCK_STAGES: HeroStage[] = [1, 2, 3, 4, 5, 6, 7, 8];
 
@@ -44,16 +46,6 @@ function stageIndex(plant: PlantKind): HeroStage {
   return plant;
 }
 
-function parseYouTubeId(input: string): string | null {
-  const url = input.trim();
-  const m = url.match(
-    /(?:youtube\.com\/(?:watch\?(?:.*&)?v=|embed\/|shorts\/)|youtu\.be\/)([A-Za-z0-9_-]{6,16})/,
-  );
-  if (m) return m[1];
-  if (/^[A-Za-z0-9_-]{11}$/.test(url)) return url;
-  return null;
-}
-
 export function GardenStage({ project }: { project: Project }) {
   const { theme, particles } = useTheme();
   const dark = theme === "dark";
@@ -66,11 +58,21 @@ export function GardenStage({ project }: { project: Project }) {
   const [droplets, setDroplets] = useState<number[]>([]);
   const [backdrop, setBackdrop] = useState<string | null>(null);
   const [dragging, setDragging] = useState(false);
+  // Founder-editable presentation (name, links, video) — edited in /admin.
+  // HANDOFF NOTE: these come from localStorage overrides in the prototype;
+  // in production they're just fields on the Project entity.
+  const [name, setName] = useState(project.name);
+  const [links, setLinks] = useState<ProjectLink[]>(project.links);
   const [videoId, setVideoId] = useState<string | null>(null);
-  const [videoInputOpen, setVideoInputOpen] = useState(false);
-  const [videoDraft, setVideoDraft] = useState("");
   const fileInput = useRef<HTMLInputElement>(null);
   const dropletId = useRef(0);
+
+  useEffect(() => {
+    const o = loadOverrides(project.slug);
+    if (o.name) setName(o.name);
+    if (o.links) setLinks(o.links);
+    if (o.videoId) setVideoId(o.videoId);
+  }, [project.slug]);
 
   const currentMilestone = Math.min(stage - 1, 6);
 
@@ -101,14 +103,6 @@ export function GardenStage({ project }: { project: Project }) {
     setStage((s) => (((s - 1 + offset + 8) % 8) + 1) as HeroStage);
   };
 
-  const submitVideo = () => {
-    const id = parseYouTubeId(videoDraft);
-    if (!id) return;
-    setVideoId(id);
-    setVideoInputOpen(false);
-    setVideoDraft("");
-  };
-
   return (
     <div className="garden-layout">
       <main
@@ -134,7 +128,7 @@ export function GardenStage({ project }: { project: Project }) {
 
         <div className="stage-center">
           <div className="micro-label">Project</div>
-          <h1 className="stage-hero-name">{project.name}</h1>
+          <h1 className="stage-hero-name">{name}</h1>
           <div className="founder-chip">
             <div
               className="mini-avatar"
@@ -152,7 +146,7 @@ export function GardenStage({ project }: { project: Project }) {
         <div className="glass-card links-card">
           <div className="card-label">Links</div>
           <div className="links-list">
-            {project.links.map((link) => {
+            {links.map((link) => {
               const Icon = LINK_ICONS[link.kind];
               return (
                 <a
@@ -173,57 +167,24 @@ export function GardenStage({ project }: { project: Project }) {
           </div>
         </div>
 
-        <div className="glass-card video-card">
-          <div className="card-label">Project video</div>
-          {videoId ? (
+        {/* Only rendered once the founder has added a video (via /admin) */}
+        {videoId && (
+          <div className="glass-card video-card">
+            <div className="card-label">Project video</div>
             <a
               className="video-thumb"
-              href={`https://www.youtube.com/watch?v=${videoId}`}
+              href={youTubeWatch(videoId)}
               target="_blank"
               rel="noopener noreferrer"
             >
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={`https://i.ytimg.com/vi/${videoId}/hqdefault.jpg`} alt="Project video" />
+              <img src={youTubeThumb(videoId)} alt="Project video" />
               <span className="video-thumb-play">
                 <PlayIcon size={18} fill="#6c5ce7" style={{ marginLeft: 2 }} />
               </span>
             </a>
-          ) : (
-            <div className="video-empty">
-              <VideoCamIcon size={26} />
-              <span>Show the garden what you&apos;re growing</span>
-            </div>
-          )}
-          {videoInputOpen ? (
-            <div className="video-input-row">
-              <input
-                className="video-input"
-                placeholder="Paste a YouTube link…"
-                value={videoDraft}
-                autoFocus
-                onChange={(e) => setVideoDraft(e.target.value)}
-                onKeyDown={(e) => e.key === "Enter" && submitVideo()}
-              />
-              <button className="video-input-go" onClick={submitVideo} aria-label="Add video">
-                <CheckIcon size={13} strokeWidth={3.4} />
-              </button>
-            </div>
-          ) : (
-            <div className="video-actions">
-              <button
-                className="video-btn primary"
-                title="Recording lands with the real app"
-              >
-                <VideoCamIcon size={14} />
-                Record
-              </button>
-              <button className="video-btn" onClick={() => setVideoInputOpen(true)}>
-                <YoutubeIcon size={14} />
-                {videoId ? "Replace link" : "Link a video"}
-              </button>
-            </div>
-          )}
-        </div>
+          </div>
+        )}
 
         <div className="glass-card health-card">
           <div className="card-label">Plant health</div>

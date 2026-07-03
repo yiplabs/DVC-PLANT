@@ -14,6 +14,7 @@ import {
   MoonIcon,
   QuestIcon,
   SearchIcon,
+  SlidersIcon,
   SproutIcon,
   StageIcon,
   SunIcon,
@@ -105,6 +106,13 @@ export function AppShell({ children }: { children: React.ReactNode }) {
             </div>
           )}
           <div className="nav-bottom">
+            <Link
+              href="/admin"
+              className={`nav-pill${isActive("/admin", pathname) ? " active" : ""}`}
+            >
+              <SlidersIcon />
+              Admin panel
+            </Link>
             <Link
               href="/settings"
               className={`nav-pill${isActive("/settings", pathname) ? " active" : ""}`}

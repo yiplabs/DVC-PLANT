@@ -2999,6 +2999,118 @@ a.pdf-row:hover .pdf-download {
   pointer-events: none;
 }
 
+/* ---------- Admin / editing panel ---------- */
+
+.admin-main {
+  flex: 1;
+  min-width: 0;
+  padding: 40px 56px 32px;
+  max-width: 860px;
+}
+
+.admin-card {
+  margin-top: 16px;
+  padding: 24px;
+}
+
+.text-input {
+  display: block;
+  width: 100%;
+  margin-top: 8px;
+  border-radius: 14px;
+  background: var(--field-bg);
+  border: 1.5px solid var(--field-border);
+  padding: 11px 14px;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--ink);
+  outline: none;
+  transition: border-color 150ms ease;
+}
+
+.text-input::placeholder {
+  color: var(--muted);
+  font-weight: 600;
+}
+
+.text-input:focus {
+  border-color: var(--wash-border);
+}
+
+.link-manage-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border: 1px solid var(--hairline);
+  border-radius: 16px;
+  padding: 10px 14px;
+}
+
+.link-manage-label {
+  font-weight: 800;
+  font-size: 14px;
+  color: var(--ink);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.link-manage-url {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--faint);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.row-icon-btn {
+  width: 30px;
+  height: 30px;
+  flex: 0 0 30px;
+  border-radius: 999px;
+  background: var(--lavender);
+  color: var(--chip-purple-text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 150ms ease, color 150ms ease;
+}
+
+.row-icon-btn:hover {
+  background: var(--lavender-hover);
+}
+
+.row-icon-btn.danger:hover {
+  background: rgba(232, 67, 147, 0.14);
+  color: #e84393;
+}
+
+.admin-link-form {
+  margin-top: 10px;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.admin-link-form .text-input {
+  margin-top: 0;
+  flex: 1;
+}
+
+.admin-empty {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--faint);
+  padding: 8px 2px;
+}
+
+.btn-visit.danger:hover {
+  background: rgba(232, 67, 147, 0.14);
+  color: #e84393;
+}
+
 /* ---------- Settings ---------- */
 
 .settings-main {

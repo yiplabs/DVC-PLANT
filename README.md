@@ -9,6 +9,9 @@ complete **quests**, collect community **submissions**, and pitch live on the
 > runs on mock data in [`lib/data.ts`](lib/data.ts) with local React state. The
 > focus of this repo is the design and the general feel. It will later be
 > connected to a real project / handed off for integration.
+>
+> **Taking this over?** Start with [`HANDOFF.md`](HANDOFF.md) — it maps the file
+> structure, every backend integration point, and what's intentionally mocked.
 
 ## Stack
 

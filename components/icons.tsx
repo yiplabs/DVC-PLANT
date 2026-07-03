@@ -283,6 +283,17 @@ export function VideoCamIcon({ size, ...props }: IconProps) {
   );
 }
 
+export function SlidersIcon({ size, ...props }: IconProps) {
+  return (
+    <svg {...base(size, 19)} fill="none" stroke="currentColor" strokeWidth={2.2} strokeLinecap="round" {...props}>
+      <path d="M4 7h16M4 12h16M4 17h16" />
+      <circle cx="9" cy="7" r="2.4" fill="var(--card, #fff)" />
+      <circle cx="15" cy="12" r="2.4" fill="var(--card, #fff)" />
+      <circle cx="7" cy="17" r="2.4" fill="var(--card, #fff)" />
+    </svg>
+  );
+}
+
 export function SunIcon({ size, ...props }: IconProps) {
   return (
     <svg {...base(size, 19)} fill="none" stroke="currentColor" strokeWidth={2.2} strokeLinecap="round" {...props}>
