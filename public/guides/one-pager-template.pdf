@@ -1,0 +1,52 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+2 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold >>
+endobj
+3 0 obj
+<< /Length 1500 >>
+stream
+0.424 0.361 0.906 rg
+0 812 612 -50 re f
+BT /FB 16 Tf 1 1 1 rg 48 780 Td (Sproutly · Garden Guides) Tj ET
+BT /FB 26 Tf 0.176 0.165 0.271 rg 48 691.1 Td (One-Pager Template) Tj ET
+BT /FR 11 Tf 0.176 0.165 0.271 rg 48 671.0 Td (Quest 1 · Launch a simple website · +40 XP) Tj ET
+BT /FB 14 Tf 0.176 0.165 0.271 rg 48 629.9 Td (1. Hero headline) Tj ET
+BT /FR 11 Tf 0.176 0.165 0.271 rg 48 609.7 Td (One sentence that says what your project does and who it is for.) Tj ET
+BT /FR 11 Tf 0.176 0.165 0.271 rg 48 589.6 Td (Example: RankKit helps indie makers climb the charts.) Tj ET
+BT /FB 14 Tf 0.176 0.165 0.271 rg 48 548.5 Td (2. The three things it does) Tj ET
+BT /FR 11 Tf 0.176 0.165 0.271 rg 48 524.3 Td ([  ]  Benefit one - lead with the outcome, not the feature.) Tj ET
+BT /FR 11 Tf 0.176 0.165 0.271 rg 48 500.2 Td ([  ]  Benefit two - keep each line under twelve words.) Tj ET
+BT /FR 11 Tf 0.176 0.165 0.271 rg 48 476.0 Td ([  ]  Benefit three - if you cannot cut to three, cut harder.) Tj ET
+BT /FB 14 Tf 0.176 0.165 0.271 rg 48 434.9 Td (3. One screenshot) Tj ET
+BT /FR 11 Tf 0.176 0.165 0.271 rg 48 414.8 Td (A single, honest screenshot beats a carousel. Crop to the moment of value.) Tj ET
+BT /FB 14 Tf 0.176 0.165 0.271 rg 48 373.7 Td (4. Call to action) Tj ET
+BT /FR 11 Tf 0.176 0.165 0.271 rg 48 353.5 Td (One button, one verb: Try it, Join the beta, Water this plant.) Tj ET
+BT /FR 9 Tf 0.176 0.165 0.271 rg 48 314.7 Td (Placeholder guide generated for the Sproutly design prototype.) Tj ET
+endstream
+endobj
+4 0 obj
+<< /Type /Page /Parent 5 0 R /MediaBox [0 0 612 792] /Resources << /Font << /FR 1 0 R /FB 2 0 R >> >> /Contents 3 0 R >>
+endobj
+5 0 obj
+<< /Type /Pages /Kids [4 0 R] /Count 1 >>
+endobj
+6 0 obj
+<< /Type /Catalog /Pages 5 0 R >>
+endobj
+xref
+0 7
+0000000000 65535 f 
+0000000009 00000 n 
+0000000079 00000 n 
+0000000154 00000 n 
+0000001705 00000 n 
+0000001841 00000 n 
+0000001898 00000 n 
+trailer
+<< /Size 7 /Root 6 0 R >>
+startxref
+1947
+%%EOF

@@ -115,48 +115,48 @@ export function MiniPlant({
 }
 
 /* ------------------------------------------------------------------ */
-/* Hero plant — the big character-select illustration on Garden        */
+/* Hero plant — the big character-select illustration on Garden.       */
+/* Every growth tier (1 seed → 8 full bloom) exists at hero size.      */
 /* ------------------------------------------------------------------ */
 
-export function HeroPlant({ dark, particles }: { dark: boolean; particles: boolean }) {
-  const uid = useId().replace(/[:]/g, "");
-  const stem = `stem-${uid}`;
-  const glow = `glow-${uid}`;
-  const flow = `flow-${uid}`;
-  const soilA = dark ? "#6e4c37" : "#8a6248";
-  const soilB = dark ? "#8a6248" : "#a57c58";
-  const petalOpacity = particles ? 1 : 0;
-  const p = dark
-    ? [0.95, 0.75, 0.7, 0.85, 0.55, 0.65, 0.8]
-    : [0.85, 0.6, 0.55, 0.7, 0.4, 0.5, 0.65];
+export type HeroStage = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8;
+
+export const TIER_NAMES: Record<HeroStage, string> = {
+  1: "Seed",
+  2: "Sprout",
+  3: "First Leaf",
+  4: "Budding",
+  5: "Flowering",
+  6: "Pollinate",
+  7: "Full Bloom",
+  8: "Full Bloom",
+};
+
+/** Transform that scales a shape by `s` while pinning its anchor (ax,ay) to (tx,ty). */
+const pin = (s: number, ax: number, ay: number, tx: number, ty: number) =>
+  `translate(${(tx - ax * s).toFixed(2)} ${(ty - ay * s).toFixed(2)}) scale(${s})`;
+
+const BIG_L = "M147 240c-30-3-48-22-51-48 28 3 48 21 51 48z"; // anchor 147,240
+const BIG_R = "M152 206c30-3 48-22 51-48-28 3-48 21-51 48z"; // anchor 152,206
+const SMALL_L = "M148 268c-20-2-32-14-34-31 19 2 32 14 34 31z"; // anchor 148,268
+const SMALL_R = "M152 262c20-2 32-14 34-31-19 2-32 14-34 31z"; // anchor 152,262
+
+function LeafBigL({ t }: { t?: string }) {
+  return <path d={BIG_L} transform={t} fill="#3ecf8e" stroke="#27a06b" strokeWidth={5} strokeLinejoin="round" />;
+}
+function LeafBigR({ t }: { t?: string }) {
+  return <path d={BIG_R} transform={t} fill="#2eb872" stroke="#219660" strokeWidth={5} strokeLinejoin="round" />;
+}
+function LeafSmallL({ t }: { t?: string }) {
+  return <path d={SMALL_L} transform={t} fill="#3ecf8e" stroke="#27a06b" strokeWidth={4.5} strokeLinejoin="round" />;
+}
+function LeafSmallR({ t }: { t?: string }) {
+  return <path d={SMALL_R} transform={t} fill="#2eb872" stroke="#219660" strokeWidth={4.5} strokeLinejoin="round" />;
+}
+
+function Flower({ scale = 1 }: { scale?: number }) {
   return (
-    <svg width="452" height="500" viewBox="0 0 300 332" style={{ marginTop: -4 }}>
-      <defs>
-        <linearGradient id={stem} x1="0" y1="1" x2="0" y2="0">
-          <stop offset="0" stopColor="#6c5ce7" />
-          <stop offset="0.55" stopColor="#4834d4" />
-          <stop offset="1" stopColor="#00cec9" />
-        </linearGradient>
-        <radialGradient id={glow}>
-          <stop offset="0" stopColor={dark ? "#8b7cf7" : "#6c5ce7"} stopOpacity={dark ? 0.65 : 0.38} />
-          <stop offset="1" stopColor={dark ? "#8b7cf7" : "#6c5ce7"} stopOpacity="0" />
-        </radialGradient>
-        <radialGradient id={flow}>
-          <stop offset="0" stopColor="#fbbf24" stopOpacity={dark ? 0.7 : 0.5} />
-          <stop offset="1" stopColor="#fbbf24" stopOpacity="0" />
-        </radialGradient>
-      </defs>
-      <ellipse cx="150" cy="296" rx={dark ? 148 : 142} ry={dark ? 32 : 30} fill={`url(#${glow})`} />
-      <ellipse cx="150" cy="288" rx="102" ry="28" fill={soilA} />
-      <ellipse cx="150" cy="280" rx="92" ry="22" fill={soilB} />
-      <circle cx="118" cy="280" r="4" fill={soilA} />
-      <circle cx="176" cy="286" r="3.4" fill={soilA} />
-      <circle cx="150" cy="116" r={dark ? 54 : 48} fill={`url(#${flow})`} />
-      <path d="M150 282c-7-38 8-62 0-96-6-26-2-46 0-70" fill="none" stroke={`url(#${stem})`} strokeWidth={13} strokeLinecap="round" />
-      <path d="M147 240c-30-3-48-22-51-48 28 3 48 21 51 48z" fill="#3ecf8e" stroke="#27a06b" strokeWidth={5} strokeLinejoin="round" />
-      <path d="M152 206c30-3 48-22 51-48-28 3-48 21-51 48z" fill="#2eb872" stroke="#219660" strokeWidth={5} strokeLinejoin="round" />
-      <path d="M148 268c-20-2-32-14-34-31 19 2 32 14 34 31z" fill="#3ecf8e" stroke="#27a06b" strokeWidth={4.5} strokeLinejoin="round" />
-      <path d="M152 262c20-2 32-14 34-31-19 2-32 14-34 31z" fill="#2eb872" stroke="#219660" strokeWidth={4.5} strokeLinejoin="round" />
+    <g transform={pin(scale, 150, 116, 150, 116)}>
       <circle cx="150" cy="96" r="12.5" fill="#fbbf24" stroke="#f59e0b" strokeWidth={3.5} />
       <circle cx="167" cy="106" r="12.5" fill="#fbbf24" stroke="#f59e0b" strokeWidth={3.5} />
       <circle cx="167" cy="126" r="12.5" fill="#fbbf24" stroke="#f59e0b" strokeWidth={3.5} />
@@ -164,15 +164,163 @@ export function HeroPlant({ dark, particles }: { dark: boolean; particles: boole
       <circle cx="133" cy="126" r="12.5" fill="#fbbf24" stroke="#f59e0b" strokeWidth={3.5} />
       <circle cx="133" cy="106" r="12.5" fill="#fbbf24" stroke="#f59e0b" strokeWidth={3.5} />
       <circle cx="150" cy="116" r="11" fill="#ffd166" stroke="#f59e0b" strokeWidth={4} />
-      <g opacity={petalOpacity} className="particles">
-        <circle cx="64" cy="120" r="4" fill="#fbbf24" opacity={p[0]} />
-        <circle cx="236" cy="70" r="3" fill="#fbbf24" opacity={p[1]} />
-        <circle cx="216" cy="176" r="5" fill="#ffd166" opacity={p[2]} />
-        <circle cx="84" cy="210" r="3" fill="#ffd166" opacity={p[3]} />
-        <circle cx="252" cy="238" r="4" fill="#fbbf24" opacity={p[4]} />
-        <circle cx="44" cy="176" r="2.6" fill="#fbbf24" opacity={p[5]} />
-        <circle cx="196" cy="34" r="2.6" fill="#ffd166" opacity={p[6]} />
-      </g>
+    </g>
+  );
+}
+
+// Per-tier stem: path, width and stem-top y (where buds/flowers sit)
+const STEMS: Record<HeroStage, { d: string; w: number; top: number } | null> = {
+  1: null,
+  2: { d: "M150 282c-4-18 3-28 0-46", w: 8, top: 236 },
+  3: { d: "M150 282c-5-24 5-38 0-64", w: 9.5, top: 218 },
+  4: { d: "M150 282c-6-30 6-48 0-86", w: 11, top: 196 },
+  5: { d: "M150 282c-7-38 8-62 0-96-6-26-2-46 0-70", w: 13, top: 116 },
+  6: { d: "M150 282c-7-38 8-62 0-96-6-26-2-46 0-70", w: 13, top: 116 },
+  7: { d: "M150 282c-7-38 8-62 0-96-6-26-2-46 0-70", w: 13, top: 116 },
+  8: { d: "M150 282c-7-38 8-62 0-96-6-26-2-46 0-70", w: 13, top: 116 },
+};
+
+// Amber glow behind the bud/flower per tier (0 = none)
+const FLOWER_GLOW: Record<HeroStage, number> = { 1: 0, 2: 0, 3: 0, 4: 28, 5: 48, 6: 54, 7: 58, 8: 66 };
+
+// Purple ground-glow radius per tier
+const GROUND_GLOW: Record<HeroStage, number> = { 1: 88, 2: 100, 3: 112, 4: 124, 5: 142, 6: 148, 7: 154, 8: 162 };
+
+export function HeroPlant({
+  stage = 5,
+  dark,
+  particles,
+}: {
+  stage?: HeroStage;
+  dark: boolean;
+  particles: boolean;
+}) {
+  const uid = useId().replace(/[:]/g, "");
+  const stemId = `stem-${uid}`;
+  const glowId = `glow-${uid}`;
+  const flowId = `flow-${uid}`;
+  const soilA = dark ? "#6e4c37" : "#8a6248";
+  const soilB = dark ? "#8a6248" : "#a57c58";
+  const stem = STEMS[stage];
+  const flowerGlow = FLOWER_GLOW[stage];
+  const glowY = stage === 4 ? 194 : 116;
+  const p = dark
+    ? [0.95, 0.75, 0.7, 0.85, 0.55, 0.65, 0.8]
+    : [0.85, 0.6, 0.55, 0.7, 0.4, 0.5, 0.65];
+
+  return (
+    <svg width="452" height="500" viewBox="0 0 300 332" style={{ marginTop: -4 }}>
+      <defs>
+        <linearGradient id={stemId} x1="0" y1="1" x2="0" y2="0">
+          <stop offset="0" stopColor="#6c5ce7" />
+          <stop offset="0.55" stopColor="#4834d4" />
+          <stop offset="1" stopColor="#00cec9" />
+        </linearGradient>
+        <radialGradient id={glowId}>
+          <stop offset="0" stopColor={dark ? "#8b7cf7" : "#6c5ce7"} stopOpacity={dark ? 0.65 : 0.38} />
+          <stop offset="1" stopColor={dark ? "#8b7cf7" : "#6c5ce7"} stopOpacity="0" />
+        </radialGradient>
+        <radialGradient id={flowId}>
+          <stop offset="0" stopColor="#fbbf24" stopOpacity={dark ? 0.7 : 0.5} />
+          <stop offset="1" stopColor="#fbbf24" stopOpacity="0" />
+        </radialGradient>
+      </defs>
+
+      <ellipse cx="150" cy="296" rx={GROUND_GLOW[stage] + (dark ? 6 : 0)} ry={dark ? 32 : 30} fill={`url(#${glowId})`} />
+      <ellipse cx="150" cy="288" rx="102" ry="28" fill={soilA} />
+      <ellipse cx="150" cy="280" rx="92" ry="22" fill={soilB} />
+      <circle cx="118" cy="280" r="4" fill={soilA} />
+      <circle cx="176" cy="286" r="3.4" fill={soilA} />
+
+      {flowerGlow > 0 && <circle cx="150" cy={glowY} r={flowerGlow + (dark ? 6 : 0)} fill={`url(#${flowId})`} />}
+
+      {stem && (
+        <path d={stem.d} fill="none" stroke={`url(#${stemId})`} strokeWidth={stem.w} strokeLinecap="round" />
+      )}
+
+      {stage === 1 && (
+        <g>
+          {/* seed body half-tucked into the soil, with a hopeful little nub */}
+          <ellipse cx="150" cy="262" rx="17" ry="14" fill="#a07850" stroke="#8a6248" strokeWidth={4} />
+          <path d="M143 256q7-6 14 0" fill="none" stroke="#8a6248" strokeWidth={3} strokeLinecap="round" />
+          <path d="M150 248v-10" fill="none" stroke="#2eb872" strokeWidth={5.5} strokeLinecap="round" />
+          <path d={SMALL_L} transform={pin(0.55, 148, 268, 149, 240)} fill="#3ecf8e" stroke="#27a06b" strokeWidth={4.5} strokeLinejoin="round" />
+        </g>
+      )}
+
+      {stage === 2 && (
+        <g>
+          <LeafSmallL t={pin(0.9, 148, 268, 148, 252)} />
+          <LeafSmallR t={pin(0.9, 152, 262, 152, 243)} />
+        </g>
+      )}
+
+      {stage === 3 && (
+        <g>
+          <LeafBigL t={pin(0.7, 147, 240, 147, 250)} />
+          <LeafBigR t={pin(0.7, 152, 206, 152, 230)} />
+        </g>
+      )}
+
+      {stage === 4 && (
+        <g>
+          <LeafBigL t={pin(0.85, 147, 240, 147, 250)} />
+          <LeafBigR t={pin(0.85, 152, 206, 152, 226)} />
+          <LeafSmallL t={pin(0.9, 148, 268, 148, 270)} />
+          {/* young bud */}
+          <circle cx="150" cy="192" r="11" fill="#fbbf24" stroke="#f59e0b" strokeWidth={3.5} />
+          <circle cx="150" cy="192" r="4.5" fill="#ffd166" />
+        </g>
+      )}
+
+      {stage >= 5 && (
+        <g>
+          <LeafBigL />
+          <LeafBigR />
+          <LeafSmallL />
+          <LeafSmallR />
+          {stage >= 7 && (
+            <g>
+              <LeafSmallL t={pin(0.75, 148, 268, 148, 234)} />
+              <LeafSmallR t={pin(0.75, 152, 262, 152, 226)} />
+            </g>
+          )}
+          {stage === 8 && (
+            <g>
+              <LeafBigL t={pin(0.55, 147, 240, 148, 204)} />
+              <LeafBigR t={pin(0.55, 152, 206, 152, 190)} />
+            </g>
+          )}
+          <Flower scale={stage === 5 ? 1 : stage === 6 ? 1.04 : stage === 7 ? 1.14 : 1.28} />
+          {stage >= 6 && (
+            <g className="particles" opacity={particles ? 1 : 0}>
+              {/* pollen drifting off the bloom */}
+              <circle cx="176" cy="76" r="3" fill="#ffd166" opacity={0.85} />
+              <circle cx="196" cy="58" r="2.4" fill="#fbbf24" opacity={0.7} />
+              <circle cx="124" cy="70" r="2.6" fill="#ffd166" opacity={0.75} />
+              {stage === 8 && <circle cx="212" cy="98" r="3.4" fill="#fbbf24" opacity={0.6} />}
+            </g>
+          )}
+        </g>
+      )}
+
+      {stage >= 5 && (
+        <g opacity={particles ? 1 : 0} className="particles">
+          <circle cx="64" cy="120" r="4" fill="#fbbf24" opacity={p[0]} />
+          <circle cx="236" cy="70" r="3" fill="#fbbf24" opacity={p[1]} />
+          <circle cx="216" cy="176" r="5" fill="#ffd166" opacity={p[2]} />
+          <circle cx="84" cy="210" r="3" fill="#ffd166" opacity={p[3]} />
+          <circle cx="252" cy="238" r="4" fill="#fbbf24" opacity={p[4]} />
+          <circle cx="44" cy="176" r="2.6" fill="#fbbf24" opacity={p[5]} />
+          <circle cx="196" cy="34" r="2.6" fill="#ffd166" opacity={p[6]} />
+        </g>
+      )}
+      {stage === 4 && (
+        <g opacity={particles ? 1 : 0} className="particles">
+          <circle cx="96" cy="200" r="3" fill="#ffd166" opacity={0.6} />
+          <circle cx="208" cy="188" r="3.4" fill="#fbbf24" opacity={0.5} />
+        </g>
+      )}
     </svg>
   );
 }

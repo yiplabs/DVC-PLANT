@@ -1,9 +1,8 @@
 "use client";
 
 import { useRef, useState } from "react";
-import { useRouter } from "next/navigation";
 import { useTheme } from "@/components/ThemeProvider";
-import { HeroPlant, MiniPlant } from "@/components/plants";
+import { HeroPlant, MiniPlant, TIER_NAMES, type HeroStage } from "@/components/plants";
 import {
   CheckIcon,
   ChevronLeftIcon,
@@ -13,21 +12,22 @@ import {
   FlameIcon,
   StarIcon,
 } from "@/components/icons";
-import { activityFeed, milestoneLabels, projects, type PlantKind, type Project } from "@/lib/data";
+import { activityFeed, milestoneLabels, type PlantKind, type Project } from "@/lib/data";
 
-const DOCK_STAGES: PlantKind[] = [1, 2, 3, 4, 5, 6, 7, 8];
+const DOCK_STAGES: HeroStage[] = [1, 2, 3, 4, 5, 6, 7, 8];
 
-function stageIndex(plant: PlantKind): number {
+function stageIndex(plant: PlantKind): HeroStage {
   if (plant === "wilted") return 2;
   if (plant === "regrowth") return 3;
   return plant;
 }
 
 export function GardenStage({ project }: { project: Project }) {
-  const router = useRouter();
   const { theme, particles } = useTheme();
   const dark = theme === "dark";
 
+  // Every growth tier is built — the dock switches between them.
+  const [stage, setStage] = useState<HeroStage>(stageIndex(project.plant));
   const [health, setHealth] = useState(project.health);
   const [waters, setWaters] = useState(project.waters);
   const [droplets, setDroplets] = useState<number[]>([]);
@@ -36,7 +36,7 @@ export function GardenStage({ project }: { project: Project }) {
   const fileInput = useRef<HTMLInputElement>(null);
   const dropletId = useRef(0);
 
-  const currentMilestone = Math.min(stageIndex(project.plant) - 1, 6);
+  const currentMilestone = Math.min(stage - 1, 6);
 
   const water = () => {
     setWaters((w) => w + 1);
@@ -53,10 +53,11 @@ export function GardenStage({ project }: { project: Project }) {
     reader.readAsDataURL(file);
   };
 
-  const projectIdx = projects.findIndex((p) => p.slug === project.slug);
-  const goTo = (offset: number) => {
-    const next = projects[(projectIdx + offset + projects.length) % projects.length];
-    router.push(`/garden/${next.slug}`);
+  const stepStage = (offset: number) => {
+    setStage((s) => {
+      const next = ((s - 1 + offset + 8) % 8) + 1;
+      return next as HeroStage;
+    });
   };
 
   return (
@@ -96,7 +97,7 @@ export function GardenStage({ project }: { project: Project }) {
               {project.founderHandle} · Founder
             </span>
           </div>
-          <HeroPlant dark={dark} particles={particles} />
+          <HeroPlant stage={stage} dark={dark} particles={particles} />
         </div>
 
         <div className="glass-card milestone-card">
@@ -125,7 +126,7 @@ export function GardenStage({ project }: { project: Project }) {
           </div>
           <div className="health-readout">
             <span className="health-count">{health} / 100</span>
-            <span className="health-stage">{project.stageName}</span>
+            <span className="health-stage">{TIER_NAMES[stage]}</span>
           </div>
           <button className="btn-primary water-btn" onClick={water}>
             {droplets.map((id) => (
@@ -153,18 +154,20 @@ export function GardenStage({ project }: { project: Project }) {
         </div>
 
         <div className="dock">
-          <button className="dock-arrow" aria-label="Previous plant" onClick={() => goTo(-1)}>
+          <button className="dock-arrow" aria-label="Previous growth tier" onClick={() => stepStage(-1)}>
             <ChevronLeftIcon />
           </button>
-          {DOCK_STAGES.map((stage) => (
-            <div
-              key={stage}
-              className={`dock-thumb${stageIndex(project.plant) === stage ? " active" : ""}`}
+          {DOCK_STAGES.map((s) => (
+            <button
+              key={s}
+              className={`dock-thumb${stage === s ? " active" : ""}`}
+              aria-label={`Preview tier ${s}: ${TIER_NAMES[s]}`}
+              onClick={() => setStage(s)}
             >
-              <MiniPlant kind={stage} />
-            </div>
+              <MiniPlant kind={s} />
+            </button>
           ))}
-          <button className="dock-arrow" aria-label="Next plant" onClick={() => goTo(1)}>
+          <button className="dock-arrow" aria-label="Next growth tier" onClick={() => stepStage(1)}>
             <ChevronRightIcon />
           </button>
         </div>

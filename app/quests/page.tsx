@@ -53,10 +53,22 @@ export default function QuestsPage() {
                         <PlayIcon size={11} />
                         {q.courseMinutes}-min course
                       </span>
-                      <span className={`quest-chip ${q.state === "locked" ? "locked" : "pdf"}`}>
-                        <DocIcon size={12} />
-                        {q.pdfName}
-                      </span>
+                      {q.state === "locked" ? (
+                        <span className="quest-chip locked">
+                          <DocIcon size={12} />
+                          {q.pdfName}
+                        </span>
+                      ) : (
+                        <a
+                          className="quest-chip pdf"
+                          href={`/guides/${q.pdfName}`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          <DocIcon size={12} />
+                          {q.pdfName}
+                        </a>
+                      )}
                       <span className={`quest-chip ${q.state === "locked" ? "locked" : "xp"}`}>
                         +{q.xp} XP
                       </span>
@@ -95,7 +107,12 @@ export default function QuestsPage() {
             Resume course
           </button>
         </div>
-        <div className="card pdf-row">
+        <a
+          className="card pdf-row"
+          href="/guides/domain-checklist.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <div className="pdf-tile">
             <DocIcon size={20} />
           </div>
@@ -103,10 +120,10 @@ export default function QuestsPage() {
             <div className="pdf-name">domain-checklist.pdf</div>
             <div className="pdf-meta">2 pages · updated May 2026</div>
           </div>
-          <button className="pdf-download" aria-label="Download PDF">
+          <span className="pdf-download" aria-label="Open PDF">
             <DownloadIcon />
-          </button>
-        </div>
+          </span>
+        </a>
       </aside>
     </>
   );
