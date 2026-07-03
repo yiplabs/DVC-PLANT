@@ -938,7 +938,6 @@ p {
 
 .milestone-node.current {
   background: var(--amber);
-  box-shadow: 0 0 0 6px rgba(251, 191, 36, 0.22), 0 0 20px rgba(251, 191, 36, 0.65);
 }
 
 .milestone-node.current i {
@@ -955,10 +954,6 @@ p {
 .milestone-node.small {
   width: 24px;
   height: 24px;
-}
-
-.milestone-node.small.current {
-  box-shadow: 0 0 0 4px rgba(251, 191, 36, 0.22), 0 0 12px rgba(251, 191, 36, 0.55);
 }
 
 .milestone-node.small.current i {
@@ -1657,13 +1652,11 @@ p {
 .quest-node.done {
   background: var(--purple);
   color: #ffffff;
-  box-shadow: 0 8px 20px rgba(108, 92, 231, 0.35);
 }
 
 .quest-node.active {
   background: var(--amber);
   color: #ffffff;
-  box-shadow: 0 0 0 7px rgba(251, 191, 36, 0.22), 0 0 24px rgba(251, 191, 36, 0.6);
 }
 
 .quest-node.locked {
@@ -1868,7 +1861,6 @@ a.pdf-row:hover .pdf-download {
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 8px 24px rgba(20, 17, 31, 0.3);
   color: #6c5ce7;
   transition: transform 150ms ease;
 }
