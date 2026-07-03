@@ -1,10 +1,12 @@
 "use client";
 
 import Link from "next/link";
+import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import { useTheme } from "@/components/ThemeProvider";
 import {
   BellIcon,
+  ChevronDownIcon,
   FolderIcon,
   GearIcon,
   HomeIcon,
@@ -18,23 +20,31 @@ import {
   TrophyIcon,
 } from "@/components/icons";
 
-const NAV = [
-  { label: "Home", href: "/", icon: HomeIcon },
-  { label: "Garden", href: "/garden", icon: SproutIcon },
+// The whole showcase lives under one tab — the host app will bring its own nav.
+const SECTION = [
+  { label: "All Projects", href: "/garden", icon: HomeIcon },
   { label: "Quests", href: "/quests", icon: QuestIcon },
   { label: "Stage", href: "/stage", icon: StageIcon },
   { label: "Submissions", href: "/submissions", icon: FolderIcon },
-  { label: "Settings", href: "/settings", icon: GearIcon },
 ];
 
 function isActive(href: string, pathname: string) {
-  if (href === "/") return false; // Home routes to the garden directory
   return pathname === href || pathname.startsWith(href + "/");
 }
 
 export function AppShell({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
   const { theme, toggleTheme } = useTheme();
+  const [navOpen, setNavOpen] = useState(false);
+
+  // Deep links into a section page reveal the submenu so you can see where you are
+  useEffect(() => {
+    if (SECTION.some((c) => c.href !== "/garden" && isActive(c.href, pathname))) {
+      setNavOpen(true);
+    }
+  }, [pathname]);
+
+  const sectionActive = SECTION.some((c) => isActive(c.href, pathname));
 
   return (
     <div className="shell">
@@ -68,16 +78,41 @@ export function AppShell({ children }: { children: React.ReactNode }) {
       </header>
       <div className="shell-body">
         <nav className="sidebar">
-          {NAV.map(({ label, href, icon: Icon }) => (
+          <button
+            className={`nav-pill nav-parent${sectionActive && !navOpen ? " active" : ""}`}
+            aria-expanded={navOpen}
+            onClick={() => setNavOpen((o) => !o)}
+          >
+            <SproutIcon />
+            <span className="nav-parent-text">
+              Garden
+              <small>Project showcase</small>
+            </span>
+            <ChevronDownIcon size={13} className={`nav-chev${navOpen ? " open" : ""}`} />
+          </button>
+          {navOpen && (
+            <div className="nav-sub">
+              {SECTION.map(({ label, href, icon: Icon }) => (
+                <Link
+                  key={label}
+                  href={href}
+                  className={`nav-pill nav-sub-pill${isActive(href, pathname) ? " active" : ""}`}
+                >
+                  <Icon size={16} />
+                  {label}
+                </Link>
+              ))}
+            </div>
+          )}
+          <div className="nav-bottom">
             <Link
-              key={label}
-              href={href}
-              className={`nav-pill${isActive(href, pathname) ? " active" : ""}`}
+              href="/settings"
+              className={`nav-pill${isActive("/settings", pathname) ? " active" : ""}`}
             >
-              <Icon />
-              {label}
+              <GearIcon />
+              Settings
             </Link>
-          ))}
+          </div>
         </nav>
         <div className="shell-content">{children}</div>
       </div>

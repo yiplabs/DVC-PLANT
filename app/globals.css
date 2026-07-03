@@ -350,6 +350,83 @@ p {
   color: var(--nav-active-text);
 }
 
+/* One-tab nav: "Garden — Project showcase" discloses the section pages */
+.nav-parent {
+  width: 100%;
+  text-align: left;
+}
+
+.nav-parent-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+  flex: 1;
+  min-width: 0;
+}
+
+.nav-parent-text small {
+  margin-top: 2px;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.nav-chev {
+  flex: 0 0 auto;
+  color: var(--muted);
+  transition: transform 150ms ease;
+}
+
+.nav-chev.open {
+  transform: rotate(180deg);
+}
+
+.nav-sub {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  margin: 2px 0 4px;
+  position: relative;
+  padding-left: 14px;
+  animation: nav-drop 160ms ease;
+}
+
+.nav-sub::before {
+  content: "";
+  position: absolute;
+  left: 22px;
+  top: 8px;
+  bottom: 8px;
+  width: 2.5px;
+  border-radius: 2px;
+  background: var(--hairline);
+}
+
+.nav-sub-pill {
+  padding: 10px 16px 10px 26px;
+  font-size: 14px;
+  gap: 10px;
+}
+
+@keyframes nav-drop {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.nav-bottom {
+  margin-top: auto;
+  padding-top: 12px;
+  border-top: 1px solid var(--hairline);
+}
+
 .shell-content {
   flex: 1;
   display: flex;
