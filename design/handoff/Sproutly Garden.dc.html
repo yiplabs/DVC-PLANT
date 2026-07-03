@@ -1,0 +1,1243 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="design_doc_mode" content="canvas">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  body { margin:0; background:#eceaf4; font-family:'Nunito',sans-serif; }
+</style>
+</helmet>
+<section style="display:flex; flex-wrap:wrap; gap:64px; padding:64px 64px 0; align-items:flex-start; font-family:'Nunito',sans-serif;">
+
+  <!-- ============ 5a STAGE ============ -->
+  <div id="5a" style="display:flex; flex-direction:column; gap:14px;">
+    <div style="display:flex; align-items:center; gap:12px;">
+      <a href="#5a" style="text-decoration:none; background:#2d2a45; color:#ffffff; font-weight:800; font-size:13px; border-radius:999px; padding:5px 13px;">5a</a>
+      <span style="font-weight:800; font-size:15px; color:#6b6689;">Stage — pitch on stream</span>
+    </div>
+    <div data-screen-label="Stage" style="width:1920px; height:1080px; border-radius:28px; overflow:hidden; background:#faf8f4; display:flex; flex-direction:column; box-shadow:0 30px 80px rgba(45,42,69,0.18);">
+      <header style="height:72px; flex:0 0 72px; background:linear-gradient(90deg,#6c5ce7 0%,#4834d4 50%,#00cec9 100%); display:grid; grid-template-columns:1fr auto 1fr; align-items:center; padding:0 28px; gap:24px;">
+        <div style="display:flex; align-items:center; gap:12px;">
+          <div style="width:40px; height:40px; border-radius:14px; background:rgba(255,255,255,0.22); display:flex; align-items:center; justify-content:center;">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21v-8"></path><path d="M12 13C12 9 9 7 5 7c0 4 3 6 7 6z" fill="rgba(255,255,255,0.35)"></path><path d="M12 13c0-4 3-6 7-6 0 4-3 6-7 6z" fill="rgba(255,255,255,0.35)"></path></svg>
+          </div>
+          <span style="color:#ffffff; font-weight:900; font-size:20px;">Sproutly</span>
+        </div>
+        <div style="width:460px; height:44px; border-radius:999px; background:rgba(255,255,255,0.18); border:1px solid rgba(255,255,255,0.28); display:flex; align-items:center; gap:10px; padding:0 20px;">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.9)" stroke-width="2.4" stroke-linecap="round"><circle cx="11" cy="11" r="6.5"></circle><path d="M16 16l4.5 4.5"></path></svg>
+          <span style="color:rgba(255,255,255,0.85); font-size:15px; font-weight:600;">Search the garden…</span>
+        </div>
+        <div style="display:flex; align-items:center; justify-content:flex-end; gap:12px;">
+          <div style="width:40px; height:40px; border-radius:14px; background:rgba(255,255,255,0.18); display:flex; align-items:center; justify-content:center;">
+            <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 16v-5a6 6 0 1 0-12 0v5l-2 3h16z"></path><path d="M10.5 21.5a2 2 0 0 0 3 0"></path></svg>
+          </div>
+          <div style="width:40px; height:40px; border-radius:14px; background:rgba(255,255,255,0.18); display:flex; align-items:center; justify-content:center;">
+            <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 4h8v5a4 4 0 0 1-8 0z"></path><path d="M8 5H5a3 3 0 0 0 3 4M16 5h3a3 3 0 0 1-3 4"></path><path d="M12 13v4M9 20h6"></path></svg>
+          </div>
+          <div style="width:40px; height:40px; border-radius:999px; background:linear-gradient(135deg,#ffd166,#fbbf24); border:2px solid rgba(255,255,255,0.75); display:flex; align-items:center; justify-content:center; color:#7c2d12; font-weight:900; font-size:15px;">M</div>
+        </div>
+      </header>
+      <div style="flex:1; display:flex; min-height:0;">
+        <nav style="width:232px; flex:0 0 232px; background:#ffffff; border-right:1px solid #f0eef9; padding:24px 16px; display:flex; flex-direction:column; gap:6px;">
+          <div style="display:flex; align-items:center; gap:12px; padding:12px 18px; border-radius:999px; color:#6b6689; font-weight:800; font-size:15px;"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11l8-7 8 7v9h-5.5v-5h-5v5H4z"></path></svg>Home</div>
+          <div style="display:flex; align-items:center; gap:12px; padding:12px 18px; border-radius:999px; color:#6b6689; font-weight:800; font-size:15px;"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21v-8"></path><path d="M12 13C12 9 9 7 5 7c0 4 3 6 7 6z"></path><path d="M12 13c0-4 3-6 7-6 0 4-3 6-7 6z"></path></svg>Garden</div>
+          <div style="display:flex; align-items:center; gap:12px; padding:12px 18px; border-radius:999px; color:#6b6689; font-weight:800; font-size:15px;"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 21V4h11.5l-2.5 4.5 2.5 4.5H6"></path></svg>Quests</div>
+          <div style="display:flex; align-items:center; gap:12px; padding:12px 18px; border-radius:999px; background:#eef0ff; color:#6c5ce7; font-weight:800; font-size:15px;"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="12" height="10" rx="2.5"></rect><path d="M15 10.5l6-3v9l-6-3"></path></svg>Stage</div>
+          <div style="display:flex; align-items:center; gap:12px; padding:12px 18px; border-radius:999px; color:#6b6689; font-weight:800; font-size:15px;"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7.5A2.5 2.5 0 0 1 5.5 5H9l2 2.5h7.5A2.5 2.5 0 0 1 21 10v6.5a2.5 2.5 0 0 1-2.5 2.5h-13A2.5 2.5 0 0 1 3 16.5z"></path></svg>Submissions</div>
+          <div style="display:flex; align-items:center; gap:12px; padding:12px 18px; border-radius:999px; color:#6b6689; font-weight:800; font-size:15px;"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="12" cy="12" r="3.2"></circle><path d="M12 2.5v3M12 18.5v3M2.5 12h3M18.5 12h3M5 5l2.1 2.1M16.9 16.9L19 19M19 5l-2.1 2.1M7.1 16.9L5 19"></path></svg>Settings</div>
+        </nav>
+        <main style="flex:1; min-width:0; padding:40px 56px 32px;">
+          <div style="font-size:12px; font-weight:800; letter-spacing:0.24em; color:#a29bce;">LIVE SHOWCASE</div>
+          <h1 style="margin:4px 0 0; font-size:52px; font-weight:900; color:#2d2a45; letter-spacing:-0.02em; line-height:1.05;">Pitch on stream</h1>
+          <p style="margin:8px 0 0; font-size:14px; font-weight:700; color:#6b6689;">Demo your project live on the garden stream — the hosts and the chat ask you questions.</p>
+          <div style="margin-top:20px; background:#ffffff; border:1px solid #f0eef9; border-radius:24px; padding:18px 24px; box-shadow:0 10px 28px rgba(108,92,231,0.08); display:flex; align-items:center; gap:20px;">
+            <div style="width:80px; height:80px; flex:0 0 80px; border-radius:20px; background:#eef0ff; display:flex; flex-direction:column; align-items:center; justify-content:center;">
+              <span style="font-size:11px; font-weight:800; letter-spacing:0.14em; color:#6c5ce7;">JUL</span>
+              <span style="font-size:30px; font-weight:900; color:#2d2a45; line-height:1;">9</span>
+              <span style="font-size:10px; font-weight:800; letter-spacing:0.14em; color:#a29bce;">THU</span>
+            </div>
+            <div style="flex:1; min-width:0;">
+              <div style="font-weight:900; font-size:22px; color:#2d2a45;">Community pitch night #14</div>
+              <div style="margin-top:6px; display:flex; align-items:center; gap:8px;">
+                <div style="display:flex; padding-left:7px;">
+                  <div style="width:24px; height:24px; border-radius:999px; background:linear-gradient(135deg,#4834d4,#6c5ce7); border:2px solid #ffffff; margin-left:-7px; color:#ffffff; font-weight:900; font-size:10px; display:flex; align-items:center; justify-content:center;">I</div>
+                  <div style="width:24px; height:24px; border-radius:999px; background:linear-gradient(135deg,#00cec9,#2eb872); border:2px solid #ffffff; margin-left:-7px; color:#ffffff; font-weight:900; font-size:10px; display:flex; align-items:center; justify-content:center;">T</div>
+                </div>
+                <span style="font-weight:700; font-size:13px; color:#6b6689;">Hosted by keepers Ines &amp; Tom · 7:00 PM CET · streamed live to the garden</span>
+              </div>
+            </div>
+            <span style="background:#fef3d7; color:#b45309; font-weight:800; font-size:13px; border-radius:999px; padding:9px 18px;">3 pitch spots left</span>
+            <div style="background:#eef0ff; color:#6c5ce7; font-weight:800; font-size:14px; border-radius:999px; padding:11px 22px; cursor:pointer;" style-hover="background:#e2e5ff;">Remind me</div>
+          </div>
+          <div style="margin-top:16px; display:grid; grid-template-columns:1fr 1fr; gap:16px; align-items:start;">
+            <div style="background:#ffffff; border:1px solid #f0eef9; border-radius:24px; padding:24px; box-shadow:0 16px 40px rgba(108,92,231,0.12);">
+              <div style="font-size:11px; font-weight:800; letter-spacing:0.2em; color:#a29bce;">REQUEST A SPOT</div>
+              <div style="margin-top:16px; font-size:10px; font-weight:800; letter-spacing:0.16em; color:#b3aed0;">YOUR PROJECT</div>
+              <div style="margin-top:8px; display:flex; align-items:center; gap:12px; background:#f6f4ff; border:1.5px solid #ddd8f8; border-radius:16px; padding:10px 14px;">
+                <div style="width:38px; height:38px; border-radius:12px; background:linear-gradient(135deg,#6c5ce7,#4834d4); display:flex; align-items:center; justify-content:center; color:#ffffff; font-weight:900; font-size:16px;">R</div>
+                <div style="flex:1; min-width:0;">
+                  <div style="font-weight:900; font-size:16px; color:#2d2a45;">RankKit</div>
+                  <div style="font-size:11px; font-weight:700; color:#a29bce;">Flowering · 80% health</div>
+                </div>
+                <div style="width:24px; height:24px; border-radius:999px; background:#6c5ce7; display:flex; align-items:center; justify-content:center;">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4 10-10"></path></svg>
+                </div>
+              </div>
+              <div style="margin-top:16px; font-size:10px; font-weight:800; letter-spacing:0.16em; color:#b3aed0;">WHAT WILL YOU DEMO?</div>
+              <div style="margin-top:8px; min-height:88px; border-radius:16px; background:#f7f6fd; border:1.5px solid #e8e5f4; padding:12px 15px; font-size:14px; font-weight:600; color:#4a4664; line-height:1.45;">The new ranking table, live — plus where I'm stuck on pricing.</div>
+              <div style="margin-top:16px; font-size:10px; font-weight:800; letter-spacing:0.16em; color:#b3aed0;">PITCH LENGTH</div>
+              <div style="margin-top:8px; display:flex; gap:8px;">
+                <span style="background:#6c5ce7; color:#ffffff; font-weight:800; font-size:13px; border-radius:999px; padding:8px 18px;">3 min</span>
+                <span style="background:#ffffff; border:1px solid #e8e5f4; color:#6b6689; font-weight:800; font-size:13px; border-radius:999px; padding:8px 18px;">5 min</span>
+                <span style="background:#ffffff; border:1px solid #e8e5f4; color:#6b6689; font-weight:800; font-size:13px; border-radius:999px; padding:8px 18px;">8 min</span>
+              </div>
+              <div style="margin-top:14px; font-size:12px; font-weight:700; color:#b3aed0;">After the demo, the hosts and the chat ask questions — friendly Shark Tank rules.</div>
+              <div style="margin-top:14px; background:#6c5ce7; border-radius:14px; padding:13px; text-align:center; color:#ffffff; font-weight:900; font-size:15px; box-shadow:0 10px 24px rgba(108,92,231,0.4); cursor:pointer;" style-hover="background:#5b4bd6;">Request my spot</div>
+              <div style="margin-top:9px; font-size:11.5px; font-weight:700; color:#b3aed0; text-align:center;">A keeper confirms your spot by DM before Thursday.</div>
+            </div>
+            <div style="background:#ffffff; border:1px solid #f0eef9; border-radius:24px; padding:24px; box-shadow:0 10px 28px rgba(108,92,231,0.08);">
+              <div style="font-size:11px; font-weight:800; letter-spacing:0.2em; color:#a29bce;">THU JUL 9 · LINEUP</div>
+              <div style="margin-top:14px; display:flex; flex-direction:column; gap:10px;">
+                <div style="display:flex; align-items:center; gap:12px; border:1px solid #f0eef9; border-radius:16px; padding:11px 14px;">
+                  <span style="background:#eef0ff; color:#6c5ce7; font-weight:800; font-size:12px; border-radius:999px; padding:5px 11px;">7:05</span>
+                  <div style="width:34px; height:34px; border-radius:999px; background:linear-gradient(135deg,#00cec9,#0a86a8); display:flex; align-items:center; justify-content:center; color:#ffffff; font-weight:900; font-size:14px;">P</div>
+                  <div style="flex:1; min-width:0;">
+                    <div style="font-weight:900; font-size:15px; color:#2d2a45;">PixelPay</div>
+                    <div style="font-size:11px; font-weight:700; color:#a29bce;">Ana Reyes · 5 min</div>
+                  </div>
+                  <span style="background:#e7f8ef; color:#1d9d6b; font-weight:800; font-size:11px; letter-spacing:0.06em; border-radius:999px; padding:5px 11px;">CONFIRMED</span>
+                </div>
+                <div style="display:flex; align-items:center; gap:12px; border:1px solid #f0eef9; border-radius:16px; padding:11px 14px;">
+                  <span style="background:#eef0ff; color:#6c5ce7; font-weight:800; font-size:12px; border-radius:999px; padding:5px 11px;">7:20</span>
+                  <div style="width:34px; height:34px; border-radius:10px; background:linear-gradient(135deg,#fbbf24,#f2762e); display:flex; align-items:center; justify-content:center; color:#ffffff; font-weight:900; font-size:14px;">L</div>
+                  <div style="flex:1; min-width:0;">
+                    <div style="font-weight:900; font-size:15px; color:#2d2a45;">Looply</div>
+                    <div style="font-size:11px; font-weight:700; color:#a29bce;">Theo Lang · 3 min</div>
+                  </div>
+                  <span style="background:#e7f8ef; color:#1d9d6b; font-weight:800; font-size:11px; letter-spacing:0.06em; border-radius:999px; padding:5px 11px;">CONFIRMED</span>
+                </div>
+                <div style="display:flex; align-items:center; gap:12px; border:1px solid #f0eef9; border-radius:16px; padding:11px 14px;">
+                  <span style="background:#eef0ff; color:#6c5ce7; font-weight:800; font-size:12px; border-radius:999px; padding:5px 11px;">7:35</span>
+                  <div style="width:34px; height:34px; border-radius:10px; background:linear-gradient(135deg,#4834d4,#2c1e9e); display:flex; align-items:center; justify-content:center; color:#ffffff; font-weight:900; font-size:14px;">Q</div>
+                  <div style="flex:1; min-width:0;">
+                    <div style="font-weight:900; font-size:15px; color:#2d2a45;">Quilljar</div>
+                    <div style="font-size:11px; font-weight:700; color:#a29bce;">Noor Salem · 5 min</div>
+                  </div>
+                  <span style="background:#fef3d7; color:#b45309; font-weight:800; font-size:11px; letter-spacing:0.06em; border-radius:999px; padding:5px 11px;">WAITLIST</span>
+                </div>
+                <div style="display:flex; align-items:center; gap:12px; background:#f6f4ff; border:1.5px solid #ddd8f8; border-radius:16px; padding:11px 14px;">
+                  <span style="background:#ffffff; color:#6c5ce7; font-weight:800; font-size:12px; border-radius:999px; padding:5px 11px;">7:50</span>
+                  <div style="width:34px; height:34px; border-radius:10px; background:linear-gradient(135deg,#6c5ce7,#4834d4); display:flex; align-items:center; justify-content:center; color:#ffffff; font-weight:900; font-size:14px;">R</div>
+                  <div style="flex:1; min-width:0;">
+                    <div style="font-weight:900; font-size:15px; color:#2d2a45;">RankKit</div>
+                    <div style="font-size:11px; font-weight:700; color:#6c5ce7;">Your request · 3 min</div>
+                  </div>
+                  <span style="background:#fef3d7; color:#b45309; font-weight:800; font-size:11px; letter-spacing:0.06em; border-radius:999px; padding:5px 11px;">PENDING</span>
+                </div>
+              </div>
+              <div style="margin-top:12px; font-size:11.5px; font-weight:700; color:#b3aed0;">Hosts pick four pitches per stream — replays land on the project's garden page.</div>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ 4a SUBMISSIONS FOLDER ============ -->
+  <div id="4a" style="display:flex; flex-direction:column; gap:14px;">
+    <div style="display:flex; align-items:center; gap:12px;">
+      <a href="#4a" style="text-decoration:none; background:#2d2a45; color:#ffffff; font-weight:800; font-size:13px; border-radius:999px; padding:5px 13px;">4a</a>
+      <span style="font-weight:800; font-size:15px; color:#6b6689;">Submissions folder — all community requests</span>
+    </div>
+    <div data-screen-label="Submissions" style="width:1920px; height:1080px; border-radius:28px; overflow:hidden; background:#faf8f4; display:flex; flex-direction:column; box-shadow:0 30px 80px rgba(45,42,69,0.18);">
+      <header style="height:72px; flex:0 0 72px; background:linear-gradient(90deg,#6c5ce7 0%,#4834d4 50%,#00cec9 100%); display:grid; grid-template-columns:1fr auto 1fr; align-items:center; padding:0 28px; gap:24px;">
+        <div style="display:flex; align-items:center; gap:12px;">
+          <div style="width:40px; height:40px; border-radius:14px; background:rgba(255,255,255,0.22); display:flex; align-items:center; justify-content:center;">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21v-8"></path><path d="M12 13C12 9 9 7 5 7c0 4 3 6 7 6z" fill="rgba(255,255,255,0.35)"></path><path d="M12 13c0-4 3-6 7-6 0 4-3 6-7 6z" fill="rgba(255,255,255,0.35)"></path></svg>
+          </div>
+          <span style="color:#ffffff; font-weight:900; font-size:20px;">Sproutly</span>
+        </div>
+        <div style="width:460px; height:44px; border-radius:999px; background:rgba(255,255,255,0.18); border:1px solid rgba(255,255,255,0.28); display:flex; align-items:center; gap:10px; padding:0 20px;">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.9)" stroke-width="2.4" stroke-linecap="round"><circle cx="11" cy="11" r="6.5"></circle><path d="M16 16l4.5 4.5"></path></svg>
+          <span style="color:rgba(255,255,255,0.85); font-size:15px; font-weight:600;">Search the garden…</span>
+        </div>
+        <div style="display:flex; align-items:center; justify-content:flex-end; gap:12px;">
+          <div style="width:40px; height:40px; border-radius:14px; background:rgba(255,255,255,0.18); display:flex; align-items:center; justify-content:center;">
+            <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 16v-5a6 6 0 1 0-12 0v5l-2 3h16z"></path><path d="M10.5 21.5a2 2 0 0 0 3 0"></path></svg>
+          </div>
+          <div style="width:40px; height:40px; border-radius:14px; background:rgba(255,255,255,0.18); display:flex; align-items:center; justify-content:center;">
+            <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 4h8v5a4 4 0 0 1-8 0z"></path><path d="M8 5H5a3 3 0 0 0 3 4M16 5h3a3 3 0 0 1-3 4"></path><path d="M12 13v4M9 20h6"></path></svg>
+          </div>
+          <div style="width:40px; height:40px; border-radius:999px; background:linear-gradient(135deg,#ffd166,#fbbf24); border:2px solid rgba(255,255,255,0.75); display:flex; align-items:center; justify-content:center; color:#7c2d12; font-weight:900; font-size:15px;">M</div>
+        </div>
+      </header>
+      <div style="flex:1; display:flex; min-height:0;">
+        <nav style="width:232px; flex:0 0 232px; background:#ffffff; border-right:1px solid #f0eef9; padding:24px 16px; display:flex; flex-direction:column; gap:6px;">
+          <div style="display:flex; align-items:center; gap:12px; padding:12px 18px; border-radius:999px; color:#6b6689; font-weight:800; font-size:15px;"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11l8-7 8 7v9h-5.5v-5h-5v5H4z"></path></svg>Home</div>
+          <div style="display:flex; align-items:center; gap:12px; padding:12px 18px; border-radius:999px; color:#6b6689; font-weight:800; font-size:15px;"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21v-8"></path><path d="M12 13C12 9 9 7 5 7c0 4 3 6 7 6z"></path><path d="M12 13c0-4 3-6 7-6 0 4-3 6-7 6z"></path></svg>Garden</div>
+          <div style="display:flex; align-items:center; gap:12px; padding:12px 18px; border-radius:999px; color:#6b6689; font-weight:800; font-size:15px;"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 21V4h11.5l-2.5 4.5 2.5 4.5H6"></path></svg>Quests</div>
+          <div style="display:flex; align-items:center; gap:12px; padding:12px 18px; border-radius:999px; color:#6b6689; font-weight:800; font-size:15px;"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="12" height="10" rx="2.5"></rect><path d="M15 10.5l6-3v9l-6-3"></path></svg>Stage</div>
+          <div style="display:flex; align-items:center; gap:12px; padding:12px 18px; border-radius:999px; background:#eef0ff; color:#6c5ce7; font-weight:800; font-size:15px;"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7.5A2.5 2.5 0 0 1 5.5 5H9l2 2.5h7.5A2.5 2.5 0 0 1 21 10v6.5a2.5 2.5 0 0 1-2.5 2.5h-13A2.5 2.5 0 0 1 3 16.5z"></path></svg>Submissions</div>
+          <div style="display:flex; align-items:center; gap:12px; padding:12px 18px; border-radius:999px; color:#6b6689; font-weight:800; font-size:15px;"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="12" cy="12" r="3.2"></circle><path d="M12 2.5v3M12 18.5v3M2.5 12h3M18.5 12h3M5 5l2.1 2.1M16.9 16.9L19 19M19 5l-2.1 2.1M7.1 16.9L5 19"></path></svg>Settings</div>
+        </nav>
+        <main style="flex:1; min-width:0; padding:40px 56px 28px; display:flex; flex-direction:column;">
+          <div style="display:flex; align-items:flex-end; justify-content:space-between; gap:24px;">
+            <div>
+              <div style="font-size:12px; font-weight:800; letter-spacing:0.24em; color:#a29bce;">SUBMISSION FOLDER</div>
+              <h1 style="margin:4px 0 0; font-size:52px; font-weight:900; color:#2d2a45; letter-spacing:-0.02em; line-height:1.05;">RankKit submissions</h1>
+              <p style="margin:8px 0 0; font-size:14px; font-weight:700; color:#6b6689;">Everything the community has asked for, in one place — founders read them all.</p>
+            </div>
+            <div style="display:flex; align-items:center; gap:10px; padding-bottom:6px; background:#ffffff; border:1px solid #e8e5f4; border-radius:999px; padding:8px 16px 8px 9px;">
+              <div style="width:28px; height:28px; border-radius:10px; background:linear-gradient(135deg,#6c5ce7,#4834d4); display:flex; align-items:center; justify-content:center; color:#ffffff; font-weight:900; font-size:12px;">R</div>
+              <span style="font-weight:800; font-size:14px; color:#2d2a45;">RankKit</span>
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#a29bce" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9.5l6 6 6-6"></path></svg>
+            </div>
+          </div>
+          <div style="margin-top:16px; display:flex; gap:8px;">
+            <span style="background:#6c5ce7; color:#ffffff; font-weight:800; font-size:13px; border-radius:999px; padding:8px 18px;">All · 6</span>
+            <span style="background:#ffffff; border:1px solid #e8e5f4; color:#6b6689; font-weight:800; font-size:13px; border-radius:999px; padding:8px 18px;">New</span>
+            <span style="background:#ffffff; border:1px solid #e8e5f4; color:#6b6689; font-weight:800; font-size:13px; border-radius:999px; padding:8px 18px;">Considering</span>
+            <span style="background:#ffffff; border:1px solid #e8e5f4; color:#6b6689; font-weight:800; font-size:13px; border-radius:999px; padding:8px 18px;">Planned</span>
+            <span style="background:#ffffff; border:1px solid #e8e5f4; color:#6b6689; font-weight:800; font-size:13px; border-radius:999px; padding:8px 18px;">Shipped</span>
+          </div>
+          <div style="margin-top:16px; display:flex; flex-direction:column; gap:11px;">
+            <div style="background:#ffffff; border:1px solid #f0eef9; border-radius:20px; padding:16px 20px; box-shadow:0 8px 22px rgba(108,92,231,0.07); display:flex; gap:14px;">
+              <div style="width:38px; height:38px; flex:0 0 38px; border-radius:999px; background:linear-gradient(135deg,#fbbf24,#6c5ce7); color:#ffffff; font-weight:900; font-size:14px; display:flex; align-items:center; justify-content:center;">P</div>
+              <div style="flex:1; min-width:0;">
+                <div style="display:flex; align-items:center; gap:8px;">
+                  <span style="font-weight:800; font-size:13px; color:#2d2a45;">Priya Nair</span>
+                  <span style="font-size:11px; font-weight:700; color:#b3aed0;">2 days ago</span>
+                </div>
+                <div style="margin-top:4px; font-size:15px; font-weight:700; color:#2d2a45; line-height:1.45;">I would like to see keyboard shortcuts for moving rows in the ranking table.</div>
+                <div style="margin-top:10px; background:#f6f4ff; border-radius:12px; padding:8px 12px; font-size:12.5px; font-weight:700; color:#6c5ce7;">Maya (founder): "On the list — pairing it with the next table update."</div>
+              </div>
+              <div style="display:flex; flex-direction:column; align-items:flex-end; gap:8px;">
+                <span style="display:inline-flex; align-items:center; gap:5px; background:#6c5ce7; color:#ffffff; font-weight:800; font-size:12px; border-radius:999px; padding:6px 13px;"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 14.5l6-6 6 6"></path></svg>12</span>
+                <span style="background:#fef3d7; color:#b45309; font-weight:800; font-size:11px; letter-spacing:0.06em; border-radius:999px; padding:5px 11px;">CONSIDERING</span>
+              </div>
+            </div>
+            <div style="background:#ffffff; border:1px solid #f0eef9; border-radius:20px; padding:16px 20px; box-shadow:0 8px 22px rgba(108,92,231,0.07); display:flex; gap:14px;">
+              <div style="width:38px; height:38px; flex:0 0 38px; border-radius:999px; background:linear-gradient(135deg,#00cec9,#2eb872); color:#ffffff; font-weight:900; font-size:14px; display:flex; align-items:center; justify-content:center;">R</div>
+              <div style="flex:1; min-width:0;">
+                <div style="display:flex; align-items:center; gap:8px;">
+                  <span style="font-weight:800; font-size:13px; color:#2d2a45;">Rio Vega</span>
+                  <span style="font-size:11px; font-weight:700; color:#b3aed0;">3 days ago</span>
+                </div>
+                <div style="margin-top:4px; font-size:15px; font-weight:700; color:#2d2a45; line-height:1.45;">Dark mode for the dashboard — I check ranks at night.</div>
+                <div style="margin-top:10px; background:#f6f4ff; border-radius:12px; padding:8px 12px; font-size:12.5px; font-weight:700; color:#6c5ce7;">Leo (founder): "Shipped last Tuesday — enjoy!"</div>
+              </div>
+              <div style="display:flex; flex-direction:column; align-items:flex-end; gap:8px;">
+                <span style="display:inline-flex; align-items:center; gap:5px; background:#6c5ce7; color:#ffffff; font-weight:800; font-size:12px; border-radius:999px; padding:6px 13px;"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 14.5l6-6 6 6"></path></svg>23</span>
+                <span style="background:#dff7f5; color:#0a9490; font-weight:800; font-size:11px; letter-spacing:0.06em; border-radius:999px; padding:5px 11px;">SHIPPED</span>
+              </div>
+            </div>
+            <div style="background:#ffffff; border:1px solid #f0eef9; border-radius:20px; padding:16px 20px; box-shadow:0 8px 22px rgba(108,92,231,0.07); display:flex; gap:14px;">
+              <div style="width:38px; height:38px; flex:0 0 38px; border-radius:999px; background:linear-gradient(135deg,#4834d4,#6c5ce7); color:#ffffff; font-weight:900; font-size:14px; display:flex; align-items:center; justify-content:center;">S</div>
+              <div style="flex:1; min-width:0;">
+                <div style="display:flex; align-items:center; gap:8px;">
+                  <span style="font-weight:800; font-size:13px; color:#2d2a45;">Sam Ortiz</span>
+                  <span style="font-size:11px; font-weight:700; color:#b3aed0;">4 days ago</span>
+                </div>
+                <div style="margin-top:4px; font-size:15px; font-weight:700; color:#2d2a45; line-height:1.45;">I recommend you add a weekly email digest of rank changes.</div>
+              </div>
+              <div style="display:flex; flex-direction:column; align-items:flex-end; gap:8px;">
+                <span style="display:inline-flex; align-items:center; gap:5px; background:#eef0ff; color:#6c5ce7; font-weight:800; font-size:12px; border-radius:999px; padding:6px 13px;"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#6c5ce7" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 14.5l6-6 6 6"></path></svg>8</span>
+                <span style="background:#e7f8ef; color:#1d9d6b; font-weight:800; font-size:11px; letter-spacing:0.06em; border-radius:999px; padding:5px 11px;">PLANNED</span>
+              </div>
+            </div>
+            <div style="background:#ffffff; border:1px solid #f0eef9; border-radius:20px; padding:16px 20px; box-shadow:0 8px 22px rgba(108,92,231,0.07); display:flex; gap:14px;">
+              <div style="width:38px; height:38px; flex:0 0 38px; border-radius:999px; background:linear-gradient(135deg,#00cec9,#0a86a8); color:#ffffff; font-weight:900; font-size:14px; display:flex; align-items:center; justify-content:center;">A</div>
+              <div style="flex:1; min-width:0;">
+                <div style="display:flex; align-items:center; gap:8px;">
+                  <span style="font-weight:800; font-size:13px; color:#2d2a45;">Ana Reyes</span>
+                  <span style="font-size:11px; font-weight:700; color:#b3aed0;">5 days ago</span>
+                </div>
+                <div style="margin-top:4px; font-size:15px; font-weight:700; color:#2d2a45; line-height:1.45;">Let us export the ranking table as CSV.</div>
+              </div>
+              <div style="display:flex; flex-direction:column; align-items:flex-end; gap:8px;">
+                <span style="display:inline-flex; align-items:center; gap:5px; background:#eef0ff; color:#6c5ce7; font-weight:800; font-size:12px; border-radius:999px; padding:6px 13px;"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#6c5ce7" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 14.5l6-6 6 6"></path></svg>6</span>
+                <span style="background:#eef0ff; color:#6c5ce7; font-weight:800; font-size:11px; letter-spacing:0.06em; border-radius:999px; padding:5px 11px;">NEW</span>
+              </div>
+            </div>
+            <div style="background:#ffffff; border:1px solid #f0eef9; border-radius:20px; padding:16px 20px; box-shadow:0 8px 22px rgba(108,92,231,0.07); display:flex; gap:14px;">
+              <div style="width:38px; height:38px; flex:0 0 38px; border-radius:999px; background:linear-gradient(135deg,#6c5ce7,#00cec9); color:#ffffff; font-weight:900; font-size:14px; display:flex; align-items:center; justify-content:center;">N</div>
+              <div style="flex:1; min-width:0;">
+                <div style="display:flex; align-items:center; gap:8px;">
+                  <span style="font-weight:800; font-size:13px; color:#2d2a45;">Noor Salem</span>
+                  <span style="font-size:11px; font-weight:700; color:#b3aed0;">last week</span>
+                </div>
+                <div style="margin-top:4px; font-size:15px; font-weight:700; color:#2d2a45; line-height:1.45;">Show a tiny sparkline of each app's rank history next to its name.</div>
+              </div>
+              <div style="display:flex; flex-direction:column; align-items:flex-end; gap:8px;">
+                <span style="display:inline-flex; align-items:center; gap:5px; background:#eef0ff; color:#6c5ce7; font-weight:800; font-size:12px; border-radius:999px; padding:6px 13px;"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#6c5ce7" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 14.5l6-6 6 6"></path></svg>15</span>
+                <span style="background:#fef3d7; color:#b45309; font-weight:800; font-size:11px; letter-spacing:0.06em; border-radius:999px; padding:5px 11px;">CONSIDERING</span>
+              </div>
+            </div>
+            <div style="background:#ffffff; border:1px solid #f0eef9; border-radius:20px; padding:16px 20px; box-shadow:0 8px 22px rgba(108,92,231,0.07); display:flex; gap:14px;">
+              <div style="width:38px; height:38px; flex:0 0 38px; border-radius:999px; background:linear-gradient(135deg,#2eb872,#0f8f57); color:#ffffff; font-weight:900; font-size:14px; display:flex; align-items:center; justify-content:center;">T</div>
+              <div style="flex:1; min-width:0;">
+                <div style="display:flex; align-items:center; gap:8px;">
+                  <span style="font-weight:800; font-size:13px; color:#2d2a45;">Tam Vu</span>
+                  <span style="font-size:11px; font-weight:700; color:#b3aed0;">last week</span>
+                </div>
+                <div style="margin-top:4px; font-size:15px; font-weight:700; color:#2d2a45; line-height:1.45;">I would like to see a public API for pulling my app's rank.</div>
+              </div>
+              <div style="display:flex; flex-direction:column; align-items:flex-end; gap:8px;">
+                <span style="display:inline-flex; align-items:center; gap:5px; background:#eef0ff; color:#6c5ce7; font-weight:800; font-size:12px; border-radius:999px; padding:6px 13px;"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#6c5ce7" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 14.5l6-6 6 6"></path></svg>4</span>
+                <span style="background:#eef0ff; color:#6c5ce7; font-weight:800; font-size:11px; letter-spacing:0.06em; border-radius:999px; padding:5px 11px;">NEW</span>
+              </div>
+            </div>
+          </div>
+        </main>
+        <aside style="width:340px; flex:0 0 340px; padding:40px 28px 28px;">
+          <div style="background:#ffffff; border:1px solid #f0eef9; border-radius:24px; box-shadow:0 16px 40px rgba(108,92,231,0.12); padding:24px;">
+            <div style="font-size:11px; font-weight:800; letter-spacing:0.2em; color:#a29bce;">ADD A SUBMISSION</div>
+            <div style="margin-top:14px; min-height:96px; border-radius:16px; background:#f7f6fd; border:1.5px solid #e8e5f4; padding:13px 16px; font-size:14px; font-weight:600; color:#a29bce; line-height:1.45;">I would like to see…</div>
+            <div style="margin-top:14px; background:#6c5ce7; border-radius:14px; padding:13px; text-align:center; color:#ffffff; font-weight:900; font-size:14px; box-shadow:0 10px 24px rgba(108,92,231,0.4); cursor:pointer;" style-hover="background:#5b4bd6;">Submit to the folder</div>
+            <div style="margin-top:10px; font-size:11.5px; font-weight:700; color:#b3aed0; text-align:center;">Founders read every submission and set a status.</div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<section style="display:flex; flex-wrap:wrap; gap:64px; padding:64px 64px 0; align-items:flex-start; font-family:'Nunito',sans-serif;">
+
+  <!-- ============ 3a QUESTS ============ -->
+  <div id="3a" style="display:flex; flex-direction:column; gap:14px;">
+    <div style="display:flex; align-items:center; gap:12px;">
+      <a href="#3a" style="text-decoration:none; background:#2d2a45; color:#ffffff; font-weight:800; font-size:13px; border-radius:999px; padding:5px 13px;">3a</a>
+      <span style="font-weight:800; font-size:15px; color:#6b6689;">Quests — course + PDF per quest</span>
+    </div>
+    <div data-screen-label="Quests" style="width:1920px; height:1080px; border-radius:28px; overflow:hidden; background:#faf8f4; display:flex; flex-direction:column; box-shadow:0 30px 80px rgba(45,42,69,0.18);">
+      <header style="height:72px; flex:0 0 72px; background:linear-gradient(90deg,#6c5ce7 0%,#4834d4 50%,#00cec9 100%); display:grid; grid-template-columns:1fr auto 1fr; align-items:center; padding:0 28px; gap:24px;">
+        <div style="display:flex; align-items:center; gap:12px;">
+          <div style="width:40px; height:40px; border-radius:14px; background:rgba(255,255,255,0.22); display:flex; align-items:center; justify-content:center;">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21v-8"></path><path d="M12 13C12 9 9 7 5 7c0 4 3 6 7 6z" fill="rgba(255,255,255,0.35)"></path><path d="M12 13c0-4 3-6 7-6 0 4-3 6-7 6z" fill="rgba(255,255,255,0.35)"></path></svg>
+          </div>
+          <span style="color:#ffffff; font-weight:900; font-size:20px;">Sproutly</span>
+        </div>
+        <div style="width:460px; height:44px; border-radius:999px; background:rgba(255,255,255,0.18); border:1px solid rgba(255,255,255,0.28); display:flex; align-items:center; gap:10px; padding:0 20px;">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.9)" stroke-width="2.4" stroke-linecap="round"><circle cx="11" cy="11" r="6.5"></circle><path d="M16 16l4.5 4.5"></path></svg>
+          <span style="color:rgba(255,255,255,0.85); font-size:15px; font-weight:600;">Search the garden…</span>
+        </div>
+        <div style="display:flex; align-items:center; justify-content:flex-end; gap:12px;">
+          <div style="width:40px; height:40px; border-radius:14px; background:rgba(255,255,255,0.18); display:flex; align-items:center; justify-content:center;">
+            <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 16v-5a6 6 0 1 0-12 0v5l-2 3h16z"></path><path d="M10.5 21.5a2 2 0 0 0 3 0"></path></svg>
+          </div>
+          <div style="width:40px; height:40px; border-radius:14px; background:rgba(255,255,255,0.18); display:flex; align-items:center; justify-content:center;">
+            <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 4h8v5a4 4 0 0 1-8 0z"></path><path d="M8 5H5a3 3 0 0 0 3 4M16 5h3a3 3 0 0 1-3 4"></path><path d="M12 13v4M9 20h6"></path></svg>
+          </div>
+          <div style="width:40px; height:40px; border-radius:999px; background:linear-gradient(135deg,#ffd166,#fbbf24); border:2px solid rgba(255,255,255,0.75); display:flex; align-items:center; justify-content:center; color:#7c2d12; font-weight:900; font-size:15px;">M</div>
+        </div>
+      </header>
+      <div style="flex:1; display:flex; min-height:0;">
+        <nav style="width:232px; flex:0 0 232px; background:#ffffff; border-right:1px solid #f0eef9; padding:24px 16px; display:flex; flex-direction:column; gap:6px;">
+          <div style="display:flex; align-items:center; gap:12px; padding:12px 18px; border-radius:999px; color:#6b6689; font-weight:800; font-size:15px;"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11l8-7 8 7v9h-5.5v-5h-5v5H4z"></path></svg>Home</div>
+          <div style="display:flex; align-items:center; gap:12px; padding:12px 18px; border-radius:999px; color:#6b6689; font-weight:800; font-size:15px;"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21v-8"></path><path d="M12 13C12 9 9 7 5 7c0 4 3 6 7 6z"></path><path d="M12 13c0-4 3-6 7-6 0 4-3 6-7 6z"></path></svg>Garden</div>
+          <div style="display:flex; align-items:center; gap:12px; padding:12px 18px; border-radius:999px; background:#eef0ff; color:#6c5ce7; font-weight:800; font-size:15px;"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 21V4h11.5l-2.5 4.5 2.5 4.5H6"></path></svg>Quests</div>
+          <div style="display:flex; align-items:center; gap:12px; padding:12px 18px; border-radius:999px; color:#6b6689; font-weight:800; font-size:15px;"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="12" height="10" rx="2.5"></rect><path d="M15 10.5l6-3v9l-6-3"></path></svg>Stage</div>
+          <div style="display:flex; align-items:center; gap:12px; padding:12px 18px; border-radius:999px; color:#6b6689; font-weight:800; font-size:15px;"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7.5A2.5 2.5 0 0 1 5.5 5H9l2 2.5h7.5A2.5 2.5 0 0 1 21 10v6.5a2.5 2.5 0 0 1-2.5 2.5h-13A2.5 2.5 0 0 1 3 16.5z"></path></svg>Submissions</div>
+          <div style="display:flex; align-items:center; gap:12px; padding:12px 18px; border-radius:999px; color:#6b6689; font-weight:800; font-size:15px;"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="12" cy="12" r="3.2"></circle><path d="M12 2.5v3M12 18.5v3M2.5 12h3M18.5 12h3M5 5l2.1 2.1M16.9 16.9L19 19M19 5l-2.1 2.1M7.1 16.9L5 19"></path></svg>Settings</div>
+        </nav>
+        <main style="flex:1; min-width:0; padding:44px 56px 32px;">
+          <div style="max-width:980px;">
+            <div style="font-size:12px; font-weight:800; letter-spacing:0.24em; color:#a29bce;">QUESTS</div>
+            <h1 style="margin:4px 0 0; font-size:52px; font-weight:900; color:#2d2a45; letter-spacing:-0.02em; line-height:1.05;">Grow your project</h1>
+            <div style="margin-top:12px; display:flex; align-items:center; gap:10px;">
+              <p style="margin:0; font-size:15px; font-weight:700; color:#6b6689;">Three quests to get RankKit out the door — each one comes with a mini course and a PDF guide.</p>
+              <span style="background:#eef0ff; color:#6c5ce7; font-weight:800; font-size:12px; border-radius:999px; padding:6px 13px;">1 of 3 complete</span>
+              <span style="background:#fef3d7; color:#b45309; font-weight:800; font-size:12px; border-radius:999px; padding:6px 13px;">+40 XP earned</span>
+            </div>
+            <div style="position:relative; margin-top:28px;">
+              <div style="position:absolute; left:34px; top:32px; bottom:32px; width:0; border-left:3px dashed #ddd8f2;"></div>
+              <div style="position:relative; display:flex; gap:22px; margin-bottom:16px;">
+                <div style="width:72px; flex:0 0 72px; display:flex; justify-content:center; padding-top:24px;">
+                  <div style="width:56px; height:56px; border-radius:999px; background:#6c5ce7; display:flex; align-items:center; justify-content:center; box-shadow:0 8px 20px rgba(108,92,231,0.35);">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4 10-10"></path></svg>
+                  </div>
+                </div>
+                <div style="flex:1; background:#ffffff; border:1px solid #f0eef9; border-radius:24px; padding:20px 24px; box-shadow:0 10px 28px rgba(108,92,231,0.08); display:flex; align-items:center; gap:20px;">
+                  <div style="flex:1; min-width:0;">
+                    <div style="font-size:11px; font-weight:800; letter-spacing:0.18em; color:#a29bce;">QUEST 1</div>
+                    <div style="margin-top:3px; font-weight:900; font-size:21px; color:#2d2a45;">Launch a simple website</div>
+                    <p style="margin:5px 0 0; font-size:14px; font-weight:600; color:#6b6689;">A one-pager is enough — the course walks you through building it in an afternoon.</p>
+                    <div style="margin-top:12px; display:flex; gap:8px; flex-wrap:wrap;">
+                      <span style="display:inline-flex; align-items:center; gap:6px; background:#eef0ff; color:#6c5ce7; font-weight:800; font-size:12px; border-radius:999px; padding:7px 13px;"><svg width="11" height="11" viewBox="0 0 24 24" fill="#6c5ce7"><path d="M8 5.5l11 6.5-11 6.5z"></path></svg>12-min course</span>
+                      <span style="display:inline-flex; align-items:center; gap:6px; background:#ffffff; border:1px solid #e8e5f4; color:#6b6689; font-weight:800; font-size:12px; border-radius:999px; padding:7px 13px;"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#6b6689" stroke-width="2.4" stroke-linejoin="round"><path d="M7 3h7l4 4v14H7z"></path><path d="M14 3v4h4"></path></svg>one-pager-template.pdf</span>
+                      <span style="background:#fef3d7; color:#b45309; font-weight:800; font-size:12px; border-radius:999px; padding:7px 13px;">+40 XP</span>
+                    </div>
+                  </div>
+                  <span style="background:#e7f8ef; color:#1d9d6b; font-weight:800; font-size:13px; border-radius:999px; padding:9px 18px;">Completed</span>
+                </div>
+              </div>
+              <div style="position:relative; display:flex; gap:22px; margin-bottom:16px;">
+                <div style="width:72px; flex:0 0 72px; display:flex; justify-content:center; padding-top:24px;">
+                  <div style="width:56px; height:56px; border-radius:999px; background:#fbbf24; display:flex; align-items:center; justify-content:center; box-shadow:0 0 0 7px rgba(251,191,36,0.22), 0 0 24px rgba(251,191,36,0.6);">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.6" stroke-linecap="round"><circle cx="12" cy="12" r="3.6"></circle><path d="M15.6 12v1.4a2.4 2.4 0 0 0 4.8 0V12a8.4 8.4 0 1 0-3.3 6.7"></path></svg>
+                  </div>
+                </div>
+                <div style="flex:1; background:#ffffff; border:2px solid #fde68a; border-radius:24px; padding:20px 24px; box-shadow:0 16px 40px rgba(251,191,36,0.18); display:flex; align-items:center; gap:20px;">
+                  <div style="flex:1; min-width:0;">
+                    <div style="font-size:11px; font-weight:800; letter-spacing:0.18em; color:#d99a06;">QUEST 2 · IN PROGRESS</div>
+                    <div style="margin-top:3px; font-weight:900; font-size:21px; color:#2d2a45;">Claim your domain name</div>
+                    <p style="margin:5px 0 0; font-size:14px; font-weight:600; color:#6b6689;">Pick a name people can spell out loud — the checklist keeps you from common traps.</p>
+                    <div style="margin-top:12px; display:flex; gap:8px; flex-wrap:wrap;">
+                      <span style="display:inline-flex; align-items:center; gap:6px; background:#eef0ff; color:#6c5ce7; font-weight:800; font-size:12px; border-radius:999px; padding:7px 13px;"><svg width="11" height="11" viewBox="0 0 24 24" fill="#6c5ce7"><path d="M8 5.5l11 6.5-11 6.5z"></path></svg>8-min course</span>
+                      <span style="display:inline-flex; align-items:center; gap:6px; background:#ffffff; border:1px solid #e8e5f4; color:#6b6689; font-weight:800; font-size:12px; border-radius:999px; padding:7px 13px;"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#6b6689" stroke-width="2.4" stroke-linejoin="round"><path d="M7 3h7l4 4v14H7z"></path><path d="M14 3v4h4"></path></svg>domain-checklist.pdf</span>
+                      <span style="background:#fef3d7; color:#b45309; font-weight:800; font-size:12px; border-radius:999px; padding:7px 13px;">+40 XP</span>
+                    </div>
+                  </div>
+                  <div style="background:#6c5ce7; color:#ffffff; font-weight:900; font-size:15px; border-radius:16px; padding:13px 24px; box-shadow:0 10px 24px rgba(108,92,231,0.4); cursor:pointer;" style-hover="background:#5b4bd6;">Continue quest</div>
+                </div>
+              </div>
+              <div style="position:relative; display:flex; gap:22px;">
+                <div style="width:72px; flex:0 0 72px; display:flex; justify-content:center; padding-top:24px;">
+                  <div style="width:56px; height:56px; border-radius:999px; background:#e6e3f2; display:flex; align-items:center; justify-content:center;">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#a29bce" stroke-width="2.4" stroke-linejoin="round"><rect x="6" y="11" width="12" height="9" rx="2.5"></rect><path d="M8.5 11V8a3.5 3.5 0 0 1 7 0v3"></path></svg>
+                  </div>
+                </div>
+                <div style="flex:1; background:#fbfaf7; border:1px solid #efece2; border-radius:24px; padding:20px 24px; display:flex; align-items:center; gap:20px;">
+                  <div style="flex:1; min-width:0;">
+                    <div style="font-size:11px; font-weight:800; letter-spacing:0.18em; color:#b3aed0;">QUEST 3</div>
+                    <div style="margin-top:3px; font-weight:900; font-size:21px; color:#8f8aa8;">Run your first marketing push</div>
+                    <p style="margin:5px 0 0; font-size:14px; font-weight:600; color:#a29bce;">Explain what you're building, where it helps, and invite the garden to try it.</p>
+                    <div style="margin-top:12px; display:flex; gap:8px; flex-wrap:wrap;">
+                      <span style="display:inline-flex; align-items:center; gap:6px; background:#f3f1ec; color:#b3aed0; font-weight:800; font-size:12px; border-radius:999px; padding:7px 13px;"><svg width="11" height="11" viewBox="0 0 24 24" fill="#b3aed0"><path d="M8 5.5l11 6.5-11 6.5z"></path></svg>15-min course</span>
+                      <span style="display:inline-flex; align-items:center; gap:6px; background:#f3f1ec; color:#b3aed0; font-weight:800; font-size:12px; border-radius:999px; padding:7px 13px;"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#b3aed0" stroke-width="2.4" stroke-linejoin="round"><path d="M7 3h7l4 4v14H7z"></path><path d="M14 3v4h4"></path></svg>launch-post-guide.pdf</span>
+                      <span style="background:#f3f1ec; color:#b3aed0; font-weight:800; font-size:12px; border-radius:999px; padding:7px 13px;">+60 XP</span>
+                    </div>
+                  </div>
+                  <span style="display:inline-flex; align-items:center; gap:7px; background:#f3f1ec; color:#a29bce; font-weight:800; font-size:13px; border-radius:999px; padding:9px 18px;"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#a29bce" stroke-width="2.4" stroke-linejoin="round"><rect x="6" y="11" width="12" height="9" rx="2.5"></rect><path d="M8.5 11V8a3.5 3.5 0 0 1 7 0v3"></path></svg>Finish quest 2 first</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </main>
+        <aside style="width:340px; flex:0 0 340px; padding:44px 28px 32px; display:flex; flex-direction:column; gap:16px;">
+          <div style="background:#ffffff; border:1px solid #f0eef9; border-radius:24px; box-shadow:0 16px 40px rgba(108,92,231,0.12); padding:20px;">
+            <div style="font-size:11px; font-weight:800; letter-spacing:0.2em; color:#a29bce;">CONTINUE LEARNING</div>
+            <div style="margin-top:14px; height:150px; border-radius:18px; background:linear-gradient(135deg,#6c5ce7,#4834d4 55%,#00cec9); position:relative; display:flex; align-items:center; justify-content:center;">
+              <div style="width:54px; height:54px; border-radius:999px; background:rgba(255,255,255,0.92); display:flex; align-items:center; justify-content:center; box-shadow:0 8px 24px rgba(20,17,31,0.3);">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="#6c5ce7" style="margin-left:2px;"><path d="M8 5.5l11 6.5-11 6.5z"></path></svg>
+              </div>
+              <span style="position:absolute; right:12px; bottom:10px; background:rgba(20,17,31,0.55); color:#ffffff; font-weight:800; font-size:11px; border-radius:999px; padding:4px 10px;">8:24</span>
+            </div>
+            <div style="margin-top:14px; font-weight:900; font-size:18px; color:#2d2a45;">Naming &amp; domains</div>
+            <div style="margin-top:3px; font-size:12px; font-weight:700; color:#a29bce;">Lesson 1 of 3 · with keeper Ines</div>
+            <div style="margin-top:12px; height:9px; border-radius:999px; background:#eef0ff; overflow:hidden;">
+              <div style="height:100%; width:35%; border-radius:999px; background:linear-gradient(90deg,#6c5ce7,#00cec9);"></div>
+            </div>
+            <div style="margin-top:14px; background:#6c5ce7; border-radius:14px; padding:12px; text-align:center; color:#ffffff; font-weight:900; font-size:14px; box-shadow:0 10px 24px rgba(108,92,231,0.4); cursor:pointer;" style-hover="background:#5b4bd6;">Resume course</div>
+          </div>
+          <div style="background:#ffffff; border:1px solid #f0eef9; border-radius:24px; box-shadow:0 10px 28px rgba(108,92,231,0.08); padding:18px 20px; display:flex; align-items:center; gap:14px;">
+            <div style="width:46px; height:46px; flex:0 0 46px; border-radius:14px; background:#eef0ff; display:flex; align-items:center; justify-content:center;">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#6c5ce7" stroke-width="2.4" stroke-linejoin="round"><path d="M7 3h7l4 4v14H7z"></path><path d="M14 3v4h4"></path></svg>
+            </div>
+            <div style="flex:1; min-width:0;">
+              <div style="font-weight:800; font-size:14px; color:#2d2a45;">domain-checklist.pdf</div>
+              <div style="font-size:11px; font-weight:700; color:#b3aed0;">2 pages · updated May 2026</div>
+            </div>
+            <div style="width:38px; height:38px; border-radius:999px; background:#eef0ff; display:flex; align-items:center; justify-content:center; cursor:pointer;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#6c5ce7" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v10M7.5 10.5L12 15l4.5-4.5M5 19.5h14"></path></svg>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </div>
+
+  </section>
+
+<section style="display:flex; flex-wrap:wrap; gap:64px; padding:64px 64px 0; align-items:flex-start; font-family:'Nunito',sans-serif;">
+
+  <!-- ============ 2a ALL PROJECTS — PERSONAL ============ -->
+  <div id="2a" style="display:flex; flex-direction:column; gap:14px;">
+    <div style="display:flex; align-items:center; gap:12px;">
+      <a href="#2a" style="text-decoration:none; background:#2d2a45; color:#ffffff; font-weight:800; font-size:13px; border-radius:999px; padding:5px 13px;">2a</a>
+      <span style="font-weight:800; font-size:15px; color:#6b6689;">All Projects — personal, keeper-approved</span>
+    </div>
+    <div data-screen-label="All Projects Personal" style="width:1920px; height:1080px; border-radius:28px; overflow:hidden; background:#faf8f4; display:flex; flex-direction:column; box-shadow:0 30px 80px rgba(45,42,69,0.18);">
+      <header style="height:72px; flex:0 0 72px; background:linear-gradient(90deg,#6c5ce7 0%,#4834d4 50%,#00cec9 100%); display:grid; grid-template-columns:1fr auto 1fr; align-items:center; padding:0 28px; gap:24px;">
+        <div style="display:flex; align-items:center; gap:12px;">
+          <div style="width:40px; height:40px; border-radius:14px; background:rgba(255,255,255,0.22); display:flex; align-items:center; justify-content:center;">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21v-8"></path><path d="M12 13C12 9 9 7 5 7c0 4 3 6 7 6z" fill="rgba(255,255,255,0.35)"></path><path d="M12 13c0-4 3-6 7-6 0 4-3 6-7 6z" fill="rgba(255,255,255,0.35)"></path></svg>
+          </div>
+          <span style="color:#ffffff; font-weight:900; font-size:20px;">Sproutly</span>
+        </div>
+        <div style="width:460px; height:44px; border-radius:999px; background:rgba(255,255,255,0.18); border:1px solid rgba(255,255,255,0.28); display:flex; align-items:center; gap:10px; padding:0 20px;">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.9)" stroke-width="2.4" stroke-linecap="round"><circle cx="11" cy="11" r="6.5"></circle><path d="M16 16l4.5 4.5"></path></svg>
+          <span style="color:rgba(255,255,255,0.85); font-size:15px; font-weight:600;">Search the garden…</span>
+        </div>
+        <div style="display:flex; align-items:center; justify-content:flex-end; gap:12px;">
+          <div style="width:40px; height:40px; border-radius:14px; background:rgba(255,255,255,0.18); display:flex; align-items:center; justify-content:center;">
+            <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 16v-5a6 6 0 1 0-12 0v5l-2 3h16z"></path><path d="M10.5 21.5a2 2 0 0 0 3 0"></path></svg>
+          </div>
+          <div style="width:40px; height:40px; border-radius:14px; background:rgba(255,255,255,0.18); display:flex; align-items:center; justify-content:center;">
+            <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 4h8v5a4 4 0 0 1-8 0z"></path><path d="M8 5H5a3 3 0 0 0 3 4M16 5h3a3 3 0 0 1-3 4"></path><path d="M12 13v4M9 20h6"></path></svg>
+          </div>
+          <div style="width:40px; height:40px; border-radius:999px; background:linear-gradient(135deg,#ffd166,#fbbf24); border:2px solid rgba(255,255,255,0.75); display:flex; align-items:center; justify-content:center; color:#7c2d12; font-weight:900; font-size:15px;">M</div>
+        </div>
+      </header>
+      <div style="flex:1; display:flex; min-height:0;">
+        <nav style="width:232px; flex:0 0 232px; background:#ffffff; border-right:1px solid #f0eef9; padding:24px 16px; display:flex; flex-direction:column; gap:6px;">
+          <div style="display:flex; align-items:center; gap:12px; padding:12px 18px; border-radius:999px; color:#6b6689; font-weight:800; font-size:15px;"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11l8-7 8 7v9h-5.5v-5h-5v5H4z"></path></svg>Home</div>
+          <div style="display:flex; align-items:center; gap:12px; padding:12px 18px; border-radius:999px; background:#eef0ff; color:#6c5ce7; font-weight:800; font-size:15px;"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21v-8"></path><path d="M12 13C12 9 9 7 5 7c0 4 3 6 7 6z"></path><path d="M12 13c0-4 3-6 7-6 0 4-3 6-7 6z"></path></svg>Garden</div>
+          <div style="display:flex; align-items:center; gap:12px; padding:12px 18px; border-radius:999px; color:#6b6689; font-weight:800; font-size:15px;"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 21V4h11.5l-2.5 4.5 2.5 4.5H6"></path></svg>Quests</div>
+          <div style="display:flex; align-items:center; gap:12px; padding:12px 18px; border-radius:999px; color:#6b6689; font-weight:800; font-size:15px;"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="12" height="10" rx="2.5"></rect><path d="M15 10.5l6-3v9l-6-3"></path></svg>Stage</div>
+          <div style="display:flex; align-items:center; gap:12px; padding:12px 18px; border-radius:999px; color:#6b6689; font-weight:800; font-size:15px;"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7.5A2.5 2.5 0 0 1 5.5 5H9l2 2.5h7.5A2.5 2.5 0 0 1 21 10v6.5a2.5 2.5 0 0 1-2.5 2.5h-13A2.5 2.5 0 0 1 3 16.5z"></path></svg>Submissions</div>
+          <div style="display:flex; align-items:center; gap:12px; padding:12px 18px; border-radius:999px; color:#6b6689; font-weight:800; font-size:15px;"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="12" cy="12" r="3.2"></circle><path d="M12 2.5v3M12 18.5v3M2.5 12h3M18.5 12h3M5 5l2.1 2.1M16.9 16.9L19 19M19 5l-2.1 2.1M7.1 16.9L5 19"></path></svg>Settings</div>
+        </nav>
+        <main style="flex:1; min-width:0; padding:34px 48px 26px; display:flex; flex-direction:column;">
+          <div style="display:flex; align-items:flex-end; justify-content:space-between; gap:24px;">
+            <div>
+              <div style="font-size:12px; font-weight:800; letter-spacing:0.24em; color:#a29bce;">CHOOSE A PLANT</div>
+              <h1 style="margin:4px 0 0; font-size:52px; font-weight:900; color:#2d2a45; letter-spacing:-0.02em; line-height:1.05;">All Projects</h1>
+              <p style="margin:8px 0 0; font-size:14px; font-weight:700; color:#6b6689;">Every plant here was hand-approved by a garden keeper.</p>
+            </div>
+            <div style="display:flex; gap:8px; padding-bottom:6px;">
+              <span style="background:#6c5ce7; color:#ffffff; font-weight:800; font-size:13px; border-radius:999px; padding:8px 18px;">All</span>
+              <span style="background:#ffffff; border:1px solid #e8e5f4; color:#6b6689; font-weight:800; font-size:13px; border-radius:999px; padding:8px 18px;">Thriving</span>
+              <span style="background:#ffffff; border:1px solid #e8e5f4; color:#6b6689; font-weight:800; font-size:13px; border-radius:999px; padding:8px 18px;">Wilting</span>
+              <span style="background:#ffffff; border:1px solid #e8e5f4; color:#6b6689; font-weight:800; font-size:13px; border-radius:999px; padding:8px 18px;">New</span>
+            </div>
+          </div>
+          <div style="margin-top:18px; display:flex; align-items:center; gap:18px; background:linear-gradient(160deg, #fffdf5, #fef7e2); border:2px solid #fcd34d; border-radius:24px; padding:14px 22px; box-shadow:0 10px 28px rgba(251,191,36,0.16);">
+            <div style="display:flex; gap:8px; flex:0 0 132px; align-items:center;">
+              <div style="width:62px; height:62px; border-radius:16px; background:linear-gradient(135deg,#fbbf24,#f2762e); display:flex; align-items:center; justify-content:center; box-shadow:0 8px 18px rgba(251,191,36,0.3);">
+                <span style="color:#ffffff; font-weight:900; font-size:26px;">O</span>
+              </div>
+              <div style="width:62px; height:62px; border-radius:16px; background:#fef3c7; display:flex; align-items:center; justify-content:center;">
+                <svg width="34" height="34" viewBox="0 0 24 24"><ellipse cx="12" cy="20.6" rx="6" ry="1.6" fill="#e3c184"></ellipse><path d="M12 20v-4.5" fill="none" stroke="#2eb872" stroke-width="2.4" stroke-linecap="round"></path><path d="M12 16c0-3-2-4.4-5-4.4 0 3 2 4.4 5 4.4z" fill="#3ecf8e"></path></svg>
+              </div>
+            </div>
+            <div style="flex:1; min-width:0;">
+              <div style="display:flex; align-items:center; gap:10px;">
+                <span style="font-weight:900; font-size:20px; color:#2d2a45;">Orbit Notes</span>
+                <span style="background:#fef3c7; color:#b45309; font-weight:800; font-size:11px; letter-spacing:0.1em; border-radius:999px; padding:4px 11px;">PENDING</span>
+              </div>
+              <div style="margin-top:4px; display:flex; align-items:center; gap:8px;">
+                <div style="display:flex; padding-left:7px;">
+                  <div style="width:22px; height:22px; border-radius:999px; background:linear-gradient(135deg,#fbbf24,#6c5ce7); border:2px solid #ffffff; margin-left:-7px; color:#ffffff; font-weight:900; font-size:10px; display:flex; align-items:center; justify-content:center;">J</div>
+                  <div style="width:22px; height:22px; border-radius:999px; background:linear-gradient(135deg,#00cec9,#2eb872); border:2px solid #ffffff; margin-left:-7px; color:#ffffff; font-weight:900; font-size:10px; display:flex; align-items:center; justify-content:center;">D</div>
+                </div>
+                <span style="font-weight:800; font-size:13px; color:#6b6689;">Jules Kim &amp; Dana Fox</span>
+                <span style="font-weight:700; font-size:12px; color:#c9a24d;">· submitted 2h ago — "Notes that orbit around your ideas."</span>
+              </div>
+            </div>
+            <div style="display:flex; gap:10px;">
+              <div style="background:#ffffff; border:1.5px solid #fcd34d; color:#b45309; font-weight:800; font-size:14px; border-radius:999px; padding:10px 20px; cursor:pointer;">Later</div>
+              <div style="background:#fbbf24; color:#7c2d12; font-weight:900; font-size:14px; border-radius:999px; padding:10px 22px; box-shadow:0 8px 18px rgba(251,191,36,0.35); cursor:pointer;">Review &amp; approve</div>
+            </div>
+          </div>
+          <div style="margin-top:16px; flex:1; display:grid; grid-template-columns:1fr 1fr; gap:14px;">
+            <sc-for list="{{ rows2 }}" as="r" hint-placeholder-count="6">
+              <div style="background:#ffffff; border:1px solid #f0eef9; border-radius:24px; padding:18px 20px; display:flex; gap:18px; box-shadow:0 10px 28px rgba(108,92,231,0.08);">
+                <div style="display:flex; gap:10px; flex:0 0 178px; align-items:center;">
+                  <div style="width:84px; height:84px; border-radius:{{r.lrad}}; background:{{r.lbg}}; display:flex; align-items:center; justify-content:center; box-shadow:0 10px 22px rgba(72,52,212,0.22);">
+                    <span style="color:#ffffff; font-weight:900; font-size:34px; letter-spacing:-0.02em;">{{ r.lch }}</span>
+                  </div>
+                  <div style="width:84px; height:84px; border-radius:22px; background:{{r.tbg}}; display:flex; align-items:center; justify-content:center;">
+                    <svg width="56" height="56" viewBox="0 0 24 24">
+                      <ellipse cx="12" cy="20.7" rx="6.5" ry="1.7" fill="#c9a07c"></ellipse>
+                      <path d="{{r.d1}}" fill="{{r.f1}}" stroke="{{r.s1}}" stroke-width="2.4" stroke-linecap="round"></path>
+                      <path d="{{r.d2}}" fill="{{r.f2}}" stroke="{{r.s2}}" stroke-width="1.6" stroke-linecap="round"></path>
+                      <path d="{{r.d3}}" fill="{{r.f3}}" stroke="{{r.s3}}" stroke-width="1.6" stroke-linecap="round"></path>
+                      <path d="{{r.d4}}" fill="{{r.f4}}" stroke="{{r.s4}}" stroke-width="1.6" stroke-linecap="round"></path>
+                      <path d="{{r.d5}}" fill="{{r.f5}}" stroke="{{r.s5}}" stroke-width="1.6" stroke-linecap="round"></path>
+                    </svg>
+                  </div>
+                </div>
+                <div style="flex:1; min-width:0; display:flex; flex-direction:column;">
+                  <div style="display:flex; align-items:center; gap:10px;">
+                    <span style="font-weight:900; font-size:20px; color:#2d2a45;">{{ r.name }}</span>
+                    <span style="background:{{r.bbg}}; color:{{r.bc}}; font-weight:800; font-size:11px; letter-spacing:0.08em; text-transform:uppercase; border-radius:999px; padding:4px 11px;">{{ r.badge }}</span>
+                    <span style="margin-left:auto; display:inline-flex; align-items:center; gap:5px; background:#eef0ff; color:#6c5ce7; font-weight:800; font-size:11px; border-radius:999px; padding:4px 10px;"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#6c5ce7" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4 10-10"></path></svg>{{ r.keeper }}</span>
+                  </div>
+                  <div style="margin-top:7px; display:flex; align-items:center; gap:8px;">
+                    <div style="display:flex; padding-left:7px;">
+                      <sc-for list="{{ r.favs }}" as="fa" hint-placeholder-count="2">
+                        <div style="width:24px; height:24px; border-radius:999px; background:{{fa.g}}; border:2px solid #ffffff; margin-left:-7px; color:#ffffff; font-weight:900; font-size:10px; display:flex; align-items:center; justify-content:center;">{{ fa.init }}</div>
+                      </sc-for>
+                    </div>
+                    <span style="font-weight:800; font-size:13px; color:#6b6689;">{{ r.fnames }}</span>
+                    <span style="font-weight:700; font-size:12px; color:#b3aed0;">· {{ r.planted }}</span>
+                  </div>
+                  <p style="margin:9px 0 0; font-size:14.5px; font-weight:700; color:#565271; line-height:1.4;">“{{ r.quote }}”</p>
+                  <div style="margin-top:auto; padding-top:12px; display:flex; align-items:center; gap:14px;">
+                    <div style="flex:1; display:flex; flex-direction:column; gap:5px;">
+                      <div style="height:9px; border-radius:999px; background:#eef0ff; overflow:hidden;">
+                        <div style="height:100%; width:{{r.hw}}; border-radius:999px; background:linear-gradient(90deg,#6c5ce7,#00cec9);"></div>
+                      </div>
+                      <span style="font-size:11px; font-weight:800; color:#b3aed0;">{{ r.hl }} · {{ r.waters }} waters</span>
+                    </div>
+                    <div style="background:#eef0ff; color:#6c5ce7; font-weight:800; font-size:13px; border-radius:999px; padding:9px 20px; cursor:pointer;" style-hover="background:#e2e5ff;">Visit</div>
+                  </div>
+                </div>
+              </div>
+            </sc-for>
+          </div>
+        </main>
+        <aside style="width:312px; flex:0 0 312px; padding:34px 28px 26px;">
+          <div style="background:#ffffff; border:1px solid #f0eef9; border-radius:24px; box-shadow:0 16px 40px rgba(108,92,231,0.12); padding:26px 24px; display:flex; flex-direction:column; align-items:center; text-align:center;">
+            <svg width="140" height="112" viewBox="0 0 120 100">
+              <ellipse cx="60" cy="94" rx="38" ry="5" fill="#eef0ff"></ellipse>
+              <path d="M60 34V22" fill="none" stroke="#2eb872" stroke-width="4" stroke-linecap="round"></path>
+              <path d="M60 26c0-8-5-11-13-11 0 8 5 11 13 11z" fill="#3ecf8e" stroke="#27a06b" stroke-width="2.5" stroke-linejoin="round"></path>
+              <path d="M60 22c0-8 5-11 13-11 0 8-5 11-13 11z" fill="#2eb872" stroke="#219660" stroke-width="2.5" stroke-linejoin="round"></path>
+              <rect x="38" y="34" width="44" height="12" rx="6" fill="#7d6ef0"></rect>
+              <path d="M42 46h36l-4.5 40a6 6 0 0 1-6 5.5h-15a6 6 0 0 1-6-5.5z" fill="#6c5ce7"></path>
+              <circle cx="53" cy="64" r="2.6" fill="#241f3a"></circle>
+              <circle cx="67" cy="64" r="2.6" fill="#241f3a"></circle>
+              <path d="M53 71q7 6 14 0" fill="none" stroke="#241f3a" stroke-width="2.5" stroke-linecap="round"></path>
+              <path d="M92 62l-9-5" fill="none" stroke="#00cec9" stroke-width="5" stroke-linecap="round"></path>
+              <rect x="90" y="58" width="21" height="17" rx="5" fill="#00cec9"></rect>
+              <path d="M100 58c0-6 9-6 9 0" fill="none" stroke="#00b5b1" stroke-width="3.5"></path>
+              <circle cx="86" cy="30" r="3" fill="#fbbf24" opacity="0.8"></circle>
+              <circle cx="30" cy="42" r="2.4" fill="#ffd166" opacity="0.7"></circle>
+            </svg>
+            <div style="margin-top:12px; font-size:11px; font-weight:800; letter-spacing:0.2em; color:#a29bce;">SUBMIT YOUR PROJECT</div>
+            <p style="margin:9px 0 0; font-size:13px; font-weight:600; color:#6b6689; line-height:1.5;">Plant a seed — add your logo and your team, and let the community help it grow.</p>
+            <div style="margin-top:16px; width:100%; background:#6c5ce7; border-radius:16px; padding:13px; color:#ffffff; font-weight:900; font-size:15px; box-shadow:0 10px 24px rgba(108,92,231,0.4); cursor:pointer;" style-hover="background:#5b4bd6;">Submit a project</div>
+          </div>
+          <div style="margin-top:16px; background:#ffffff; border:1px solid #f0eef9; border-radius:24px; box-shadow:0 10px 28px rgba(108,92,231,0.08); padding:22px 24px;">
+            <div style="font-size:11px; font-weight:800; letter-spacing:0.2em; color:#a29bce;">GARDEN KEEPERS</div>
+            <div style="margin-top:14px; display:flex; flex-direction:column; gap:13px;">
+              <div style="display:flex; align-items:center; gap:11px;">
+                <div style="width:36px; height:36px; border-radius:999px; background:linear-gradient(135deg,#4834d4,#6c5ce7); color:#ffffff; font-weight:900; font-size:14px; display:flex; align-items:center; justify-content:center;">I</div>
+                <div>
+                  <div style="font-weight:800; font-size:14px; color:#2d2a45;">Ines</div>
+                  <div style="font-size:11px; font-weight:700; color:#b3aed0;">34 approvals this season</div>
+                </div>
+              </div>
+              <div style="display:flex; align-items:center; gap:11px;">
+                <div style="width:36px; height:36px; border-radius:999px; background:linear-gradient(135deg,#00cec9,#2eb872); color:#ffffff; font-weight:900; font-size:14px; display:flex; align-items:center; justify-content:center;">T</div>
+                <div>
+                  <div style="font-weight:800; font-size:14px; color:#2d2a45;">Tom</div>
+                  <div style="font-size:11px; font-weight:700; color:#b3aed0;">21 approvals this season</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<section style="display:flex; flex-wrap:wrap; gap:64px; padding:64px; align-items:flex-start; font-family:'Nunito',sans-serif;">
+
+  <!-- ============ 1a GARDEN LIGHT ============ -->
+  <div id="1a" style="display:flex; flex-direction:column; gap:14px;">
+    <div style="display:flex; align-items:center; gap:12px;">
+      <a href="#1a" style="text-decoration:none; background:#2d2a45; color:#ffffff; font-weight:800; font-size:13px; border-radius:999px; padding:5px 13px;">1a</a>
+      <span style="font-weight:800; font-size:15px; color:#6b6689;">Garden — light</span>
+    </div>
+    <div data-screen-label="Garden Light" style="width:1920px; height:1080px; border-radius:28px; overflow:hidden; background:#faf8f4; display:flex; flex-direction:column; box-shadow:0 30px 80px rgba(45,42,69,0.18);">
+      <header style="height:72px; flex:0 0 72px; background:linear-gradient(90deg,#6c5ce7 0%,#4834d4 50%,#00cec9 100%); display:grid; grid-template-columns:1fr auto 1fr; align-items:center; padding:0 28px; gap:24px;">
+        <div style="display:flex; align-items:center; gap:12px;">
+          <div style="width:40px; height:40px; border-radius:14px; background:rgba(255,255,255,0.22); display:flex; align-items:center; justify-content:center;">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21v-8"></path><path d="M12 13C12 9 9 7 5 7c0 4 3 6 7 6z" fill="rgba(255,255,255,0.35)"></path><path d="M12 13c0-4 3-6 7-6 0 4-3 6-7 6z" fill="rgba(255,255,255,0.35)"></path></svg>
+          </div>
+          <span style="color:#ffffff; font-weight:900; font-size:20px;">Sproutly</span>
+        </div>
+        <div style="width:460px; height:44px; border-radius:999px; background:rgba(255,255,255,0.18); border:1px solid rgba(255,255,255,0.28); display:flex; align-items:center; gap:10px; padding:0 20px;">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.9)" stroke-width="2.4" stroke-linecap="round"><circle cx="11" cy="11" r="6.5"></circle><path d="M16 16l4.5 4.5"></path></svg>
+          <span style="color:rgba(255,255,255,0.85); font-size:15px; font-weight:600;">Search the garden…</span>
+        </div>
+        <div style="display:flex; align-items:center; justify-content:flex-end; gap:12px;">
+          <div style="width:40px; height:40px; border-radius:14px; background:rgba(255,255,255,0.18); display:flex; align-items:center; justify-content:center;">
+            <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 16v-5a6 6 0 1 0-12 0v5l-2 3h16z"></path><path d="M10.5 21.5a2 2 0 0 0 3 0"></path></svg>
+          </div>
+          <div style="width:40px; height:40px; border-radius:14px; background:rgba(255,255,255,0.18); display:flex; align-items:center; justify-content:center;">
+            <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 4h8v5a4 4 0 0 1-8 0z"></path><path d="M8 5H5a3 3 0 0 0 3 4M16 5h3a3 3 0 0 1-3 4"></path><path d="M12 13v4M9 20h6"></path></svg>
+          </div>
+          <div style="width:40px; height:40px; border-radius:999px; background:linear-gradient(135deg,#ffd166,#fbbf24); border:2px solid rgba(255,255,255,0.75); display:flex; align-items:center; justify-content:center; color:#7c2d12; font-weight:900; font-size:15px;">M</div>
+        </div>
+      </header>
+      <div style="flex:1; display:flex; min-height:0;">
+        <nav style="width:232px; flex:0 0 232px; background:#ffffff; border-right:1px solid #f0eef9; padding:24px 16px; display:flex; flex-direction:column; gap:6px;">
+          <div style="display:flex; align-items:center; gap:12px; padding:12px 18px; border-radius:999px; color:#6b6689; font-weight:800; font-size:15px;"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11l8-7 8 7v9h-5.5v-5h-5v5H4z"></path></svg>Home</div>
+          <div style="display:flex; align-items:center; gap:12px; padding:12px 18px; border-radius:999px; background:#eef0ff; color:#6c5ce7; font-weight:800; font-size:15px;"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21v-8"></path><path d="M12 13C12 9 9 7 5 7c0 4 3 6 7 6z"></path><path d="M12 13c0-4 3-6 7-6 0 4-3 6-7 6z"></path></svg>Garden</div>
+          <div style="display:flex; align-items:center; gap:12px; padding:12px 18px; border-radius:999px; color:#6b6689; font-weight:800; font-size:15px;"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 21V4h11.5l-2.5 4.5 2.5 4.5H6"></path></svg>Quests</div>
+          <div style="display:flex; align-items:center; gap:12px; padding:12px 18px; border-radius:999px; color:#6b6689; font-weight:800; font-size:15px;"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="12" height="10" rx="2.5"></rect><path d="M15 10.5l6-3v9l-6-3"></path></svg>Stage</div>
+          <div style="display:flex; align-items:center; gap:12px; padding:12px 18px; border-radius:999px; color:#6b6689; font-weight:800; font-size:15px;"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7.5A2.5 2.5 0 0 1 5.5 5H9l2 2.5h7.5A2.5 2.5 0 0 1 21 10v6.5a2.5 2.5 0 0 1-2.5 2.5h-13A2.5 2.5 0 0 1 3 16.5z"></path></svg>Submissions</div>
+          <div style="display:flex; align-items:center; gap:12px; padding:12px 18px; border-radius:999px; color:#6b6689; font-weight:800; font-size:15px;"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="12" cy="12" r="3.2"></circle><path d="M12 2.5v3M12 18.5v3M2.5 12h3M18.5 12h3M5 5l2.1 2.1M16.9 16.9L19 19M19 5l-2.1 2.1M7.1 16.9L5 19"></path></svg>Settings</div>
+        </nav>
+        <main style="flex:1; position:relative; min-width:0; overflow:hidden;">
+          <x-import component-from-global-scope="image-slot" from="./image-slot.js" id="garden-bg-1a" placeholder="Drop a screenshot — your website becomes the backdrop" shape="rect" fit="cover" style="position:absolute; left:0; top:0; width:100%; height:100%;" hint-size="100%,100%"></x-import>
+          <div style="position:absolute; inset:0; pointer-events:none; background:linear-gradient(180deg, rgba(250,248,244,0.9) 0%, rgba(250,248,244,0.44) 38%, rgba(250,248,244,0.3) 62%, rgba(250,248,244,0.74) 100%), radial-gradient(circle at 50% 44%, rgba(108,92,231,0.13), rgba(108,92,231,0) 58%);"></div>
+          <div style="position:absolute; inset:0; z-index:1; pointer-events:none; display:flex; flex-direction:column; align-items:center; padding-top:52px;">
+            <div style="font-size:12px; font-weight:800; letter-spacing:0.24em; color:#a29bce;">PROJECT</div>
+            <h1 style="margin:4px 0 0; font-size:78px; font-weight:900; color:#2d2a45; letter-spacing:-0.02em; line-height:1;">RankKit</h1>
+            <div style="margin-top:16px; display:flex; align-items:center; gap:8px; background:#eef0ff; border-radius:999px; padding:6px 16px 6px 7px;">
+              <div style="width:24px; height:24px; border-radius:999px; background:linear-gradient(135deg,#6c5ce7,#00cec9); color:#ffffff; font-size:12px; font-weight:900; display:flex; align-items:center; justify-content:center;">M</div>
+              <span style="color:#6c5ce7; font-weight:800; font-size:14px;">@maya · Founder</span>
+            </div>
+            <svg width="452" height="500" viewBox="0 0 300 332" style="margin-top:-4px;">
+              <defs>
+                <linearGradient id="stemA" x1="0" y1="1" x2="0" y2="0">
+                  <stop offset="0" stop-color="#6c5ce7"></stop>
+                  <stop offset="0.55" stop-color="#4834d4"></stop>
+                  <stop offset="1" stop-color="#00cec9"></stop>
+                </linearGradient>
+                <radialGradient id="glowA">
+                  <stop offset="0" stop-color="#6c5ce7" stop-opacity="0.38"></stop>
+                  <stop offset="1" stop-color="#6c5ce7" stop-opacity="0"></stop>
+                </radialGradient>
+                <radialGradient id="flowA">
+                  <stop offset="0" stop-color="#fbbf24" stop-opacity="0.5"></stop>
+                  <stop offset="1" stop-color="#fbbf24" stop-opacity="0"></stop>
+                </radialGradient>
+              </defs>
+              <ellipse cx="150" cy="296" rx="142" ry="30" fill="url(#glowA)"></ellipse>
+              <ellipse cx="150" cy="288" rx="102" ry="28" fill="#8a6248"></ellipse>
+              <ellipse cx="150" cy="280" rx="92" ry="22" fill="#a57c58"></ellipse>
+              <circle cx="118" cy="280" r="4" fill="#8a6248"></circle>
+              <circle cx="176" cy="286" r="3.4" fill="#8a6248"></circle>
+              <circle cx="150" cy="116" r="48" fill="url(#flowA)"></circle>
+              <path d="M150 282c-7-38 8-62 0-96-6-26-2-46 0-70" fill="none" stroke="url(#stemA)" stroke-width="13" stroke-linecap="round"></path>
+              <path d="M147 240c-30-3-48-22-51-48 28 3 48 21 51 48z" fill="#3ecf8e" stroke="#27a06b" stroke-width="5" stroke-linejoin="round"></path>
+              <path d="M152 206c30-3 48-22 51-48-28 3-48 21-51 48z" fill="#2eb872" stroke="#219660" stroke-width="5" stroke-linejoin="round"></path>
+              <path d="M148 268c-20-2-32-14-34-31 19 2 32 14 34 31z" fill="#3ecf8e" stroke="#27a06b" stroke-width="4.5" stroke-linejoin="round"></path>
+              <path d="M152 262c20-2 32-14 34-31-19 2-32 14-34 31z" fill="#2eb872" stroke="#219660" stroke-width="4.5" stroke-linejoin="round"></path>
+              <circle cx="150" cy="96" r="12.5" fill="#fbbf24" stroke="#f59e0b" stroke-width="3.5"></circle>
+              <circle cx="167" cy="106" r="12.5" fill="#fbbf24" stroke="#f59e0b" stroke-width="3.5"></circle>
+              <circle cx="167" cy="126" r="12.5" fill="#fbbf24" stroke="#f59e0b" stroke-width="3.5"></circle>
+              <circle cx="150" cy="136" r="12.5" fill="#fbbf24" stroke="#f59e0b" stroke-width="3.5"></circle>
+              <circle cx="133" cy="126" r="12.5" fill="#fbbf24" stroke="#f59e0b" stroke-width="3.5"></circle>
+              <circle cx="133" cy="106" r="12.5" fill="#fbbf24" stroke="#f59e0b" stroke-width="3.5"></circle>
+              <circle cx="150" cy="116" r="11" fill="#ffd166" stroke="#f59e0b" stroke-width="4"></circle>
+              <g opacity="{{ particleOpacity }}">
+                <circle cx="64" cy="120" r="4" fill="#fbbf24" opacity="0.85"></circle>
+                <circle cx="236" cy="70" r="3" fill="#fbbf24" opacity="0.6"></circle>
+                <circle cx="216" cy="176" r="5" fill="#ffd166" opacity="0.55"></circle>
+                <circle cx="84" cy="210" r="3" fill="#ffd166" opacity="0.7"></circle>
+                <circle cx="252" cy="238" r="4" fill="#fbbf24" opacity="0.4"></circle>
+                <circle cx="44" cy="176" r="2.6" fill="#fbbf24" opacity="0.5"></circle>
+                <circle cx="196" cy="34" r="2.6" fill="#ffd166" opacity="0.65"></circle>
+              </g>
+            </svg>
+          </div>
+          <div style="position:absolute; left:52px; top:168px; width:248px; background:linear-gradient(160deg, rgba(255,255,255,0.44), rgba(120,102,240,0.16)); backdrop-filter:blur(22px) saturate(1.35); -webkit-backdrop-filter:blur(22px) saturate(1.35); border:1.5px solid rgba(255,255,255,0.8); border-radius:24px; box-shadow:0 16px 40px rgba(108,92,231,0.18); padding:22px;">
+            <div style="font-size:11px; font-weight:800; letter-spacing:0.2em; color:#a29bce;">MILESTONE PATH</div>
+            <div style="position:relative; margin-top:14px;">
+              <div style="position:absolute; left:14px; top:16px; bottom:16px; width:3px; border-radius:2px; background:rgba(108,92,231,0.16);"></div>
+              <sc-for list="{{ milestonesL }}" as="m" hint-placeholder-count="7">
+                <div style="position:relative; display:flex; align-items:center; gap:14px; padding:7px 0;">
+                  <div style="width:31px; height:31px; border-radius:999px; display:flex; align-items:center; justify-content:center; background:{{m.bg}}; box-shadow:{{m.glow}};">
+                    <sc-if value="{{ m.check }}" hint-placeholder-val="{{ true }}">
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4 10-10"></path></svg>
+                    </sc-if>
+                    <sc-if value="{{ m.cur }}" hint-placeholder-val="{{ false }}">
+                      <div style="width:11px; height:11px; border-radius:999px; background:#ffffff;"></div>
+                    </sc-if>
+                  </div>
+                  <span style="font-weight:800; font-size:14px; color:{{m.lc}};">{{ m.label }}</span>
+                </div>
+              </sc-for>
+            </div>
+          </div>
+          <div style="position:absolute; right:52px; top:190px; width:300px; background:linear-gradient(160deg, rgba(255,255,255,0.44), rgba(120,102,240,0.16)); backdrop-filter:blur(22px) saturate(1.35); -webkit-backdrop-filter:blur(22px) saturate(1.35); border:1.5px solid rgba(255,255,255,0.8); border-radius:24px; box-shadow:0 16px 40px rgba(108,92,231,0.18); padding:24px;">
+            <div style="font-size:11px; font-weight:800; letter-spacing:0.2em; color:#a29bce;">PLANT HEALTH</div>
+            <div style="margin-top:14px; height:18px; border-radius:999px; background:rgba(108,92,231,0.16); overflow:hidden;">
+              <div style="height:100%; width:{{healthW}}; border-radius:999px; background:linear-gradient(90deg,#6c5ce7,#00cec9);"></div>
+            </div>
+            <div style="margin-top:8px; display:flex; justify-content:space-between; align-items:center;">
+              <span style="font-size:13px; font-weight:800; color:#6b6689;">{{ healthPct }} / 100</span>
+              <span style="font-size:13px; font-weight:800; color:#f59e0b;">Flowering</span>
+            </div>
+            <div style="margin-top:18px; background:#6c5ce7; border-radius:16px; padding:14px; display:flex; align-items:center; justify-content:center; gap:10px; box-shadow:0 10px 24px rgba(108,92,231,0.4); cursor:pointer;" style-hover="background:#5b4bd6;">
+              <svg width="19" height="19" viewBox="0 0 24 24" fill="rgba(255,255,255,0.3)" stroke="#ffffff" stroke-width="2.4" stroke-linejoin="round"><path d="M12 3.5s6 6.8 6 10.7a6 6 0 1 1-12 0C6 10.3 12 3.5 12 3.5z"></path></svg>
+              <span style="color:#ffffff; font-weight:900; font-size:17px;">Water</span>
+            </div>
+            <div style="margin-top:16px; display:flex; flex-wrap:wrap; gap:8px;">
+              <span style="display:inline-flex; align-items:center; gap:6px; background:rgba(255,255,255,0.62); border:1px solid rgba(255,255,255,0.78); border-radius:999px; padding:7px 12px; font-size:12px; font-weight:800; color:#6b6689;"><svg width="12" height="12" viewBox="0 0 24 24" fill="#f59e0b"><path d="M12 3c.8 3.5 4.8 5 4.8 9.5a4.8 4.8 0 0 1-9.6 0c0-2.4 1.6-3.6 1.9-5.9.9.9 1.5 1.6 2.5 1.8-.3-1.8-.6-3.7.4-5.4z"></path></svg>12-day streak</span>
+              <span style="display:inline-flex; align-items:center; gap:6px; background:rgba(255,255,255,0.62); border:1px solid rgba(255,255,255,0.78); border-radius:999px; padding:7px 12px; font-size:12px; font-weight:800; color:#6b6689;"><svg width="12" height="12" viewBox="0 0 24 24" fill="#6c5ce7"><path d="M12 3s6 6.8 6 11a6 6 0 1 1-12 0c0-4.2 6-11 6-11z"></path></svg>248 waters</span>
+              <span style="display:inline-flex; align-items:center; gap:6px; background:rgba(255,255,255,0.62); border:1px solid rgba(255,255,255,0.78); border-radius:999px; padding:7px 12px; font-size:12px; font-weight:800; color:#6b6689;"><svg width="12" height="12" viewBox="0 0 24 24" fill="#fbbf24"><path d="M12 3l2.7 5.6 6.3.9-4.5 4.4 1 6.1-5.5-2.9-5.5 2.9 1-6.1L3 9.5l6.3-.9z"></path></svg>Level 5</span>
+            </div>
+          </div>
+          <div style="position:absolute; left:50%; bottom:26px; transform:translateX(-50%); display:flex; align-items:center; gap:13px; background:rgba(255,255,255,0.5); backdrop-filter:blur(20px) saturate(1.3); -webkit-backdrop-filter:blur(20px) saturate(1.3); border:1.5px solid rgba(255,255,255,0.75); border-radius:26px; padding:13px 16px; box-shadow:0 16px 40px rgba(108,92,231,0.18);">
+            <div style="width:36px; height:36px; border-radius:999px; background:#eef0ff; display:flex; align-items:center; justify-content:center;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#6c5ce7" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M14 6l-6 6 6 6"></path></svg></div>
+            <sc-for list="{{ thumbs }}" as="t" hint-placeholder-count="8">
+              <div style="width:54px; height:54px; border-radius:999px; background:#eef0ff; display:flex; align-items:center; justify-content:center; box-shadow:{{t.ringL}};">
+                <svg width="34" height="34" viewBox="0 0 24 24">
+                  <path d="{{t.d1}}" fill="{{t.f1}}" stroke="{{t.s1}}" stroke-width="2.4" stroke-linecap="round"></path>
+                  <path d="{{t.d2}}" fill="{{t.f2}}" stroke="{{t.s2}}" stroke-width="1.6" stroke-linecap="round"></path>
+                  <path d="{{t.d3}}" fill="{{t.f3}}" stroke="{{t.s3}}" stroke-width="1.6" stroke-linecap="round"></path>
+                  <path d="{{t.d4}}" fill="{{t.f4}}" stroke="{{t.s4}}" stroke-width="1.6" stroke-linecap="round"></path>
+                  <path d="{{t.d5}}" fill="{{t.f5}}" stroke="{{t.s5}}" stroke-width="1.6" stroke-linecap="round"></path>
+                </svg>
+              </div>
+            </sc-for>
+            <div style="width:36px; height:36px; border-radius:999px; background:#eef0ff; display:flex; align-items:center; justify-content:center;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#6c5ce7" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M10 6l6 6-6 6"></path></svg></div>
+          </div>
+        </main>
+        <aside style="width:320px; flex:0 0 320px; padding:28px 24px; display:flex; flex-direction:column; gap:11px;">
+          <div style="font-size:11px; font-weight:800; letter-spacing:0.2em; color:#a29bce; margin-bottom:4px;">ACTIVITY</div>
+          <sc-for list="{{ feed }}" as="f" hint-placeholder-count="6">
+            <div style="display:flex; align-items:center; gap:12px; background:#ffffff; border:1px solid #f0eef9; border-radius:18px; padding:12px 14px; box-shadow:0 6px 18px rgba(108,92,231,0.08);">
+              <div style="width:40px; height:40px; flex:0 0 40px; border-radius:999px; padding:2px; background:{{f.g}};">
+                <div style="width:100%; height:100%; box-sizing:border-box; border-radius:999px; background:#eef0ff; border:2px solid #ffffff; display:flex; align-items:center; justify-content:center; color:#6c5ce7; font-weight:900; font-size:13px;">{{ f.init }}</div>
+              </div>
+              <div style="flex:1; min-width:0; font-size:13px; color:#6b6689; font-weight:600; line-height:1.35;"><strong style="color:#2d2a45; font-weight:800;">{{ f.n }}</strong> {{ f.t }}</div>
+              <span style="font-size:11px; font-weight:800; color:#b3aed0;">{{ f.time }}</span>
+            </div>
+          </sc-for>
+        </aside>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ 1b GARDEN DARK ============ -->
+  <div id="1b" style="display:flex; flex-direction:column; gap:14px;">
+    <div style="display:flex; align-items:center; gap:12px;">
+      <a href="#1b" style="text-decoration:none; background:#2d2a45; color:#ffffff; font-weight:800; font-size:13px; border-radius:999px; padding:5px 13px;">1b</a>
+      <span style="font-weight:800; font-size:15px; color:#6b6689;">Garden — dark</span>
+    </div>
+    <div data-screen-label="Garden Dark" style="width:1920px; height:1080px; border-radius:28px; overflow:hidden; background:#14111f; display:flex; flex-direction:column; box-shadow:0 30px 80px rgba(20,17,31,0.5);">
+      <header style="height:72px; flex:0 0 72px; background:linear-gradient(90deg,#6c5ce7 0%,#4834d4 50%,#00cec9 100%); display:grid; grid-template-columns:1fr auto 1fr; align-items:center; padding:0 28px; gap:24px;">
+        <div style="display:flex; align-items:center; gap:12px;">
+          <div style="width:40px; height:40px; border-radius:14px; background:rgba(255,255,255,0.22); display:flex; align-items:center; justify-content:center;">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21v-8"></path><path d="M12 13C12 9 9 7 5 7c0 4 3 6 7 6z" fill="rgba(255,255,255,0.35)"></path><path d="M12 13c0-4 3-6 7-6 0 4-3 6-7 6z" fill="rgba(255,255,255,0.35)"></path></svg>
+          </div>
+          <span style="color:#ffffff; font-weight:900; font-size:20px;">Sproutly</span>
+        </div>
+        <div style="width:460px; height:44px; border-radius:999px; background:rgba(255,255,255,0.18); border:1px solid rgba(255,255,255,0.28); display:flex; align-items:center; gap:10px; padding:0 20px;">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.9)" stroke-width="2.4" stroke-linecap="round"><circle cx="11" cy="11" r="6.5"></circle><path d="M16 16l4.5 4.5"></path></svg>
+          <span style="color:rgba(255,255,255,0.85); font-size:15px; font-weight:600;">Search the garden…</span>
+        </div>
+        <div style="display:flex; align-items:center; justify-content:flex-end; gap:12px;">
+          <div style="width:40px; height:40px; border-radius:14px; background:rgba(255,255,255,0.18); display:flex; align-items:center; justify-content:center;">
+            <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 16v-5a6 6 0 1 0-12 0v5l-2 3h16z"></path><path d="M10.5 21.5a2 2 0 0 0 3 0"></path></svg>
+          </div>
+          <div style="width:40px; height:40px; border-radius:14px; background:rgba(255,255,255,0.18); display:flex; align-items:center; justify-content:center;">
+            <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 4h8v5a4 4 0 0 1-8 0z"></path><path d="M8 5H5a3 3 0 0 0 3 4M16 5h3a3 3 0 0 1-3 4"></path><path d="M12 13v4M9 20h6"></path></svg>
+          </div>
+          <div style="width:40px; height:40px; border-radius:999px; background:linear-gradient(135deg,#ffd166,#fbbf24); border:2px solid rgba(255,255,255,0.75); display:flex; align-items:center; justify-content:center; color:#7c2d12; font-weight:900; font-size:15px;">M</div>
+        </div>
+      </header>
+      <div style="flex:1; display:flex; min-height:0;">
+        <nav style="width:232px; flex:0 0 232px; background:#191527; border-right:1px solid rgba(255,255,255,0.06); padding:24px 16px; display:flex; flex-direction:column; gap:6px;">
+          <div style="display:flex; align-items:center; gap:12px; padding:12px 18px; border-radius:999px; color:#9d96c0; font-weight:800; font-size:15px;"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11l8-7 8 7v9h-5.5v-5h-5v5H4z"></path></svg>Home</div>
+          <div style="display:flex; align-items:center; gap:12px; padding:12px 18px; border-radius:999px; background:rgba(108,92,231,0.25); color:#b9aefc; font-weight:800; font-size:15px;"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21v-8"></path><path d="M12 13C12 9 9 7 5 7c0 4 3 6 7 6z"></path><path d="M12 13c0-4 3-6 7-6 0 4-3 6-7 6z"></path></svg>Garden</div>
+          <div style="display:flex; align-items:center; gap:12px; padding:12px 18px; border-radius:999px; color:#9d96c0; font-weight:800; font-size:15px;"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 21V4h11.5l-2.5 4.5 2.5 4.5H6"></path></svg>Quests</div>
+          <div style="display:flex; align-items:center; gap:12px; padding:12px 18px; border-radius:999px; color:#9d96c0; font-weight:800; font-size:15px;"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="12" height="10" rx="2.5"></rect><path d="M15 10.5l6-3v9l-6-3"></path></svg>Stage</div>
+          <div style="display:flex; align-items:center; gap:12px; padding:12px 18px; border-radius:999px; color:#9d96c0; font-weight:800; font-size:15px;"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7.5A2.5 2.5 0 0 1 5.5 5H9l2 2.5h7.5A2.5 2.5 0 0 1 21 10v6.5a2.5 2.5 0 0 1-2.5 2.5h-13A2.5 2.5 0 0 1 3 16.5z"></path></svg>Submissions</div>
+          <div style="display:flex; align-items:center; gap:12px; padding:12px 18px; border-radius:999px; color:#9d96c0; font-weight:800; font-size:15px;"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="12" cy="12" r="3.2"></circle><path d="M12 2.5v3M12 18.5v3M2.5 12h3M18.5 12h3M5 5l2.1 2.1M16.9 16.9L19 19M19 5l-2.1 2.1M7.1 16.9L5 19"></path></svg>Settings</div>
+        </nav>
+        <main style="flex:1; position:relative; min-width:0; overflow:hidden; background:#14111f;">
+          <x-import component-from-global-scope="image-slot" from="./image-slot.js" id="garden-bg-1b" placeholder="Drop a screenshot — your website becomes the backdrop" shape="rect" fit="cover" style="position:absolute; left:0; top:0; width:100%; height:100%;" hint-size="100%,100%"></x-import>
+          <div style="position:absolute; inset:0; pointer-events:none; background:linear-gradient(180deg, rgba(20,17,31,0.93) 0%, rgba(20,17,31,0.52) 38%, rgba(20,17,31,0.4) 62%, rgba(20,17,31,0.84) 100%), radial-gradient(circle at 50% 44%, rgba(108,92,231,0.3), rgba(108,92,231,0) 60%);"></div>
+          <div style="position:absolute; inset:0; z-index:1; pointer-events:none; display:flex; flex-direction:column; align-items:center; padding-top:52px;">
+            <div style="font-size:12px; font-weight:800; letter-spacing:0.24em; color:#7d76a3;">PROJECT</div>
+            <h1 style="margin:4px 0 0; font-size:78px; font-weight:900; color:#f2efff; letter-spacing:-0.02em; line-height:1;">RankKit</h1>
+            <div style="margin-top:16px; display:flex; align-items:center; gap:8px; background:rgba(108,92,231,0.25); border-radius:999px; padding:6px 16px 6px 7px;">
+              <div style="width:24px; height:24px; border-radius:999px; background:linear-gradient(135deg,#6c5ce7,#00cec9); color:#ffffff; font-size:12px; font-weight:900; display:flex; align-items:center; justify-content:center;">M</div>
+              <span style="color:#c4bbff; font-weight:800; font-size:14px;">@maya · Founder</span>
+            </div>
+            <svg width="452" height="500" viewBox="0 0 300 332" style="margin-top:-4px;">
+              <defs>
+                <linearGradient id="stemB" x1="0" y1="1" x2="0" y2="0">
+                  <stop offset="0" stop-color="#6c5ce7"></stop>
+                  <stop offset="0.55" stop-color="#4834d4"></stop>
+                  <stop offset="1" stop-color="#00cec9"></stop>
+                </linearGradient>
+                <radialGradient id="glowB">
+                  <stop offset="0" stop-color="#8b7cf7" stop-opacity="0.65"></stop>
+                  <stop offset="1" stop-color="#8b7cf7" stop-opacity="0"></stop>
+                </radialGradient>
+                <radialGradient id="flowB">
+                  <stop offset="0" stop-color="#fbbf24" stop-opacity="0.7"></stop>
+                  <stop offset="1" stop-color="#fbbf24" stop-opacity="0"></stop>
+                </radialGradient>
+              </defs>
+              <ellipse cx="150" cy="296" rx="148" ry="32" fill="url(#glowB)"></ellipse>
+              <ellipse cx="150" cy="288" rx="102" ry="28" fill="#6e4c37"></ellipse>
+              <ellipse cx="150" cy="280" rx="92" ry="22" fill="#8a6248"></ellipse>
+              <circle cx="118" cy="280" r="4" fill="#6e4c37"></circle>
+              <circle cx="176" cy="286" r="3.4" fill="#6e4c37"></circle>
+              <circle cx="150" cy="116" r="54" fill="url(#flowB)"></circle>
+              <path d="M150 282c-7-38 8-62 0-96-6-26-2-46 0-70" fill="none" stroke="url(#stemB)" stroke-width="13" stroke-linecap="round"></path>
+              <path d="M147 240c-30-3-48-22-51-48 28 3 48 21 51 48z" fill="#3ecf8e" stroke="#27a06b" stroke-width="5" stroke-linejoin="round"></path>
+              <path d="M152 206c30-3 48-22 51-48-28 3-48 21-51 48z" fill="#2eb872" stroke="#219660" stroke-width="5" stroke-linejoin="round"></path>
+              <path d="M148 268c-20-2-32-14-34-31 19 2 32 14 34 31z" fill="#3ecf8e" stroke="#27a06b" stroke-width="4.5" stroke-linejoin="round"></path>
+              <path d="M152 262c20-2 32-14 34-31-19 2-32 14-34 31z" fill="#2eb872" stroke="#219660" stroke-width="4.5" stroke-linejoin="round"></path>
+              <circle cx="150" cy="96" r="12.5" fill="#fbbf24" stroke="#f59e0b" stroke-width="3.5"></circle>
+              <circle cx="167" cy="106" r="12.5" fill="#fbbf24" stroke="#f59e0b" stroke-width="3.5"></circle>
+              <circle cx="167" cy="126" r="12.5" fill="#fbbf24" stroke="#f59e0b" stroke-width="3.5"></circle>
+              <circle cx="150" cy="136" r="12.5" fill="#fbbf24" stroke="#f59e0b" stroke-width="3.5"></circle>
+              <circle cx="133" cy="126" r="12.5" fill="#fbbf24" stroke="#f59e0b" stroke-width="3.5"></circle>
+              <circle cx="133" cy="106" r="12.5" fill="#fbbf24" stroke="#f59e0b" stroke-width="3.5"></circle>
+              <circle cx="150" cy="116" r="11" fill="#ffd166" stroke="#f59e0b" stroke-width="4"></circle>
+              <g opacity="{{ particleOpacity }}">
+                <circle cx="64" cy="120" r="4" fill="#fbbf24" opacity="0.95"></circle>
+                <circle cx="236" cy="70" r="3" fill="#fbbf24" opacity="0.75"></circle>
+                <circle cx="216" cy="176" r="5" fill="#ffd166" opacity="0.7"></circle>
+                <circle cx="84" cy="210" r="3" fill="#ffd166" opacity="0.85"></circle>
+                <circle cx="252" cy="238" r="4" fill="#fbbf24" opacity="0.55"></circle>
+                <circle cx="44" cy="176" r="2.6" fill="#fbbf24" opacity="0.65"></circle>
+                <circle cx="196" cy="34" r="2.6" fill="#ffd166" opacity="0.8"></circle>
+              </g>
+            </svg>
+          </div>
+          <div style="position:absolute; left:52px; top:168px; width:248px; background:linear-gradient(160deg, rgba(139,124,247,0.2), rgba(32,27,49,0.36)); backdrop-filter:blur(22px) saturate(1.35); -webkit-backdrop-filter:blur(22px) saturate(1.35); border:1.5px solid rgba(255,255,255,0.16); border-radius:24px; box-shadow:0 16px 40px rgba(0,0,0,0.45); padding:22px;">
+            <div style="font-size:11px; font-weight:800; letter-spacing:0.2em; color:#7d76a3;">MILESTONE PATH</div>
+            <div style="position:relative; margin-top:14px;">
+              <div style="position:absolute; left:14px; top:16px; bottom:16px; width:3px; border-radius:2px; background:rgba(255,255,255,0.08);"></div>
+              <sc-for list="{{ milestonesD }}" as="m" hint-placeholder-count="7">
+                <div style="position:relative; display:flex; align-items:center; gap:14px; padding:7px 0;">
+                  <div style="width:31px; height:31px; border-radius:999px; display:flex; align-items:center; justify-content:center; background:{{m.bg}}; box-shadow:{{m.glow}};">
+                    <sc-if value="{{ m.check }}" hint-placeholder-val="{{ true }}">
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4 10-10"></path></svg>
+                    </sc-if>
+                    <sc-if value="{{ m.cur }}" hint-placeholder-val="{{ false }}">
+                      <div style="width:11px; height:11px; border-radius:999px; background:#ffffff;"></div>
+                    </sc-if>
+                  </div>
+                  <span style="font-weight:800; font-size:14px; color:{{m.lc}};">{{ m.label }}</span>
+                </div>
+              </sc-for>
+            </div>
+          </div>
+          <div style="position:absolute; right:52px; top:190px; width:300px; background:linear-gradient(160deg, rgba(139,124,247,0.2), rgba(32,27,49,0.36)); backdrop-filter:blur(22px) saturate(1.35); -webkit-backdrop-filter:blur(22px) saturate(1.35); border:1.5px solid rgba(255,255,255,0.16); border-radius:24px; box-shadow:0 16px 40px rgba(0,0,0,0.45); padding:24px;">
+            <div style="font-size:11px; font-weight:800; letter-spacing:0.2em; color:#7d76a3;">PLANT HEALTH</div>
+            <div style="margin-top:14px; height:18px; border-radius:999px; background:rgba(255,255,255,0.1); overflow:hidden;">
+              <div style="height:100%; width:{{healthW}}; border-radius:999px; background:linear-gradient(90deg,#6c5ce7,#00cec9);"></div>
+            </div>
+            <div style="margin-top:8px; display:flex; justify-content:space-between; align-items:center;">
+              <span style="font-size:13px; font-weight:800; color:#c9c3e8;">{{ healthPct }} / 100</span>
+              <span style="font-size:13px; font-weight:800; color:#fbbf24;">Flowering</span>
+            </div>
+            <div style="margin-top:18px; background:#6c5ce7; border-radius:16px; padding:14px; display:flex; align-items:center; justify-content:center; gap:10px; box-shadow:0 10px 28px rgba(108,92,231,0.55); cursor:pointer;" style-hover="background:#7d6ef0;">
+              <svg width="19" height="19" viewBox="0 0 24 24" fill="rgba(255,255,255,0.3)" stroke="#ffffff" stroke-width="2.4" stroke-linejoin="round"><path d="M12 3.5s6 6.8 6 10.7a6 6 0 1 1-12 0C6 10.3 12 3.5 12 3.5z"></path></svg>
+              <span style="color:#ffffff; font-weight:900; font-size:17px;">Water</span>
+            </div>
+            <div style="margin-top:16px; display:flex; flex-wrap:wrap; gap:8px;">
+              <span style="display:inline-flex; align-items:center; gap:6px; background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.08); border-radius:999px; padding:7px 12px; font-size:12px; font-weight:800; color:#c9c3e8;"><svg width="12" height="12" viewBox="0 0 24 24" fill="#f59e0b"><path d="M12 3c.8 3.5 4.8 5 4.8 9.5a4.8 4.8 0 0 1-9.6 0c0-2.4 1.6-3.6 1.9-5.9.9.9 1.5 1.6 2.5 1.8-.3-1.8-.6-3.7.4-5.4z"></path></svg>12-day streak</span>
+              <span style="display:inline-flex; align-items:center; gap:6px; background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.08); border-radius:999px; padding:7px 12px; font-size:12px; font-weight:800; color:#c9c3e8;"><svg width="12" height="12" viewBox="0 0 24 24" fill="#8b7cf7"><path d="M12 3s6 6.8 6 11a6 6 0 1 1-12 0c0-4.2 6-11 6-11z"></path></svg>248 waters</span>
+              <span style="display:inline-flex; align-items:center; gap:6px; background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.08); border-radius:999px; padding:7px 12px; font-size:12px; font-weight:800; color:#c9c3e8;"><svg width="12" height="12" viewBox="0 0 24 24" fill="#fbbf24"><path d="M12 3l2.7 5.6 6.3.9-4.5 4.4 1 6.1-5.5-2.9-5.5 2.9 1-6.1L3 9.5l6.3-.9z"></path></svg>Level 5</span>
+            </div>
+          </div>
+          <div style="position:absolute; left:50%; bottom:26px; transform:translateX(-50%); display:flex; align-items:center; gap:13px; background:rgba(32,27,49,0.55); backdrop-filter:blur(20px) saturate(1.3); -webkit-backdrop-filter:blur(20px) saturate(1.3); border:1.5px solid rgba(255,255,255,0.14); border-radius:26px; padding:13px 16px; box-shadow:0 16px 40px rgba(0,0,0,0.45);">
+            <div style="width:36px; height:36px; border-radius:999px; background:rgba(108,92,231,0.22); display:flex; align-items:center; justify-content:center;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#b9aefc" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M14 6l-6 6 6 6"></path></svg></div>
+            <sc-for list="{{ thumbs }}" as="t" hint-placeholder-count="8">
+              <div style="width:54px; height:54px; border-radius:999px; background:rgba(108,92,231,0.16); display:flex; align-items:center; justify-content:center; box-shadow:{{t.ringD}};">
+                <svg width="34" height="34" viewBox="0 0 24 24">
+                  <path d="{{t.d1}}" fill="{{t.f1}}" stroke="{{t.s1}}" stroke-width="2.4" stroke-linecap="round"></path>
+                  <path d="{{t.d2}}" fill="{{t.f2}}" stroke="{{t.s2}}" stroke-width="1.6" stroke-linecap="round"></path>
+                  <path d="{{t.d3}}" fill="{{t.f3}}" stroke="{{t.s3}}" stroke-width="1.6" stroke-linecap="round"></path>
+                  <path d="{{t.d4}}" fill="{{t.f4}}" stroke="{{t.s4}}" stroke-width="1.6" stroke-linecap="round"></path>
+                  <path d="{{t.d5}}" fill="{{t.f5}}" stroke="{{t.s5}}" stroke-width="1.6" stroke-linecap="round"></path>
+                </svg>
+              </div>
+            </sc-for>
+            <div style="width:36px; height:36px; border-radius:999px; background:rgba(108,92,231,0.22); display:flex; align-items:center; justify-content:center;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#b9aefc" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M10 6l6 6-6 6"></path></svg></div>
+          </div>
+        </main>
+        <aside style="width:320px; flex:0 0 320px; padding:28px 24px; display:flex; flex-direction:column; gap:11px;">
+          <div style="font-size:11px; font-weight:800; letter-spacing:0.2em; color:#7d76a3; margin-bottom:4px;">ACTIVITY</div>
+          <sc-for list="{{ feed }}" as="f" hint-placeholder-count="6">
+            <div style="display:flex; align-items:center; gap:12px; background:#201b31; border:1px solid rgba(255,255,255,0.08); border-radius:18px; padding:12px 14px; box-shadow:0 6px 18px rgba(0,0,0,0.3);">
+              <div style="width:40px; height:40px; flex:0 0 40px; border-radius:999px; padding:2px; background:{{f.g}};">
+                <div style="width:100%; height:100%; box-sizing:border-box; border-radius:999px; background:#171225; border:2px solid #201b31; display:flex; align-items:center; justify-content:center; color:#b9aefc; font-weight:900; font-size:13px;">{{ f.init }}</div>
+              </div>
+              <div style="flex:1; min-width:0; font-size:13px; color:#a49dc7; font-weight:600; line-height:1.35;"><strong style="color:#f2efff; font-weight:800;">{{ f.n }}</strong> {{ f.t }}</div>
+              <span style="font-size:11px; font-weight:800; color:#6e678f;">{{ f.time }}</span>
+            </div>
+          </sc-for>
+        </aside>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ 1c ALL PROJECTS ============ -->
+  <div id="1c" style="display:flex; flex-direction:column; gap:14px;">
+    <div style="display:flex; align-items:center; gap:12px;">
+      <a href="#1c" style="text-decoration:none; background:#2d2a45; color:#ffffff; font-weight:800; font-size:13px; border-radius:999px; padding:5px 13px;">1c</a>
+      <span style="font-weight:800; font-size:15px; color:#6b6689;">All Projects — directory</span>
+    </div>
+    <div data-screen-label="All Projects" style="width:1920px; height:1080px; border-radius:28px; overflow:hidden; background:#faf8f4; display:flex; flex-direction:column; box-shadow:0 30px 80px rgba(45,42,69,0.18);">
+      <header style="height:72px; flex:0 0 72px; background:linear-gradient(90deg,#6c5ce7 0%,#4834d4 50%,#00cec9 100%); display:grid; grid-template-columns:1fr auto 1fr; align-items:center; padding:0 28px; gap:24px;">
+        <div style="display:flex; align-items:center; gap:12px;">
+          <div style="width:40px; height:40px; border-radius:14px; background:rgba(255,255,255,0.22); display:flex; align-items:center; justify-content:center;">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21v-8"></path><path d="M12 13C12 9 9 7 5 7c0 4 3 6 7 6z" fill="rgba(255,255,255,0.35)"></path><path d="M12 13c0-4 3-6 7-6 0 4-3 6-7 6z" fill="rgba(255,255,255,0.35)"></path></svg>
+          </div>
+          <span style="color:#ffffff; font-weight:900; font-size:20px;">Sproutly</span>
+        </div>
+        <div style="width:460px; height:44px; border-radius:999px; background:rgba(255,255,255,0.18); border:1px solid rgba(255,255,255,0.28); display:flex; align-items:center; gap:10px; padding:0 20px;">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.9)" stroke-width="2.4" stroke-linecap="round"><circle cx="11" cy="11" r="6.5"></circle><path d="M16 16l4.5 4.5"></path></svg>
+          <span style="color:rgba(255,255,255,0.85); font-size:15px; font-weight:600;">Search the garden…</span>
+        </div>
+        <div style="display:flex; align-items:center; justify-content:flex-end; gap:12px;">
+          <div style="width:40px; height:40px; border-radius:14px; background:rgba(255,255,255,0.18); display:flex; align-items:center; justify-content:center;">
+            <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 16v-5a6 6 0 1 0-12 0v5l-2 3h16z"></path><path d="M10.5 21.5a2 2 0 0 0 3 0"></path></svg>
+          </div>
+          <div style="width:40px; height:40px; border-radius:14px; background:rgba(255,255,255,0.18); display:flex; align-items:center; justify-content:center;">
+            <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 4h8v5a4 4 0 0 1-8 0z"></path><path d="M8 5H5a3 3 0 0 0 3 4M16 5h3a3 3 0 0 1-3 4"></path><path d="M12 13v4M9 20h6"></path></svg>
+          </div>
+          <div style="width:40px; height:40px; border-radius:999px; background:linear-gradient(135deg,#ffd166,#fbbf24); border:2px solid rgba(255,255,255,0.75); display:flex; align-items:center; justify-content:center; color:#7c2d12; font-weight:900; font-size:15px;">M</div>
+        </div>
+      </header>
+      <div style="flex:1; display:flex; min-height:0;">
+        <nav style="width:232px; flex:0 0 232px; background:#ffffff; border-right:1px solid #f0eef9; padding:24px 16px; display:flex; flex-direction:column; gap:6px;">
+          <div style="display:flex; align-items:center; gap:12px; padding:12px 18px; border-radius:999px; color:#6b6689; font-weight:800; font-size:15px;"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11l8-7 8 7v9h-5.5v-5h-5v5H4z"></path></svg>Home</div>
+          <div style="display:flex; align-items:center; gap:12px; padding:12px 18px; border-radius:999px; background:#eef0ff; color:#6c5ce7; font-weight:800; font-size:15px;"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21v-8"></path><path d="M12 13C12 9 9 7 5 7c0 4 3 6 7 6z"></path><path d="M12 13c0-4 3-6 7-6 0 4-3 6-7 6z"></path></svg>Garden</div>
+          <div style="display:flex; align-items:center; gap:12px; padding:12px 18px; border-radius:999px; color:#6b6689; font-weight:800; font-size:15px;"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 21V4h11.5l-2.5 4.5 2.5 4.5H6"></path></svg>Quests</div>
+          <div style="display:flex; align-items:center; gap:12px; padding:12px 18px; border-radius:999px; color:#6b6689; font-weight:800; font-size:15px;"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="12" height="10" rx="2.5"></rect><path d="M15 10.5l6-3v9l-6-3"></path></svg>Stage</div>
+          <div style="display:flex; align-items:center; gap:12px; padding:12px 18px; border-radius:999px; color:#6b6689; font-weight:800; font-size:15px;"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7.5A2.5 2.5 0 0 1 5.5 5H9l2 2.5h7.5A2.5 2.5 0 0 1 21 10v6.5a2.5 2.5 0 0 1-2.5 2.5h-13A2.5 2.5 0 0 1 3 16.5z"></path></svg>Submissions</div>
+          <div style="display:flex; align-items:center; gap:12px; padding:12px 18px; border-radius:999px; color:#6b6689; font-weight:800; font-size:15px;"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="12" cy="12" r="3.2"></circle><path d="M12 2.5v3M12 18.5v3M2.5 12h3M18.5 12h3M5 5l2.1 2.1M16.9 16.9L19 19M19 5l-2.1 2.1M7.1 16.9L5 19"></path></svg>Settings</div>
+        </nav>
+        <main style="flex:1; min-width:0; padding:40px 56px 28px; display:flex; flex-direction:column;">
+          <div style="font-size:12px; font-weight:800; letter-spacing:0.24em; color:#a29bce;">CHOOSE A PLANT</div>
+          <h1 style="margin:4px 0 0; font-size:54px; font-weight:900; color:#2d2a45; letter-spacing:-0.02em; line-height:1.05;">All Projects</h1>
+          <div style="margin-top:18px; display:flex; gap:8px;">
+            <span style="background:#6c5ce7; color:#ffffff; font-weight:800; font-size:13px; border-radius:999px; padding:8px 18px;">All</span>
+            <span style="background:#ffffff; border:1px solid #e8e5f4; color:#6b6689; font-weight:800; font-size:13px; border-radius:999px; padding:8px 18px;">Thriving</span>
+            <span style="background:#ffffff; border:1px solid #e8e5f4; color:#6b6689; font-weight:800; font-size:13px; border-radius:999px; padding:8px 18px;">Wilting</span>
+            <span style="background:#ffffff; border:1px solid #e8e5f4; color:#6b6689; font-weight:800; font-size:13px; border-radius:999px; padding:8px 18px;">New</span>
+          </div>
+          <div style="margin-top:22px; display:flex; flex-direction:column; gap:11px;">
+            <div style="display:flex; align-items:center; gap:18px; background:#fffdf5; border:2px solid #fcd34d; border-radius:20px; padding:10px 20px; box-shadow:0 8px 22px rgba(251,191,36,0.14);">
+              <div style="width:52px; height:52px; flex:0 0 52px; border-radius:999px; background:#fef7e2; display:flex; align-items:center; justify-content:center;">
+                <svg width="28" height="28" viewBox="0 0 24 24"><path d="M12 20v-4.5" fill="none" stroke="#2eb872" stroke-width="2.4" stroke-linecap="round"></path><path d="M12 16c0-3-2-4.4-5-4.4 0 3 2 4.4 5 4.4z" fill="#3ecf8e"></path></svg>
+              </div>
+              <div style="flex:1; min-width:0;">
+                <div style="display:flex; align-items:center; gap:10px;">
+                  <span style="font-weight:900; font-size:19px; color:#2d2a45;">Orbit Notes</span>
+                  <span style="background:#fef3c7; color:#b45309; font-weight:800; font-size:11px; letter-spacing:0.1em; border-radius:999px; padding:4px 11px;">PENDING</span>
+                </div>
+                <div style="font-weight:700; font-size:13px; color:#a29bce;">@jules · awaiting approval</div>
+              </div>
+              <div style="background:#fbbf24; color:#7c2d12; font-weight:800; font-size:14px; border-radius:999px; padding:10px 22px; cursor:pointer;">Review</div>
+            </div>
+            <sc-for list="{{ rows }}" as="r" hint-placeholder-count="8">
+              <div style="display:flex; align-items:center; gap:18px; background:#ffffff; border:1px solid #f0eef9; border-radius:20px; padding:10px 20px; box-shadow:0 8px 22px rgba(108,92,231,0.07);">
+                <div style="width:52px; height:52px; flex:0 0 52px; border-radius:999px; background:{{r.pbg}}; display:flex; align-items:center; justify-content:center;">
+                  <svg width="28" height="28" viewBox="0 0 24 24">
+                    <path d="{{r.d1}}" fill="{{r.f1}}" stroke="{{r.s1}}" stroke-width="2.4" stroke-linecap="round"></path>
+                    <path d="{{r.d2}}" fill="{{r.f2}}" stroke="{{r.s2}}" stroke-width="1.6" stroke-linecap="round"></path>
+                    <path d="{{r.d3}}" fill="{{r.f3}}" stroke="{{r.s3}}" stroke-width="1.6" stroke-linecap="round"></path>
+                    <path d="{{r.d4}}" fill="{{r.f4}}" stroke="{{r.s4}}" stroke-width="1.6" stroke-linecap="round"></path>
+                    <path d="{{r.d5}}" fill="{{r.f5}}" stroke="{{r.s5}}" stroke-width="1.6" stroke-linecap="round"></path>
+                  </svg>
+                </div>
+                <div style="flex:1; min-width:0;">
+                  <div style="font-weight:900; font-size:19px; color:#2d2a45;">{{ r.name }}</div>
+                  <div style="font-weight:700; font-size:13px; color:#a29bce;">{{ r.handle }}</div>
+                </div>
+                <span style="background:{{r.bbg}}; color:{{r.bc}}; font-weight:800; font-size:11px; letter-spacing:0.08em; text-transform:uppercase; border-radius:999px; padding:4px 11px;">{{ r.badge }}</span>
+                <div style="width:210px; display:flex; flex-direction:column; gap:5px;">
+                  <div style="height:8px; border-radius:999px; background:#eef0ff; overflow:hidden;">
+                    <div style="height:100%; width:{{r.hw}}; border-radius:999px; background:linear-gradient(90deg,#6c5ce7,#00cec9);"></div>
+                  </div>
+                  <span style="font-size:11px; font-weight:800; color:#b3aed0;">{{ r.hl }}</span>
+                </div>
+                <div style="background:#eef0ff; color:#6c5ce7; font-weight:800; font-size:14px; border-radius:999px; padding:10px 24px; cursor:pointer;" style-hover="background:#e2e5ff;">Visit</div>
+              </div>
+            </sc-for>
+          </div>
+        </main>
+        <aside style="width:312px; flex:0 0 312px; padding:40px 28px 28px;">
+          <div style="background:#ffffff; border:1px solid #f0eef9; border-radius:24px; box-shadow:0 16px 40px rgba(108,92,231,0.12); padding:28px 24px; display:flex; flex-direction:column; align-items:center; text-align:center;">
+            <svg width="150" height="120" viewBox="0 0 120 100">
+              <ellipse cx="60" cy="94" rx="38" ry="5" fill="#eef0ff"></ellipse>
+              <path d="M60 34V22" fill="none" stroke="#2eb872" stroke-width="4" stroke-linecap="round"></path>
+              <path d="M60 26c0-8-5-11-13-11 0 8 5 11 13 11z" fill="#3ecf8e" stroke="#27a06b" stroke-width="2.5" stroke-linejoin="round"></path>
+              <path d="M60 22c0-8 5-11 13-11 0 8-5 11-13 11z" fill="#2eb872" stroke="#219660" stroke-width="2.5" stroke-linejoin="round"></path>
+              <rect x="38" y="34" width="44" height="12" rx="6" fill="#7d6ef0"></rect>
+              <path d="M42 46h36l-4.5 40a6 6 0 0 1-6 5.5h-15a6 6 0 0 1-6-5.5z" fill="#6c5ce7"></path>
+              <circle cx="53" cy="64" r="2.6" fill="#241f3a"></circle>
+              <circle cx="67" cy="64" r="2.6" fill="#241f3a"></circle>
+              <path d="M53 71q7 6 14 0" fill="none" stroke="#241f3a" stroke-width="2.5" stroke-linecap="round"></path>
+              <path d="M92 62l-9-5" fill="none" stroke="#00cec9" stroke-width="5" stroke-linecap="round"></path>
+              <rect x="90" y="58" width="21" height="17" rx="5" fill="#00cec9"></rect>
+              <path d="M100 58c0-6 9-6 9 0" fill="none" stroke="#00b5b1" stroke-width="3.5"></path>
+              <circle cx="86" cy="30" r="3" fill="#fbbf24" opacity="0.8"></circle>
+              <circle cx="30" cy="42" r="2.4" fill="#ffd166" opacity="0.7"></circle>
+            </svg>
+            <div style="margin-top:14px; font-size:11px; font-weight:800; letter-spacing:0.2em; color:#a29bce;">SUBMIT YOUR PROJECT</div>
+            <p style="margin:10px 0 0; font-size:13px; font-weight:600; color:#6b6689; line-height:1.5;">Plant a seed — add your logo and your team, and let the community help it grow.</p>
+            <div style="margin-top:18px; width:100%; background:#6c5ce7; border-radius:16px; padding:13px; color:#ffffff; font-weight:900; font-size:15px; box-shadow:0 10px 24px rgba(108,92,231,0.4); cursor:pointer;" style-hover="background:#5b4bd6;">Submit a project</div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </div>
+
+</section>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{
+  &quot;health&quot;: { &quot;editor&quot;: &quot;range&quot;, &quot;default&quot;: 80, &quot;min&quot;: 0, &quot;max&quot;: 100, &quot;step&quot;: 5, &quot;unit&quot;: &quot;%&quot;, &quot;tsType&quot;: &quot;number&quot;, &quot;section&quot;: &quot;Plant&quot; },
+  &quot;showParticles&quot;: { &quot;editor&quot;: &quot;boolean&quot;, &quot;default&quot;: true, &quot;tsType&quot;: &quot;boolean&quot;, &quot;section&quot;: &quot;Plant&quot; }
+}">
+class Component extends DCLogic {
+  renderVals() {
+    const health = Math.max(0, Math.min(100, this.props.health ?? 80));
+    const particleOpacity = (this.props.showParticles ?? true) ? 1 : 0;
+
+    const labels = ["Seed", "Sprout", "First Leaf", "Budding", "Flowering", "Pollinate", "Full Bloom"];
+    const mk = (grayBg, grayLc, doneLc) => labels.map((label, i) => {
+      if (i < 4) return { label, bg: "#6c5ce7", glow: "none", check: true, cur: false, lc: doneLc };
+      if (i === 4) return { label, bg: "#fbbf24", glow: "0 0 0 6px rgba(251,191,36,0.22), 0 0 20px rgba(251,191,36,0.65)", check: false, cur: true, lc: "#f59e0b" };
+      return { label, bg: grayBg, glow: "none", check: false, cur: false, lc: grayLc };
+    });
+    const milestonesL = mk("#e6e3f2", "#b3aed0", "#2d2a45");
+    const milestonesD = mk("#3a3450", "#6e678f", "#f2efff");
+
+    const cir = (x, y, r) => "M" + x + " " + y + " m" + (-r) + " 0 a" + r + " " + r + " 0 1 0 " + (r * 2) + " 0 a" + r + " " + r + " 0 1 0 " + (-r * 2) + " 0 ";
+    const petals = (x, y, o, r) => cir(x, y - o, r) + cir(x + o, y, r) + cir(x, y + o, r) + cir(x - o, y, r);
+    const lfL = {
+      s: (y) => "M12 " + y + "c0-2-1.4-3-3.4-3 0 2 1.4 3 3.4 3z",
+      m: (y) => "M12 " + y + "c0-2.6-1.8-3.9-4.5-3.9 0 2.6 1.8 3.9 4.5 3.9z",
+      b: (y) => "M12 " + y + "c0-3.1-2.2-4.7-5.5-4.7 0 3.1 2.2 4.7 5.5 4.7z",
+    };
+    const lfR = {
+      s: (y) => "M12 " + y + "c0-2 1.4-3 3.4-3 0 2-1.4 3-3.4 3z",
+      m: (y) => "M12 " + y + "c0-2.6 1.8-3.9 4.5-3.9 0 2.6-1.8 3.9-4.5 3.9z",
+      b: (y) => "M12 " + y + "c0-3.1 2.2-4.7 5.5-4.7 0 3.1-2.2 4.7-5.5 4.7z",
+    };
+    const glyph = (stage) => {
+      const g = {
+        d1: "M0 0", s1: "#2eb872", f1: "none",
+        d2: "M0 0", s2: "none", f2: "#3ecf8e",
+        d3: "M0 0", s3: "none", f3: "#2eb872",
+        d4: "M0 0", s4: "none", f4: "#fbbf24",
+        d5: "M0 0", s5: "none", f5: "#ffd166",
+      };
+      if (stage === 1) {
+        g.d1 = "M12 19.6c-1.7 0-2.9-1-2.9-2.5 0-1.7 1.3-3.1 2.9-3.1s2.9 1.4 2.9 3.1c0 1.5-1.2 2.5-2.9 2.5z";
+        g.f1 = "#a07850"; g.s1 = "none";
+        g.d2 = "M12 14v-1.4"; g.s2 = "#2eb872"; g.f2 = "none";
+        g.d3 = lfL.s(12.8); g.f3 = "#3ecf8e";
+      } else if (stage === 2) {
+        g.d1 = "M12 20v-4.6";
+        g.d2 = lfL.s(15.6); g.d3 = lfR.s(15.6);
+      } else if (stage === 3) {
+        g.d1 = "M12 20v-6.6";
+        g.d2 = lfL.m(15.4); g.d3 = lfR.m(13.6);
+      } else if (stage === 4) {
+        g.d1 = "M12 20v-9";
+        g.d2 = lfL.m(15.4); g.d3 = lfR.m(13.2);
+        g.d4 = lfL.s(11.2); g.f4 = "#7ddba9";
+      } else if (stage === 5) {
+        g.d1 = "M12 20V9";
+        g.d2 = lfL.b(15.6); g.d3 = lfR.m(12.6);
+        g.d4 = cir(12, 7.4, 2); g.s4 = "#f59e0b";
+      } else if (stage === 6) {
+        g.d1 = "M12 20V8.4";
+        g.d2 = lfL.b(15.8); g.d3 = lfR.b(13.4);
+        g.d4 = petals(12, 6.4, 2.1, 1.55);
+        g.d5 = cir(12, 6.4, 1.35); g.s5 = "#f59e0b";
+      } else if (stage === 7) {
+        g.d1 = "M12 20V7.6";
+        g.d2 = lfL.b(16); g.d3 = lfR.b(13.4);
+        g.d4 = petals(12, 5.8, 2.3, 1.7);
+        g.d5 = cir(12, 5.8, 1.5); g.s5 = "#f59e0b";
+      } else {
+        g.d1 = "M12 20V6.4";
+        g.d2 = lfL.b(16.4) + lfL.s(11.4);
+        g.d3 = lfR.b(14) + lfR.s(10);
+        g.d4 = petals(12, 5, 2.4, 1.8);
+        g.d5 = cir(12, 5, 1.6); g.s5 = "#f59e0b";
+      }
+      return g;
+    };
+
+    const thumbs = [1, 2, 3, 4, 5, 6, 7, 8].map((s, i) => Object.assign(glyph(s), {
+      ringL: i === 4 ? "0 0 0 3px #ffffff, 0 0 0 6px #6c5ce7" : "none",
+      ringD: i === 4 ? "0 0 0 3px #201b31, 0 0 0 6px #8b7cf7" : "none",
+    }));
+
+    const gp = "linear-gradient(135deg,#6c5ce7,#00cec9)";
+    const ga = "linear-gradient(135deg,#fbbf24,#6c5ce7)";
+    const gt = "linear-gradient(135deg,#00cec9,#2eb872)";
+    const gi = "linear-gradient(135deg,#4834d4,#6c5ce7)";
+    const feed = [
+      { n: "Maya", t: "watered RankKit", time: "2m", g: gp, init: "M" },
+      { n: "Leo", t: "hit Budding on Looply", time: "8m", g: ga, init: "L" },
+      { n: "Ana", t: "boosted PixelPay", time: "14m", g: gt, init: "A" },
+      { n: "Sam", t: "joined the garden", time: "21m", g: gi, init: "S" },
+      { n: "Rio", t: "watered Nestly", time: "33m", g: gp, init: "R" },
+      { n: "Priya", t: "commented on RankKit", time: "1h", g: ga, init: "P" },
+    ];
+
+    const em = { bbg: "#e7f8ef", bc: "#1d9d6b" };
+    const am = { bbg: "#fef3d7", bc: "#b45309" };
+    const row = (name, handle, badge, kind, hp, stage) => Object.assign(glyph(stage), {
+      name, handle, badge, bbg: kind.bbg, bc: kind.bc,
+      hw: hp + "%", hl: hp + "% health", pbg: "#eef0ff",
+    });
+    const rows = [
+      row("RankKit", "@maya", "Flowering", am, 80, 5),
+      row("Looply", "@leo", "Budding", am, 64, 4),
+      row("PixelPay", "@ana", "Thriving", em, 92, 7),
+      row("Nestly", "@rio", "Sprout", em, 41, 2),
+      {
+        name: "Fernbase", handle: "@kai", badge: "Wilting", bbg: "#fef3d7", bc: "#b45309",
+        hw: "18%", hl: "18% health", pbg: "#f6efe6",
+        d1: "M12 20c0-6-.5-9 4.5-10.5", s1: "#a07850", f1: "none",
+        d2: "M16 9.5c2.8 1.2 3.6 3.4 3.2 6-2.8-.4-4.3-2.8-3.2-6z", s2: "none", f2: "#c39a6b",
+        d3: "M0 0", s3: "none", f3: "none", d4: "M0 0", s4: "none", f4: "none",
+      },
+      {
+        name: "Quilljar", handle: "@noor", badge: "Regrowth", bbg: "#e7f8ef", bc: "#1d9d6b",
+        hw: "37%", hl: "37% health", pbg: "#f0eef7",
+        d1: "M12 20V8.5", s1: "#9a94ae", f1: "none",
+        d2: "M10 15.5l4-2.4", s2: "#7a7590", f2: "none",
+        d3: "M12 8.5c0-3.4 2.4-5 5.8-5 0 3.4-2.4 5-5.8 5z", s3: "none", f3: "#3ecf8e",
+        d4: "M0 0", s4: "none", f4: "none",
+      },
+      row("Mossly", "@tam", "Seedling", em, 22, 1),
+      row("Bloomdesk", "@ivy", "Full Bloom", em, 96, 8),
+    ];
+
+    const row2 = (name, lch, lbg, lrad, favs, fnames, planted, badge, kind, hp, waters, stage, quote, keeper) => Object.assign(glyph(stage), {
+      name, lch, lbg, lrad, favs, fnames, planted, badge, bbg: kind.bbg, bc: kind.bc,
+      hw: hp + "%", hl: hp + "% health", waters, quote, keeper, tbg: "#f4f2ff",
+    });
+    const fa = (init, g) => ({ init, g });
+    const rows2 = [
+      row2("RankKit", "R", "linear-gradient(135deg,#6c5ce7,#4834d4)", "22px", [fa("M", gp), fa("L", ga)], "Maya Chen & Leo Marsh", "Planted Mar 12", "Flowering", am, 80, 248, 5, "Helping indie makers climb the charts.", "Approved · Ines"),
+      row2("PixelPay", "P", "linear-gradient(135deg,#00cec9,#0a86a8)", "999px", [fa("A", gt), fa("S", gi), fa("P", ga)], "Ana, Sam & Priya", "Planted Jan 8", "Thriving", em, 92, 512, 7, "Tiny payments for tiny teams.", "Approved · Tom"),
+      row2("Looply", "L", "linear-gradient(135deg,#fbbf24,#f2762e)", "22px", [fa("T", ga)], "Theo Lang", "Planted Apr 2", "Budding", am, 64, 131, 4, "Habit loops that actually stick.", "Approved · Ines"),
+      Object.assign(row2("Fernbase", "F", "linear-gradient(135deg,#2eb872,#0f8f57)", "999px", [fa("K", gi), fa("J", gt)], "Kai Tanaka & Jun Ito", "Planted Feb 19", "Wilting", am, 18, 64, 2, "An open-source home for plant lovers.", "Approved · Tom"), {
+        tbg: "#f8f1e7",
+        d1: "M12 20c0-6-.5-9 4.5-10.5", s1: "#a07850", f1: "none",
+        d2: "M16 9.5c2.8 1.2 3.6 3.4 3.2 6-2.8-.4-4.3-2.8-3.2-6z", s2: "none", f2: "#c39a6b",
+        d3: "M0 0", s3: "none", f3: "none", d4: "M0 0", s4: "none", f4: "none", d5: "M0 0", s5: "none", f5: "none",
+      }),
+      Object.assign(row2("Quilljar", "Q", "linear-gradient(135deg,#4834d4,#2c1e9e)", "22px", [fa("N", gp)], "Noor Salem", "Planted Nov 30", "Regrowth", em, 37, 89, 2, "A cozy journal that writes back.", "Approved · Ines"), {
+        tbg: "#f1eff8",
+        d1: "M12 20V8.5", s1: "#9a94ae", f1: "none",
+        d2: "M10 15.5l4-2.4", s2: "#7a7590", f2: "none",
+        d3: "M12 8.5c0-3.4 2.4-5 5.8-5 0 3.4-2.4 5-5.8 5z", s3: "none", f3: "#3ecf8e",
+        d4: "M0 0", s4: "none", f4: "none", d5: "M0 0", s5: "none", f5: "none",
+      }),
+      row2("Bloomdesk", "B", "linear-gradient(135deg,#e84393,#6c5ce7)", "999px", [fa("I", gt), fa("R", gp)], "Ivy Park & Rio Vega", "Planted Oct 14", "Full Bloom", em, 96, 730, 8, "A support inbox with a heartbeat.", "Approved · Tom"),
+    ];
+
+    return {
+      healthPct: health,
+      rows2,
+      healthW: health + "%",
+      particleOpacity,
+      milestonesL, milestonesD, thumbs, feed, rows,
+    };
+  }
+}
+</script>
+</body>
+</html>
