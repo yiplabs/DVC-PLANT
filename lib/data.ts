@@ -244,7 +244,7 @@ export const activityFeed = [
   { name: "Priya", action: "commented on RankKit", time: "1h", gradient: G.amberPurple, initial: "P" },
 ];
 
-export type SubmissionStatus = "new" | "considering" | "planned" | "shipped";
+export type SubmissionStatus = "considering" | "planned" | "shipped";
 
 export type Submission = {
   id: number;
@@ -255,7 +255,8 @@ export type Submission = {
   text: string;
   upvotes: number;
   viewerUpvoted: boolean;
-  status: SubmissionStatus;
+  /** Founder-set; fresh submissions have no status chip yet */
+  status?: SubmissionStatus;
   founderReply?: string;
 };
 
@@ -304,7 +305,6 @@ export const submissions: Submission[] = [
     text: "Let us export the ranking table as CSV.",
     upvotes: 6,
     viewerUpvoted: false,
-    status: "new",
   },
   {
     id: 5,
@@ -326,7 +326,6 @@ export const submissions: Submission[] = [
     text: "I would like to see a public API for pulling my app's rank.",
     upvotes: 4,
     viewerUpvoted: false,
-    status: "new",
   },
 ];
 

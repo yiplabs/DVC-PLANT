@@ -30,7 +30,6 @@ export default function QuestsPage() {
           </div>
 
           <div className="quest-path">
-            <div className="quest-connector" />
             {quests.map((q) => (
               <div key={q.order} className="quest-row">
                 <div className="quest-node-col">

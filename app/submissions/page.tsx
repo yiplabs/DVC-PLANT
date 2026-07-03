@@ -8,14 +8,12 @@ type Filter = "all" | SubmissionStatus;
 
 const FILTERS: { key: Filter; label: string }[] = [
   { key: "all", label: "All" },
-  { key: "new", label: "New" },
   { key: "considering", label: "Considering" },
   { key: "planned", label: "Planned" },
   { key: "shipped", label: "Shipped" },
 ];
 
 const STATUS_TONE: Record<SubmissionStatus, string> = {
-  new: "tone-lavender",
   considering: "tone-amber",
   planned: "tone-emerald",
   shipped: "tone-teal",
@@ -51,7 +49,6 @@ export default function SubmissionsPage() {
         text,
         upvotes: 1,
         viewerUpvoted: true,
-        status: "new",
       },
       ...prev,
     ]);
@@ -113,7 +110,9 @@ export default function SubmissionsPage() {
                   <ChevronUpIcon />
                   {s.upvotes}
                 </button>
-                <span className={`status-chip ${STATUS_TONE[s.status]}`}>{s.status}</span>
+                {s.status && (
+                  <span className={`status-chip ${STATUS_TONE[s.status]}`}>{s.status}</span>
+                )}
               </div>
             </div>
           ))}

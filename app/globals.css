@@ -1534,19 +1534,6 @@ p {
   max-width: 980px;
 }
 
-.quest-connector {
-  position: absolute;
-  left: 34px;
-  top: 32px;
-  bottom: 32px;
-  width: 0;
-  border-left: 3px dashed #ddd8f2;
-}
-
-[data-theme="dark"] .quest-connector {
-  border-left-color: rgba(255, 255, 255, 0.1);
-}
-
 .quest-row {
   position: relative;
   display: flex;
@@ -1560,6 +1547,22 @@ p {
   display: flex;
   justify-content: center;
   padding-top: 24px;
+  position: relative;
+}
+
+/* Dashed connector runs node-center to node-center — never past the last node */
+.quest-row:not(:last-child) .quest-node-col::after {
+  content: "";
+  position: absolute;
+  left: 34.5px;
+  top: 52px;
+  bottom: -68px;
+  width: 0;
+  border-left: 3px dashed #ddd8f2;
+}
+
+[data-theme="dark"] .quest-row:not(:last-child) .quest-node-col::after {
+  border-left-color: rgba(255, 255, 255, 0.1);
 }
 
 .quest-node {
@@ -1570,6 +1573,8 @@ p {
   align-items: center;
   justify-content: center;
   flex: 0 0 auto;
+  position: relative;
+  z-index: 1;
 }
 
 .quest-node.done {
