@@ -48,8 +48,10 @@ obvious endpoint. Search the code for `HANDOFF NOTE` comments at each site.
 | Auth / roles | none — "you" are Maya (RankKit founder) everywhere | founder vs. keeper vs. gardener gating |
 
 The entity shapes in `lib/data.ts` (`Project`, `Submission`, `Quest`, lineup,
-replays) were written to match the design spec's suggested state model — they
-should survive contact with a real schema mostly unchanged.
+stream channel) were written to match the design spec's suggested state model —
+they should survive contact with a real schema mostly unchanged. Past pitch
+nights deliberately link out to the stream channel (`streamChannel` in
+`lib/data.ts`) rather than per-project recordings.
 
 ## Design system in one place
 

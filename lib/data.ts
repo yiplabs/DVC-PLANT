@@ -377,9 +377,11 @@ export const quests: {
   },
 ];
 
+// Lineup rows link to each project's Garden page via slug
 export const lineup = [
   {
     time: "7:05",
+    slug: "pixelpay",
     project: "PixelPay",
     initial: "P",
     gradient: "linear-gradient(135deg,#00cec9,#0a86a8)",
@@ -390,6 +392,7 @@ export const lineup = [
   },
   {
     time: "7:20",
+    slug: "looply",
     project: "Looply",
     initial: "L",
     gradient: "linear-gradient(135deg,#fbbf24,#f2762e)",
@@ -400,6 +403,7 @@ export const lineup = [
   },
   {
     time: "7:35",
+    slug: "quilljar",
     project: "Quilljar",
     initial: "Q",
     gradient: "linear-gradient(135deg,#4834d4,#2c1e9e)",
@@ -410,6 +414,7 @@ export const lineup = [
   },
   {
     time: "7:50",
+    slug: "rankkit",
     project: "RankKit",
     initial: "R",
     gradient: "linear-gradient(135deg,#6c5ce7,#4834d4)",
@@ -421,48 +426,12 @@ export const lineup = [
   },
 ];
 
-export const replays = [
-  {
-    number: 13,
-    project: "Looply",
-    initial: "L",
-    logoGradient: "linear-gradient(135deg,#fbbf24,#f2762e)",
-    logoRadius: "8px",
-    thumb: "linear-gradient(135deg,#fbbf24 0%,#e84393 60%,#6c5ce7 100%)",
-    duration: "14:02",
-    meta: "1.2k watched · 2 weeks ago",
-  },
-  {
-    number: 12,
-    project: "PixelPay",
-    initial: "P",
-    logoGradient: "linear-gradient(135deg,#00cec9,#0a86a8)",
-    logoRadius: "999px",
-    thumb: "linear-gradient(135deg,#00cec9 0%,#4834d4 70%)",
-    duration: "11:48",
-    meta: "980 watched · 4 weeks ago",
-  },
-  {
-    number: 11,
-    project: "Bloomdesk",
-    initial: "B",
-    logoGradient: "linear-gradient(135deg,#e84393,#6c5ce7)",
-    logoRadius: "999px",
-    thumb: "linear-gradient(135deg,#e84393 0%,#6c5ce7 65%,#00cec9 100%)",
-    duration: "16:20",
-    meta: "2.1k watched · 6 weeks ago",
-  },
-  {
-    number: 10,
-    project: "Quilljar",
-    initial: "Q",
-    logoGradient: "linear-gradient(135deg,#4834d4,#2c1e9e)",
-    logoRadius: "8px",
-    thumb: "linear-gradient(135deg,#4834d4 0%,#6c5ce7 55%,#fbbf24 130%)",
-    duration: "9:31",
-    meta: "760 watched · 2 months ago",
-  },
-];
+// HANDOFF NOTE: past pitch nights aren't recorded per-project — the Stage
+// page links to the community stream channel instead. Swap in the real URL.
+export const streamChannel = {
+  url: "https://twitch.tv/sproutlygarden",
+  handle: "twitch.tv/sproutlygarden",
+};
 
 export const keepers = [
   { name: "Ines", initial: "I", gradient: G.indigoPurple, approvals: "34 approvals this season" },

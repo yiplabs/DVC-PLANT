@@ -1,8 +1,10 @@
 "use client";
 
+import Link from "next/link";
 import { useEffect, useState } from "react";
 import { StageMascot } from "@/components/plants";
 import {
+  ArrowUpRightIcon,
   BellIcon,
   ChatIcon,
   CheckIcon,
@@ -12,7 +14,7 @@ import {
   StarIcon,
   VideoCamIcon,
 } from "@/components/icons";
-import { lineup, replays } from "@/lib/data";
+import { lineup, streamChannel } from "@/lib/data";
 
 const LINEUP_TONE = {
   confirmed: "tone-emerald",
@@ -229,8 +231,9 @@ export default function StagePage() {
           </div>
           <div className="lineup-list">
             {lineup.map((row) => (
-              <div
+              <Link
                 key={row.project}
+                href={`/garden/${row.slug}`}
                 className={`lineup-row${"mine" in row && row.mine ? " mine" : ""}${
                   "mine" in row && row.mine && requested ? " pulse" : ""
                 }`}
@@ -255,11 +258,11 @@ export default function StagePage() {
                   </div>
                 </div>
                 <span className={`status-chip ${LINEUP_TONE[row.status]}`}>{row.status}</span>
-              </div>
+              </Link>
             ))}
           </div>
           <div className="lineup-footer">
-            Hosts pick four pitches per stream — replays land on the project&apos;s garden page.
+            Hosts pick four pitches per stream — tap a project to visit its garden.
           </div>
         </div>
       </div>
@@ -267,32 +270,22 @@ export default function StagePage() {
       <div className="card-label" style={{ marginTop: 28 }}>
         Past pitch nights
       </div>
-      <div className="replay-grid">
-        {replays.map((r) => (
-          <div key={r.number} className="replay-card">
-            <div className="replay-thumb" style={{ background: r.thumb }}>
-              <span className="replay-play">
-                <PlayIcon size={16} fill="#6c5ce7" style={{ marginLeft: 2 }} />
-              </span>
-              <span className="replay-duration">{r.duration}</span>
-            </div>
-            <div className="replay-info">
-              <div
-                className="replay-logo"
-                style={{ background: r.logoGradient, borderRadius: r.logoRadius }}
-              >
-                {r.initial}
-              </div>
-              <div style={{ flex: 1, minWidth: 0 }}>
-                <div className="replay-title">
-                  Pitch night #{r.number} · {r.project}
-                </div>
-                <div className="replay-meta">{r.meta}</div>
-              </div>
-            </div>
-          </div>
-        ))}
-      </div>
+      {/* Streams aren't recorded per project — one big door to the channel */}
+      <a className="stream-cta" href={streamChannel.url} target="_blank" rel="noopener noreferrer">
+        <span className="stream-cta-play">
+          <PlayIcon size={20} fill="#6c5ce7" style={{ marginLeft: 2 }} />
+        </span>
+        <span style={{ flex: 1, minWidth: 0 }}>
+          <span className="stream-cta-title">Watch past pitch nights on the stream</span>
+          <span className="stream-cta-sub">
+            Every pitch night is streamed live and lives on our channel — replays, Q&amp;As, all of it.
+          </span>
+        </span>
+        <span className="stream-cta-chip">
+          {streamChannel.handle}
+          <ArrowUpRightIcon size={12} />
+        </span>
+      </a>
     </main>
   );
 }
