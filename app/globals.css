@@ -2595,6 +2595,333 @@ a.pdf-row:hover .pdf-download {
   color: var(--faint);
 }
 
+/* ---------- Modals (lesson player, review & approve) ---------- */
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  background: rgba(20, 17, 31, 0.55);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  animation: overlay-in 150ms ease;
+}
+
+@keyframes overlay-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.modal-card {
+  width: 480px;
+  max-width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  background: var(--card);
+  border: 1px solid var(--hairline);
+  border-radius: 24px;
+  padding: 24px;
+  box-shadow: 0 30px 80px rgba(20, 17, 31, 0.35);
+  position: relative;
+  animation: modal-pop 200ms ease;
+}
+
+@keyframes modal-pop {
+  from {
+    opacity: 0;
+    transform: translateY(10px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.modal-close {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: 32px;
+  height: 32px;
+  border-radius: 999px;
+  background: var(--lavender);
+  color: var(--chip-purple-text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 150ms ease;
+}
+
+.modal-close:hover {
+  background: var(--lavender-hover);
+}
+
+.modal-card .video-tile {
+  margin-top: 16px;
+}
+
+.lesson-list {
+  margin-top: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.lesson-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 12px;
+  border-radius: 14px;
+  border: 1.5px solid transparent;
+}
+
+.lesson-row.active {
+  background: var(--wash);
+  border-color: var(--wash-border);
+}
+
+.lesson-index {
+  width: 24px;
+  height: 24px;
+  flex: 0 0 24px;
+  border-radius: 999px;
+  background: var(--lavender);
+  color: var(--chip-purple-text);
+  font-size: 11px;
+  font-weight: 900;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lesson-index.done {
+  background: var(--purple);
+  color: #ffffff;
+}
+
+.lesson-name {
+  flex: 1;
+  min-width: 0;
+  font-size: 13.5px;
+  font-weight: 800;
+  color: var(--ink);
+}
+
+.lesson-row.todo .lesson-name {
+  color: var(--secondary);
+}
+
+.lesson-dur {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--faint);
+}
+
+.review-plant-row {
+  margin-top: 14px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--secondary);
+}
+
+.review-plant-row b {
+  color: var(--amber-text);
+}
+
+/* ---------- Quests: level card, sparks, cheer ---------- */
+
+.level-card {
+  padding: 18px 20px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  box-shadow: var(--card-shadow-lg);
+}
+
+.level-title {
+  margin-top: 3px;
+  font-weight: 900;
+  font-size: 19px;
+  color: var(--ink);
+}
+
+.level-caption {
+  margin-top: 6px;
+  font-size: 11px;
+  font-weight: 800;
+  color: var(--faint);
+}
+
+.quest-card {
+  position: relative;
+}
+
+.quest-sparks {
+  position: absolute;
+  right: 90px;
+  top: 50%;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+}
+
+.cheer {
+  flex: 0 0 auto;
+  margin-top: 190px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  width: 210px;
+}
+
+.cheer-bubble {
+  background: var(--card);
+  border: 1px solid var(--hairline);
+  border-radius: 18px;
+  padding: 12px 16px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--body-text);
+  line-height: 1.45;
+  box-shadow: var(--card-shadow-sm);
+  text-align: center;
+  position: relative;
+}
+
+.cheer-bubble::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -6px;
+  width: 12px;
+  height: 12px;
+  background: var(--card);
+  border-right: 1px solid var(--hairline);
+  border-bottom: 1px solid var(--hairline);
+  transform: translateX(-50%) rotate(45deg);
+}
+
+@media (max-width: 1500px) {
+  .cheer {
+    display: none;
+  }
+}
+
+/* ---------- Directory: pulse, sort, hover life ---------- */
+
+.pulse-row {
+  margin-top: 12px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.pulse-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 12.5px;
+  font-weight: 800;
+  color: var(--secondary);
+}
+
+.pulse-item .mini-avatar {
+  margin-left: -6px;
+}
+
+.sort-row {
+  margin-top: 9px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 7px;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--faint);
+}
+
+.sort-pill {
+  background: var(--card);
+  border: 1px solid var(--border);
+  color: var(--secondary);
+  font-weight: 800;
+  font-size: 12px;
+  border-radius: 999px;
+  padding: 6px 13px;
+  letter-spacing: 0;
+  text-transform: none;
+  transition: background 150ms ease, color 150ms ease;
+}
+
+.sort-pill:hover {
+  background: var(--lavender);
+}
+
+.sort-pill.active {
+  background: var(--purple);
+  border-color: var(--purple);
+  color: #ffffff;
+}
+
+.project-card {
+  position: relative;
+  transition: transform 150ms ease, box-shadow 150ms ease;
+}
+
+.project-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--card-shadow-lg);
+}
+
+.plant-tile svg {
+  transform-origin: 50% 88%;
+}
+
+.project-card:hover .plant-tile svg {
+  animation: plant-sway 800ms ease;
+}
+
+@keyframes plant-sway {
+  0% {
+    transform: rotate(0deg);
+  }
+  30% {
+    transform: rotate(-5deg);
+  }
+  65% {
+    transform: rotate(4deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.card-sparks {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 0;
+  height: 0;
+  z-index: 2;
+  pointer-events: none;
+}
+
 /* ---------- Settings ---------- */
 
 .settings-main {
@@ -2694,6 +3021,8 @@ a.pdf-row:hover .pdf-download {
   }
   * {
     transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
   }
 }
 

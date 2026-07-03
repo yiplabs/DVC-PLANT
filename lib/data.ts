@@ -25,6 +25,8 @@ export type Project = {
   founderNames: string;
   founderHandle: string;
   planted: string;
+  /** ISO date used by the "Newest" sort */
+  plantedAt: string;
   stageName: string;
   badgeTone: "amber" | "emerald";
   plant: PlantKind;
@@ -61,6 +63,7 @@ export const projects: Project[] = [
     founderNames: "Maya Chen & Leo Marsh",
     founderHandle: "@maya",
     planted: "Planted Mar 12",
+    plantedAt: "2026-03-12",
     stageName: "Flowering",
     badgeTone: "amber",
     plant: 5,
@@ -93,6 +96,7 @@ export const projects: Project[] = [
     founderNames: "Ana, Sam & Priya",
     founderHandle: "@ana",
     planted: "Planted Jan 8",
+    plantedAt: "2026-01-08",
     stageName: "Thriving",
     badgeTone: "emerald",
     plant: 7,
@@ -119,6 +123,7 @@ export const projects: Project[] = [
     founderNames: "Theo Lang",
     founderHandle: "@leo",
     planted: "Planted Apr 2",
+    plantedAt: "2026-04-02",
     stageName: "Budding",
     badgeTone: "amber",
     plant: 4,
@@ -148,6 +153,7 @@ export const projects: Project[] = [
     founderNames: "Kai Tanaka & Jun Ito",
     founderHandle: "@kai",
     planted: "Planted Feb 19",
+    plantedAt: "2026-02-19",
     stageName: "Wilting",
     badgeTone: "amber",
     plant: "wilted",
@@ -173,6 +179,7 @@ export const projects: Project[] = [
     founderNames: "Noor Salem",
     founderHandle: "@noor",
     planted: "Planted Nov 30",
+    plantedAt: "2025-11-30",
     stageName: "Regrowth",
     badgeTone: "emerald",
     plant: "regrowth",
@@ -201,6 +208,7 @@ export const projects: Project[] = [
     founderNames: "Ivy Park & Rio Vega",
     founderHandle: "@ivy",
     planted: "Planted Oct 14",
+    plantedAt: "2025-10-14",
     stageName: "Full Bloom",
     badgeTone: "emerald",
     plant: 8,
