@@ -1664,6 +1664,12 @@ p {
   color: var(--muted);
 }
 
+.quest-node.add {
+  background: transparent;
+  border: 2.5px dashed var(--wash-border);
+  color: var(--muted);
+}
+
 .quest-card {
   flex: 1;
   background: var(--card);
@@ -1690,6 +1696,14 @@ p {
   background: var(--locked-card-bg);
   border-color: var(--locked-card-border);
   box-shadow: none;
+}
+
+/* The "add to your roadmap" slot at the end of the path */
+.quest-card.add-quest {
+  background: transparent;
+  border: 2px dashed var(--field-border);
+  box-shadow: none;
+  gap: 10px;
 }
 
 .quest-kicker {

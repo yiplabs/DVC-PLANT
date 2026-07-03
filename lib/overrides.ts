@@ -17,10 +17,13 @@ export type ProjectOverrides = {
   /** null = video explicitly removed; undefined = never set */
   videoId?: string | null;
   links?: ProjectLink[];
-  /** Growth tier 1–8, set by filling in milestones in the admin panel */
+  /** Growth tier 1–8 — set by filling in milestones in /admin, and bumped
+   *  by one every time a quest on the roadmap is completed */
   stage?: number;
   /** The team — projects can have any number of founders */
   founders?: Founder[];
+  /** Founder-added roadmap quests (the three curated quests stay fixed) */
+  customQuests?: { title: string; xp: number }[];
 };
 
 const key = (slug: string) => `sproutly-project-${slug}`;

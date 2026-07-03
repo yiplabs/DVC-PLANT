@@ -53,6 +53,30 @@ they should survive contact with a real schema mostly unchanged. Past pitch
 nights deliberately link out to the stream channel (`streamChannel` in
 `lib/data.ts`) rather than per-project recordings.
 
+## Roles — who sees what
+
+The prototype has no auth, so everything is visible to everyone. In production
+these surfaces must be gated:
+
+- **Gardener (default, no project):** browse, water, upvote, submit requests,
+  watch streams. That's it.
+- **Founder (actually building/added a project):** additionally gets
+  `/admin` (edit project, team, links, video, milestones), the **"Request a
+  spot" card on Stage**, the **Garden backdrop drop-zone**, and
+  **adding/removing their own roadmap quests**. If someone isn't genuinely
+  building something, none of these should render.
+- **Keeper (garden admin):** the approval queue (directory banner + admin
+  Keeper-zone card), submission status triage, stage lineup confirmations.
+
+## Quests = an editable roadmap, linked to the plant
+
+The three curated quests (course + PDF) are fixed; founders append their own
+quests at the end of the path (`overrides.customQuests`). Completing **any**
+quest advances the plant one milestone (`overrides.stage`), which is what the
+Garden page renders — so roadmap progress and plant growth stay visibly
+linked. Milestones can also be set by hand in `/admin` (keeper-verified in
+the real product).
+
 ## Design system in one place
 
 `app/globals.css` starts with two token blocks (`:root` light, `[data-theme="dark"]`

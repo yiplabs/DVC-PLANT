@@ -142,8 +142,13 @@ export default function StagePage() {
       </div>
 
       <div className="stage-grid">
+        {/* HANDOFF NOTE: founders only — this whole card should be hidden for
+            gardeners without a project of their own. */}
         <div className="card request-card">
           <div className="card-label">Request a spot</div>
+          <p className="page-sub" style={{ fontSize: 12.5, marginTop: 8 }}>
+            For founders — you pitch your own plant.
+          </p>
 
           <div className="field-label" style={{ marginTop: 16 }}>
             Your project

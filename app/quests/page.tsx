@@ -1,22 +1,60 @@
 "use client";
 
-import { useState } from "react";
-import { PotMascot } from "@/components/plants";
+// Quests = the project's roadmap.
+//
+// HANDOFF NOTE: the three curated quests come with a course + PDF; founders
+// can append their own roadmap quests (persisted as overrides.customQuests).
+// Completing any quest advances the plant one milestone (overrides.stage), so
+// the roadmap and the garden plant stay visibly linked. Milestones can also
+// be set by hand in /admin. Founder-only bits (adding/removing quests) need
+// role gating once auth exists.
+
+import { useEffect, useState } from "react";
+import Link from "next/link";
+import { PotMascot, TIER_NAMES, type HeroStage } from "@/components/plants";
 import {
   CheckIcon,
   DocIcon,
   DownloadIcon,
   LockIcon,
   PlayIcon,
+  PlusIcon,
   StarIcon,
   TargetIcon,
   XSocialIcon,
 } from "@/components/icons";
-import { quests, type QuestState } from "@/lib/data";
+import { milestoneLabels, quests, type QuestState } from "@/lib/data";
+import { loadOverrides, saveOverrides } from "@/lib/overrides";
 
+const SLUG = "rankkit"; // the signed-in founder's project (mock)
 const XP_PER_LEVEL = 120;
 const BASE_LEVEL = 5;
-const BASE_XP_INTO_LEVEL = 0; // level 5 starts fresh; quest XP fills the ring
+const CUSTOM_QUEST_XP = 40;
+
+type RoadmapQuest = {
+  title: string;
+  description?: string;
+  courseMinutes?: number;
+  pdfName?: string;
+  xp: number;
+  /** curated quests carry their course/lesson id; founder quests don't */
+  courseId?: number;
+  custom?: boolean;
+};
+
+type RoadmapItem = { quest: RoadmapQuest; state: QuestState };
+
+const BASE_ITEMS: RoadmapItem[] = quests.map((q) => ({
+  quest: {
+    title: q.title,
+    description: q.description,
+    courseMinutes: q.courseMinutes,
+    pdfName: q.pdfName,
+    xp: q.xp,
+    courseId: q.order,
+  },
+  state: q.state,
+}));
 
 const LESSONS: Record<number, { name: string; dur: string; progress: number }[]> = {
   1: [
@@ -45,6 +83,19 @@ const SPARK_VECTORS = [
   [-52, -12],
   [54, -16],
 ];
+
+/** Keep the chain honest: done stays done, first open quest is active, rest locked */
+function normalize(items: RoadmapItem[]): RoadmapItem[] {
+  let activeAssigned = false;
+  return items.map((it) => {
+    if (it.state === "done") return it;
+    if (!activeAssigned) {
+      activeAssigned = true;
+      return { ...it, state: "active" as QuestState };
+    }
+    return { ...it, state: "locked" as QuestState };
+  });
+}
 
 function LevelRing({ level, progress }: { level: number; progress: number }) {
   const r = 26;
@@ -87,37 +138,87 @@ function LevelRing({ level, progress }: { level: number; progress: number }) {
 }
 
 export default function QuestsPage() {
-  const [states, setStates] = useState<QuestState[]>(quests.map((q) => q.state));
+  const [items, setItems] = useState<RoadmapItem[]>(BASE_ITEMS);
+  const [plantStage, setPlantStage] = useState<number>(5);
   const [sparkQuest, setSparkQuest] = useState<number | null>(null);
   const [lessonQuest, setLessonQuest] = useState<number | null>(null);
+  const [newQuest, setNewQuest] = useState("");
 
-  const done = states.filter((s) => s === "done").length;
-  const xpEarned = quests.reduce((sum, q, i) => (states[i] === "done" ? sum + q.xp : sum), 0);
-  const totalXp = BASE_XP_INTO_LEVEL + xpEarned;
-  const level = BASE_LEVEL + Math.floor(totalXp / XP_PER_LEVEL);
-  const xpInto = totalXp % XP_PER_LEVEL;
-  const remaining = quests.length - done;
+  useEffect(() => {
+    const o = loadOverrides(SLUG);
+    if (o.stage) setPlantStage(Math.min(8, Math.max(1, Math.round(o.stage))));
+    if (o.customQuests?.length) {
+      setItems(
+        normalize([
+          ...BASE_ITEMS,
+          ...o.customQuests.map((c) => ({
+            quest: { title: c.title, xp: c.xp, custom: true },
+            state: "locked" as QuestState,
+          })),
+        ]),
+      );
+    }
+  }, []);
+
+  const done = items.filter((it) => it.state === "done").length;
+  const xpEarned = items.reduce((sum, it) => (it.state === "done" ? sum + it.quest.xp : sum), 0);
+  const level = BASE_LEVEL + Math.floor(xpEarned / XP_PER_LEVEL);
+  const xpInto = xpEarned % XP_PER_LEVEL;
+  const remaining = items.length - done;
 
   const cheer =
     remaining === 0
-      ? "RankKit is launch-ready — go pitch it on stream!"
+      ? "The roadmap is done — RankKit is launch-ready, go pitch it on stream!"
       : remaining === 1
         ? "One more quest and RankKit is launch-ready!"
-        : "Two quests between RankKit and launch day — steady grows it.";
+        : `${remaining} quests between RankKit and launch day — steady grows it.`;
+
+  const persistCustoms = (next: RoadmapItem[]) => {
+    saveOverrides(SLUG, {
+      customQuests: next
+        .filter((it) => it.quest.custom)
+        .map((it) => ({ title: it.quest.title, xp: it.quest.xp })),
+    });
+  };
 
   const completeQuest = (index: number) => {
-    setStates((prev) => {
-      const next = [...prev];
-      next[index] = "done";
-      if (index + 1 < next.length && next[index + 1] === "locked") next[index + 1] = "active";
+    setItems((prev) =>
+      normalize(prev.map((it, i) => (i === index ? { ...it, state: "done" as QuestState } : it))),
+    );
+    // Completing a roadmap quest grows the plant one milestone
+    setPlantStage((s) => {
+      const next = Math.min(7, s + 1);
+      saveOverrides(SLUG, { stage: next });
       return next;
     });
     setSparkQuest(index);
     setTimeout(() => setSparkQuest(null), 800);
   };
 
-  const openLesson = lessonQuest !== null ? quests[lessonQuest] : null;
-  const openLessons = openLesson ? LESSONS[openLesson.order] : [];
+  const addQuest = () => {
+    const title = newQuest.trim();
+    if (!title) return;
+    setItems((prev) => {
+      const next = normalize([
+        ...prev,
+        { quest: { title, xp: CUSTOM_QUEST_XP, custom: true }, state: "locked" as QuestState },
+      ]);
+      persistCustoms(next);
+      return next;
+    });
+    setNewQuest("");
+  };
+
+  const removeQuest = (index: number) => {
+    setItems((prev) => {
+      const next = normalize(prev.filter((_, i) => i !== index));
+      persistCustoms(next);
+      return next;
+    });
+  };
+
+  const openItem = lessonQuest !== null ? items[lessonQuest] : null;
+  const openLessons = openItem?.quest.courseId ? LESSONS[openItem.quest.courseId] : [];
   const courseProgress = openLessons.length
     ? Math.round(openLessons.reduce((s, l) => s + l.progress, 0) / openLessons.length)
     : 0;
@@ -131,10 +232,10 @@ export default function QuestsPage() {
             <h1 className="page-h1">Grow your project</h1>
             <div style={{ marginTop: 12, display: "flex", alignItems: "center", gap: 10, flexWrap: "wrap" }}>
               <p style={{ margin: 0, fontSize: 15, fontWeight: 700, color: "var(--secondary)" }}>
-                Three quests to get RankKit out the door — each one comes with a mini course and a PDF guide.
+                Your roadmap to launch — every quest you finish grows the plant one milestone.
               </p>
               <span className="status-chip tone-lavender" style={{ fontSize: 12, padding: "6px 13px", textTransform: "none", letterSpacing: 0 }}>
-                {done} of 3 complete
+                {done} of {items.length} complete
               </span>
               <span className="status-chip tone-amber" style={{ fontSize: 12, padding: "6px 13px", textTransform: "none", letterSpacing: 0 }}>
                 +{xpEarned} XP earned
@@ -142,10 +243,11 @@ export default function QuestsPage() {
             </div>
 
             <div className="quest-path">
-              {quests.map((q, i) => {
-                const state = states[i];
+              {items.map((it, i) => {
+                const q = it.quest;
+                const state = it.state;
                 return (
-                  <div key={q.order} className="quest-row">
+                  <div key={`${q.title}-${i}`} className="quest-row">
                     <div className="quest-node-col">
                       <div className={`quest-node ${state}`}>
                         {state === "done" && <CheckIcon size={24} strokeWidth={3.4} />}
@@ -169,38 +271,47 @@ export default function QuestsPage() {
                       )}
                       <div style={{ flex: 1, minWidth: 0 }}>
                         <div className={`quest-kicker ${state}`}>
-                          Quest {q.order}
+                          Quest {i + 1}
+                          {q.custom && " · Yours"}
                           {state === "active" && " · In progress"}
                         </div>
                         <div className={`quest-title ${state}`}>{q.title}</div>
-                        <p className={`quest-desc ${state}`}>{q.description}</p>
+                        {q.description && <p className={`quest-desc ${state}`}>{q.description}</p>}
                         <div className="quest-chips">
-                          {state === "locked" ? (
-                            <span className="quest-chip locked">
-                              <PlayIcon size={11} />
-                              {q.courseMinutes}-min course
-                            </span>
-                          ) : (
-                            <button className="quest-chip course" onClick={() => setLessonQuest(i)}>
-                              <PlayIcon size={11} />
-                              {q.courseMinutes}-min course
-                            </button>
+                          {q.courseId && (
+                            state === "locked" ? (
+                              <span className="quest-chip locked">
+                                <PlayIcon size={11} />
+                                {q.courseMinutes}-min course
+                              </span>
+                            ) : (
+                              <button className="quest-chip course" onClick={() => setLessonQuest(i)}>
+                                <PlayIcon size={11} />
+                                {q.courseMinutes}-min course
+                              </button>
+                            )
                           )}
-                          {state === "locked" ? (
-                            <span className="quest-chip locked">
-                              <DocIcon size={12} />
-                              {q.pdfName}
+                          {q.pdfName &&
+                            (state === "locked" ? (
+                              <span className="quest-chip locked">
+                                <DocIcon size={12} />
+                                {q.pdfName}
+                              </span>
+                            ) : (
+                              <a
+                                className="quest-chip pdf"
+                                href={`/guides/${q.pdfName}`}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                              >
+                                <DocIcon size={12} />
+                                {q.pdfName}
+                              </a>
+                            ))}
+                          {q.custom && (
+                            <span className={`quest-chip ${state === "locked" ? "locked" : "course"}`}>
+                              Your roadmap
                             </span>
-                          ) : (
-                            <a
-                              className="quest-chip pdf"
-                              href={`/guides/${q.pdfName}`}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                            >
-                              <DocIcon size={12} />
-                              {q.pdfName}
-                            </a>
                           )}
                           <span className={`quest-chip ${state === "locked" ? "locked" : "xp"}`}>
                             +{q.xp} XP
@@ -216,13 +327,44 @@ export default function QuestsPage() {
                       {state === "locked" && (
                         <span className="quest-locked-chip">
                           <LockIcon size={13} />
-                          Finish quest {q.order - 1} first
+                          Finish quest {i} first
                         </span>
+                      )}
+                      {q.custom && (
+                        <button
+                          className="row-icon-btn danger"
+                          aria-label={`Remove ${q.title}`}
+                          onClick={() => removeQuest(i)}
+                        >
+                          <XSocialIcon size={11} />
+                        </button>
                       )}
                     </div>
                   </div>
                 );
               })}
+
+              {/* Founders extend the roadmap with their own quests */}
+              <div className="quest-row">
+                <div className="quest-node-col">
+                  <div className="quest-node add">
+                    <PlusIcon size={20} />
+                  </div>
+                </div>
+                <div className="quest-card add-quest">
+                  <input
+                    className="text-input"
+                    style={{ marginTop: 0 }}
+                    placeholder="Add to your roadmap — e.g. Interview five gardeners"
+                    value={newQuest}
+                    onChange={(e) => setNewQuest(e.target.value)}
+                    onKeyDown={(e) => e.key === "Enter" && addQuest()}
+                  />
+                  <button className="btn-lavender" style={{ whiteSpace: "nowrap", fontWeight: 900 }} onClick={addQuest}>
+                    Add quest
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -246,6 +388,33 @@ export default function QuestsPage() {
               {XP_PER_LEVEL - xpInto} XP to Level {level + 1}
             </div>
           </div>
+        </div>
+
+        <div className="card rail-milestones">
+          <div className="card-label">
+            Plant milestones · <span style={{ color: "var(--stage-name-text)" }}>{TIER_NAMES[Math.min(8, plantStage) as HeroStage]}</span>
+          </div>
+          <div className="rail-milestone-track">
+            <div className="rail-milestone-line" />
+            {milestoneLabels.map((label, i) => {
+              const state = i < plantStage - 1 ? "done" : i === plantStage - 1 ? "current" : "upcoming";
+              return (
+                <div key={label} className="rail-milestone-row">
+                  <div className={`milestone-node small ${state}`}>
+                    {state === "done" && <CheckIcon size={11} />}
+                    {state === "current" && <i />}
+                  </div>
+                  <span className={`rail-milestone-label ${state}`}>{label}</span>
+                </div>
+              );
+            })}
+          </div>
+          <div className="composer-note" style={{ textAlign: "left", marginTop: 8 }}>
+            Each finished quest grows the plant one milestone.
+          </div>
+          <Link href="/admin" className="btn-visit" style={{ display: "inline-block", marginTop: 10 }}>
+            Adjust in Admin panel
+          </Link>
         </div>
 
         <div className="card learning-card">
@@ -288,17 +457,17 @@ export default function QuestsPage() {
         </a>
       </aside>
 
-      {openLesson && (
+      {openItem && openItem.quest.courseId && (
         <div className="modal-overlay" onClick={() => setLessonQuest(null)}>
           <div className="modal-card" onClick={(e) => e.stopPropagation()}>
             <button className="modal-close" aria-label="Close" onClick={() => setLessonQuest(null)}>
               <XSocialIcon size={12} />
             </button>
             <div className="card-label">
-              Quest {openLesson.order} · {openLesson.courseMinutes}-min course
+              {openItem.quest.courseMinutes}-min course
             </div>
             <div style={{ marginTop: 4, fontWeight: 900, fontSize: 20, color: "var(--ink)" }}>
-              {openLesson.title}
+              {openItem.quest.title}
             </div>
             <div className="lesson-meta">with keeper Ines</div>
             <div className="video-tile" style={{ height: 180 }}>

@@ -283,6 +283,14 @@ export function VideoCamIcon({ size, ...props }: IconProps) {
   );
 }
 
+export function PlusIcon({ size, ...props }: IconProps) {
+  return (
+    <svg {...base(size, 18)} fill="none" stroke="currentColor" strokeWidth={2.6} strokeLinecap="round" {...props}>
+      <path d="M12 5v14M5 12h14" />
+    </svg>
+  );
+}
+
 export function SlidersIcon({ size, ...props }: IconProps) {
   return (
     <svg {...base(size, 19)} fill="none" stroke="currentColor" strokeWidth={2.2} strokeLinecap="round" {...props}>
