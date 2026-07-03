@@ -39,7 +39,7 @@ obvious endpoint. Search the code for `HANDOFF NOTE` comments at each site.
 | Feature | Today (mock) | Needs |
 | --- | --- | --- |
 | Water (community vote) | local state in `GardenStage.tsx` | POST water + daily rate limit per user |
-| Project edits (name, pitch, links, video) | `lib/overrides.ts` → localStorage | PATCH /projects/:slug (admin panel + Garden page both read it) |
+| Project edits (name, pitch, links, video, team, milestones) | `lib/overrides.ts` → localStorage | PATCH /projects/:slug (admin panel + Garden page both read it) |
 | Backdrop upload | FileReader data-URL, not persisted | image upload → `backdropUrl` field |
 | Submissions + upvotes + statuses | local state in `submissions/page.tsx` | CRUD + one-vote-per-user toggle |
 | Quest completion + XP/level | local state in `quests/page.tsx` | server-driven progression |

@@ -9,7 +9,7 @@
 // (PATCH /projects/:slug) and delete this file — the shapes below map 1:1
 // onto the Project entity in lib/data.ts.
 
-import type { ProjectLink } from "@/lib/data";
+import type { Founder, ProjectLink } from "@/lib/data";
 
 export type ProjectOverrides = {
   name?: string;
@@ -17,6 +17,10 @@ export type ProjectOverrides = {
   /** null = video explicitly removed; undefined = never set */
   videoId?: string | null;
   links?: ProjectLink[];
+  /** Growth tier 1–8, set by filling in milestones in the admin panel */
+  stage?: number;
+  /** The team — projects can have any number of founders */
+  founders?: Founder[];
 };
 
 const key = (slug: string) => `sproutly-project-${slug}`;

@@ -22,6 +22,7 @@ import {
 import {
   activityFeed,
   milestoneLabels,
+  type Founder,
   type LinkKind,
   type PlantKind,
   type Project,
@@ -46,6 +47,13 @@ function stageIndex(plant: PlantKind): HeroStage {
   return plant;
 }
 
+function joinFirstNames(founders: Founder[]): string {
+  const names = founders.map((f) => f.name.split(" ")[0]);
+  if (names.length <= 1) return names[0] ?? "";
+  if (names.length === 2) return `${names[0]} & ${names[1]}`;
+  return `${names.slice(0, -1).join(", ")} & ${names[names.length - 1]}`;
+}
+
 export function GardenStage({ project }: { project: Project }) {
   const { theme, particles } = useTheme();
   const dark = theme === "dark";
@@ -63,6 +71,7 @@ export function GardenStage({ project }: { project: Project }) {
   // in production they're just fields on the Project entity.
   const [name, setName] = useState(project.name);
   const [links, setLinks] = useState<ProjectLink[]>(project.links);
+  const [founders, setFounders] = useState<Founder[]>(project.founders);
   const [videoId, setVideoId] = useState<string | null>(null);
   const fileInput = useRef<HTMLInputElement>(null);
   const dropletId = useRef(0);
@@ -71,7 +80,9 @@ export function GardenStage({ project }: { project: Project }) {
     const o = loadOverrides(project.slug);
     if (o.name) setName(o.name);
     if (o.links) setLinks(o.links);
+    if (o.founders?.length) setFounders(o.founders);
     if (o.videoId) setVideoId(o.videoId);
+    if (o.stage) setStage(Math.min(8, Math.max(1, Math.round(o.stage))) as HeroStage);
   }, [project.slug]);
 
   const currentMilestone = Math.min(stage - 1, 6);
@@ -129,15 +140,21 @@ export function GardenStage({ project }: { project: Project }) {
         <div className="stage-center">
           <div className="micro-label">Project</div>
           <h1 className="stage-hero-name">{name}</h1>
+          {/* Every founder on the team is shown — the roster is edited in /admin */}
           <div className="founder-chip">
-            <div
-              className="mini-avatar"
-              style={{ background: "linear-gradient(135deg,#6c5ce7,#00cec9)", border: "none", fontSize: 12 }}
-            >
-              {project.founders[0].initial}
+            <div className="avatar-stack">
+              {founders.slice(0, 4).map((f) => (
+                <div
+                  key={f.name}
+                  className="mini-avatar"
+                  style={{ background: f.gradient, fontSize: 11 }}
+                >
+                  {f.initial}
+                </div>
+              ))}
             </div>
             <span>
-              {project.founderHandle} · Founder
+              {joinFirstNames(founders)} · {founders.length > 1 ? "Founders" : "Founder"}
             </span>
           </div>
           <HeroPlant stage={stage} dark={dark} particles={particles} />

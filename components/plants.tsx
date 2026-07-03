@@ -154,6 +154,27 @@ function LeafSmallR({ t }: { t?: string }) {
   return <path d={SMALL_R} transform={t} fill="#2eb872" stroke="#219660" strokeWidth={4.5} strokeLinejoin="round" />;
 }
 
+/** Side branch blossom: an amber bud at tier 7, a mini bloom at full bloom */
+function SideBloom({ x, y, bloom }: { x: number; y: number; bloom: boolean }) {
+  if (!bloom) {
+    return (
+      <g>
+        <circle cx={x} cy={y} r={8.5} fill="#fbbf24" stroke="#f59e0b" strokeWidth={3} />
+        <circle cx={x} cy={y} r={3.2} fill="#ffd166" />
+      </g>
+    );
+  }
+  return (
+    <g>
+      <circle cx={x} cy={y - 8} r={6} fill="#fbbf24" stroke="#f59e0b" strokeWidth={2.5} />
+      <circle cx={x + 8} cy={y} r={6} fill="#fbbf24" stroke="#f59e0b" strokeWidth={2.5} />
+      <circle cx={x} cy={y + 8} r={6} fill="#fbbf24" stroke="#f59e0b" strokeWidth={2.5} />
+      <circle cx={x - 8} cy={y} r={6} fill="#fbbf24" stroke="#f59e0b" strokeWidth={2.5} />
+      <circle cx={x} cy={y} r={5.5} fill="#ffd166" stroke="#f59e0b" strokeWidth={2.5} />
+    </g>
+  );
+}
+
 function Flower({ scale = 1 }: { scale?: number }) {
   return (
     <g transform={pin(scale, 150, 116, 150, 116)}>
@@ -279,19 +300,30 @@ export function HeroPlant({
           <LeafBigR />
           <LeafSmallL />
           <LeafSmallR />
+          <Flower scale={stage === 5 ? 1 : stage === 6 ? 1.04 : stage === 7 ? 1.12 : 1.24} />
+          {/* Tiers 7–8 grow side branches instead of extra leaves — buds first,
+              then mini blooms at full bloom. Drawn after the flower so they
+              stay visible, spread wide of its petals. */}
           {stage >= 7 && (
             <g>
-              <LeafSmallL t={pin(0.75, 148, 268, 148, 234)} />
-              <LeafSmallR t={pin(0.75, 152, 262, 152, 226)} />
+              <path
+                d="M147 194c-12-8-26-20-38-36"
+                fill="none"
+                stroke="#2eb872"
+                strokeWidth={5.5}
+                strokeLinecap="round"
+              />
+              <path
+                d="M153 172c14-6 29-17 44-36"
+                fill="none"
+                stroke="#2eb872"
+                strokeWidth={5.5}
+                strokeLinecap="round"
+              />
+              <SideBloom x={106} y={154} bloom={stage === 8} />
+              <SideBloom x={199} y={132} bloom={stage === 8} />
             </g>
           )}
-          {stage === 8 && (
-            <g>
-              <LeafBigL t={pin(0.55, 147, 240, 148, 204)} />
-              <LeafBigR t={pin(0.55, 152, 206, 152, 190)} />
-            </g>
-          )}
-          <Flower scale={stage === 5 ? 1 : stage === 6 ? 1.04 : stage === 7 ? 1.14 : 1.28} />
           {stage >= 6 && (
             <g className="particles" opacity={particles ? 1 : 0}>
               {/* pollen drifting off the bloom */}

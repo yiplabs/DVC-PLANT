@@ -22,12 +22,21 @@ import {
   XSocialIcon,
   YoutubeIcon,
 } from "@/components/icons";
-import { MiniPlant, SeedSprout } from "@/components/plants";
-import { projects, type LinkKind, type ProjectLink } from "@/lib/data";
+import { MiniPlant, SeedSprout, TIER_NAMES, type HeroStage } from "@/components/plants";
+import {
+  G,
+  milestoneLabels,
+  projects,
+  type Founder,
+  type LinkKind,
+  type ProjectLink,
+} from "@/lib/data";
 import { loadOverrides, saveOverrides } from "@/lib/overrides";
 import { parseYouTubeId, youTubeThumb, youTubeWatch } from "@/lib/video";
 
 const SLUG = "rankkit"; // the signed-in founder's project (mock)
+
+const AVATAR_GRADIENTS = [G.purpleTeal, G.amberPurple, G.tealGreen, G.indigoPurple];
 
 const LINK_ICONS: Record<LinkKind, React.ComponentType<{ size?: number }>> = {
   website: GlobeIcon,
@@ -61,12 +70,18 @@ export default function AdminPage() {
   const [linkLabel, setLinkLabel] = useState("");
   const [linkUrl, setLinkUrl] = useState("");
 
+  const [founders, setFounders] = useState<Founder[]>(project.founders);
+  const [newFounder, setNewFounder] = useState("");
+  const [stage, setStage] = useState<number>(typeof project.plant === "number" ? project.plant : 2);
+
   useEffect(() => {
     const o = loadOverrides(SLUG);
     if (o.name) setName(o.name);
     if (o.quote) setQuote(o.quote);
     if (o.links) setLinks(o.links);
+    if (o.founders?.length) setFounders(o.founders);
     if (o.videoId) setVideoId(o.videoId);
+    if (o.stage) setStage(o.stage);
   }, []);
 
   const saveDetails = () => {
@@ -105,6 +120,34 @@ export default function AdminPage() {
   const removeVideo = () => {
     setVideoId(null);
     saveOverrides(SLUG, { videoId: null });
+  };
+
+  // Founders fill in milestones as the project grows; keepers verify.
+  const setMilestone = (index: number) => {
+    const s = index + 1; // milestone 1..7 maps onto growth tiers 1..7
+    setStage(s);
+    saveOverrides(SLUG, { stage: s });
+  };
+
+  const addFounder = () => {
+    const fullName = newFounder.trim();
+    if (!fullName) return;
+    const founder: Founder = {
+      name: fullName,
+      initial: fullName[0].toUpperCase(),
+      gradient: AVATAR_GRADIENTS[founders.length % AVATAR_GRADIENTS.length],
+    };
+    const next = [...founders, founder];
+    setFounders(next);
+    saveOverrides(SLUG, { founders: next });
+    setNewFounder("");
+  };
+
+  const removeFounder = (index: number) => {
+    if (founders.length <= 1) return; // a project always keeps at least one founder
+    const next = founders.filter((_, i) => i !== index);
+    setFounders(next);
+    saveOverrides(SLUG, { founders: next });
   };
 
   return (
@@ -160,6 +203,84 @@ export default function AdminPage() {
             <span style={{ fontSize: 11.5, fontWeight: 700, color: "var(--faint)" }}>
               Shown on the hero and in All Projects.
             </span>
+          </div>
+        </div>
+
+        <div className="card admin-card">
+          <div className="card-label">
+            Milestone path · <span style={{ color: "var(--stage-name-text)" }}>{TIER_NAMES[Math.min(stage, 8) as HeroStage]}</span>
+          </div>
+          <p className="page-sub" style={{ fontSize: 13, marginTop: 10 }}>
+            Fill in milestones as you hit them — the plant on your Garden page grows to match.
+          </p>
+          <div className="rail-milestone-track" style={{ maxWidth: 340 }}>
+            <div className="rail-milestone-line" />
+            {milestoneLabels.map((label, i) => {
+              const state = i < stage - 1 ? "done" : i === stage - 1 ? "current" : "upcoming";
+              return (
+                <button key={label} className="rail-milestone-row milestone-edit-row" onClick={() => setMilestone(i)}>
+                  <div className={`milestone-node small ${state}`}>
+                    {state === "done" && <CheckIcon size={11} />}
+                    {state === "current" && <i />}
+                  </div>
+                  <span className={`rail-milestone-label ${state}`}>{label}</span>
+                </button>
+              );
+            })}
+          </div>
+          <div className="composer-note" style={{ textAlign: "left", marginTop: 8 }}>
+            Keepers verify big jumps — growth should be earned in the garden.
+          </div>
+        </div>
+
+        <div className="card admin-card">
+          <div className="card-label">Team</div>
+          <p className="page-sub" style={{ fontSize: 13, marginTop: 10 }}>
+            Everyone building this project — all founders show on the Garden page and project card.
+          </p>
+          <div style={{ marginTop: 12, display: "flex", flexDirection: "column", gap: 8 }}>
+            {founders.map((f, i) => (
+              <div key={`${f.name}-${i}`} className="link-manage-row">
+                <div
+                  className="mini-avatar"
+                  style={{ width: 30, height: 30, fontSize: 12, background: f.gradient, borderColor: "transparent" }}
+                >
+                  {f.initial}
+                </div>
+                <div style={{ flex: 1, minWidth: 0 }}>
+                  <div className="link-manage-label">{f.name}</div>
+                  <div className="link-manage-url">Founder</div>
+                </div>
+                <button
+                  className="row-icon-btn danger"
+                  aria-label={`Remove ${f.name}`}
+                  disabled={founders.length <= 1}
+                  style={founders.length <= 1 ? { opacity: 0.35, cursor: "default" } : undefined}
+                  onClick={() => removeFounder(i)}
+                >
+                  <XSocialIcon size={11} />
+                </button>
+              </div>
+            ))}
+          </div>
+          <div className="field-label" style={{ marginTop: 18 }}>
+            Add a founder
+          </div>
+          <div className="admin-link-form">
+            <input
+              className="text-input"
+              placeholder="Full name (e.g. Priya Nair)"
+              value={newFounder}
+              onChange={(e) => setNewFounder(e.target.value)}
+              onKeyDown={(e) => e.key === "Enter" && addFounder()}
+            />
+            <button
+              className="btn-lavender"
+              style={{ whiteSpace: "nowrap", fontWeight: 900 }}
+              onClick={addFounder}
+            >
+              Add founder
+            </button>
           </div>
         </div>
 
@@ -365,11 +486,11 @@ export default function AdminPage() {
           <div className="card-label">Plant status</div>
           <div style={{ marginTop: 14, display: "flex", alignItems: "center", gap: 14 }}>
             <div className="plant-tile" style={{ width: 64, height: 64, borderRadius: 16, background: "#f4f2ff" }}>
-              <MiniPlant kind={project.plant} size={44} soil />
+              <MiniPlant kind={Math.min(8, Math.max(1, stage)) as HeroStage} size={44} soil />
             </div>
             <div style={{ flex: 1, minWidth: 0 }}>
               <div style={{ fontWeight: 900, fontSize: 16, color: "var(--ink)" }}>
-                {project.stageName}
+                {TIER_NAMES[Math.min(8, Math.max(1, stage)) as HeroStage]}
               </div>
               <div className="meter" style={{ height: 9, marginTop: 8 }}>
                 <i style={{ width: `${project.health}%` }} />

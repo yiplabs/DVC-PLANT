@@ -3111,6 +3111,18 @@ a.pdf-row:hover .pdf-download {
   color: #e84393;
 }
 
+.milestone-edit-row {
+  width: 100%;
+  text-align: left;
+  border-radius: 12px;
+  padding: 4px 8px 4px 0;
+  transition: background 150ms ease;
+}
+
+.milestone-edit-row:hover {
+  background: var(--wash);
+}
+
 /* ---------- Settings ---------- */
 
 .settings-main {
