@@ -214,6 +214,66 @@ export function TargetIcon({ size, ...props }: IconProps) {
   );
 }
 
+export function GlobeIcon({ size, ...props }: IconProps) {
+  return (
+    <svg {...base(size, 15)} fill="none" stroke="currentColor" strokeWidth={2.2} strokeLinecap="round" {...props}>
+      <circle cx="12" cy="12" r="8.5" />
+      <ellipse cx="12" cy="12" rx="3.8" ry="8.5" />
+      <path d="M3.8 12h16.4" />
+    </svg>
+  );
+}
+
+export function XSocialIcon({ size, ...props }: IconProps) {
+  return (
+    <svg {...base(size, 14)} fill="none" stroke="currentColor" strokeWidth={2.6} strokeLinecap="round" {...props}>
+      <path d="M5 4.5l14 15M19 4.5l-14 15" />
+    </svg>
+  );
+}
+
+export function CodeIcon({ size, ...props }: IconProps) {
+  return (
+    <svg {...base(size, 15)} fill="none" stroke="currentColor" strokeWidth={2.4} strokeLinecap="round" strokeLinejoin="round" {...props}>
+      <path d="M9 7.5L4.5 12 9 16.5M15 7.5l4.5 4.5-4.5 4.5" />
+    </svg>
+  );
+}
+
+export function ChatIcon({ size, ...props }: IconProps) {
+  return (
+    <svg {...base(size, 15)} fill="none" stroke="currentColor" strokeWidth={2.2} strokeLinecap="round" strokeLinejoin="round" {...props}>
+      <path d="M4 6.5A2.5 2.5 0 0 1 6.5 4h11A2.5 2.5 0 0 1 20 6.5v8a2.5 2.5 0 0 1-2.5 2.5H9l-5 4z" />
+    </svg>
+  );
+}
+
+export function YoutubeIcon({ size, ...props }: IconProps) {
+  return (
+    <svg {...base(size, 15)} fill="none" stroke="currentColor" strokeWidth={2.2} strokeLinejoin="round" {...props}>
+      <rect x="3" y="6" width="18" height="13" rx="4" />
+      <path d="M10.5 10l4.5 2.5-4.5 2.5z" fill="currentColor" stroke="none" />
+    </svg>
+  );
+}
+
+export function ArrowUpRightIcon({ size, ...props }: IconProps) {
+  return (
+    <svg {...base(size, 12)} fill="none" stroke="currentColor" strokeWidth={2.6} strokeLinecap="round" strokeLinejoin="round" {...props}>
+      <path d="M7 17L17 7M9 7h8v8" />
+    </svg>
+  );
+}
+
+export function VideoCamIcon({ size, ...props }: IconProps) {
+  return (
+    <svg {...base(size, 19)} fill="none" stroke="currentColor" strokeWidth={2.2} strokeLinecap="round" strokeLinejoin="round" {...props}>
+      <rect x="3" y="7" width="12" height="10" rx="2.5" />
+      <path d="M15 10.5l6-3v9l-6-3" />
+    </svg>
+  );
+}
+
 export function SunIcon({ size, ...props }: IconProps) {
   return (
     <svg {...base(size, 19)} fill="none" stroke="currentColor" strokeWidth={2.2} strokeLinecap="round" {...props}>

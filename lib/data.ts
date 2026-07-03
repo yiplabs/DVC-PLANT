@@ -9,6 +9,10 @@ export type PlantKind =
 
 export type Founder = { name: string; initial: string; gradient: string };
 
+export type LinkKind = "website" | "x" | "github" | "discord" | "youtube";
+
+export type ProjectLink = { kind: LinkKind; label: string; url: string };
+
 export type Project = {
   slug: string;
   name: string;
@@ -31,6 +35,7 @@ export type Project = {
   quote: string;
   keeper: string;
   isNew?: boolean;
+  links: ProjectLink[];
 };
 
 // Avatar ring / founder gradients from the canvas
@@ -66,6 +71,12 @@ export const projects: Project[] = [
     quote: "Helping indie makers climb the charts.",
     keeper: "Approved · Ines",
     isNew: true,
+    links: [
+      { kind: "website", label: "rankkit.dev", url: "https://rankkit.dev" },
+      { kind: "x", label: "@rankkit", url: "https://x.com/rankkit" },
+      { kind: "github", label: "rankkit/rankkit", url: "https://github.com/rankkit" },
+      { kind: "discord", label: "Community server", url: "https://discord.gg/rankkit" },
+    ],
   },
   {
     slug: "pixelpay",
@@ -91,6 +102,11 @@ export const projects: Project[] = [
     level: 8,
     quote: "Tiny payments for tiny teams.",
     keeper: "Approved · Tom",
+    links: [
+      { kind: "website", label: "pixelpay.app", url: "https://pixelpay.app" },
+      { kind: "x", label: "@pixelpay", url: "https://x.com/pixelpay" },
+      { kind: "github", label: "pixelpay/core", url: "https://github.com/pixelpay" },
+    ],
   },
   {
     slug: "looply",
@@ -113,6 +129,10 @@ export const projects: Project[] = [
     quote: "Habit loops that actually stick.",
     keeper: "Approved · Ines",
     isNew: true,
+    links: [
+      { kind: "website", label: "looply.so", url: "https://looply.so" },
+      { kind: "youtube", label: "Demo videos", url: "https://youtube.com/@looply" },
+    ],
   },
   {
     slug: "fernbase",
@@ -137,6 +157,10 @@ export const projects: Project[] = [
     level: 2,
     quote: "An open-source home for plant lovers.",
     keeper: "Approved · Tom",
+    links: [
+      { kind: "website", label: "fernbase.org", url: "https://fernbase.org" },
+      { kind: "github", label: "fernbase/fernbase", url: "https://github.com/fernbase" },
+    ],
   },
   {
     slug: "quilljar",
@@ -158,6 +182,10 @@ export const projects: Project[] = [
     level: 3,
     quote: "A cozy journal that writes back.",
     keeper: "Approved · Ines",
+    links: [
+      { kind: "website", label: "quilljar.ink", url: "https://quilljar.ink" },
+      { kind: "x", label: "@quilljar", url: "https://x.com/quilljar" },
+    ],
   },
   {
     slug: "bloomdesk",
@@ -182,6 +210,11 @@ export const projects: Project[] = [
     level: 9,
     quote: "A support inbox with a heartbeat.",
     keeper: "Approved · Tom",
+    links: [
+      { kind: "website", label: "bloomdesk.com", url: "https://bloomdesk.com" },
+      { kind: "x", label: "@bloomdesk", url: "https://x.com/bloomdesk" },
+      { kind: "discord", label: "Support garden", url: "https://discord.gg/bloomdesk" },
+    ],
   },
 ];
 
