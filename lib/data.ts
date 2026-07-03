@@ -377,6 +377,7 @@ export const lineup = [
     gradient: "linear-gradient(135deg,#00cec9,#0a86a8)",
     radius: "999px",
     subtitle: "Ana Reyes · 5 min",
+    founder: { initial: "A", gradient: G.tealGreen },
     status: "confirmed" as const,
   },
   {
@@ -386,6 +387,7 @@ export const lineup = [
     gradient: "linear-gradient(135deg,#fbbf24,#f2762e)",
     radius: "10px",
     subtitle: "Theo Lang · 3 min",
+    founder: { initial: "T", gradient: G.amberPurple },
     status: "confirmed" as const,
   },
   {
@@ -395,6 +397,7 @@ export const lineup = [
     gradient: "linear-gradient(135deg,#4834d4,#2c1e9e)",
     radius: "10px",
     subtitle: "Noor Salem · 5 min",
+    founder: { initial: "N", gradient: G.purpleTeal },
     status: "waitlist" as const,
   },
   {
@@ -404,8 +407,52 @@ export const lineup = [
     gradient: "linear-gradient(135deg,#6c5ce7,#4834d4)",
     radius: "10px",
     subtitle: "Your request · 3 min",
+    founder: { initial: "M", gradient: G.purpleTeal },
     status: "pending" as const,
     mine: true,
+  },
+];
+
+export const replays = [
+  {
+    number: 13,
+    project: "Looply",
+    initial: "L",
+    logoGradient: "linear-gradient(135deg,#fbbf24,#f2762e)",
+    logoRadius: "8px",
+    thumb: "linear-gradient(135deg,#fbbf24 0%,#e84393 60%,#6c5ce7 100%)",
+    duration: "14:02",
+    meta: "1.2k watched · 2 weeks ago",
+  },
+  {
+    number: 12,
+    project: "PixelPay",
+    initial: "P",
+    logoGradient: "linear-gradient(135deg,#00cec9,#0a86a8)",
+    logoRadius: "999px",
+    thumb: "linear-gradient(135deg,#00cec9 0%,#4834d4 70%)",
+    duration: "11:48",
+    meta: "980 watched · 4 weeks ago",
+  },
+  {
+    number: 11,
+    project: "Bloomdesk",
+    initial: "B",
+    logoGradient: "linear-gradient(135deg,#e84393,#6c5ce7)",
+    logoRadius: "999px",
+    thumb: "linear-gradient(135deg,#e84393 0%,#6c5ce7 65%,#00cec9 100%)",
+    duration: "16:20",
+    meta: "2.1k watched · 6 weeks ago",
+  },
+  {
+    number: 10,
+    project: "Quilljar",
+    initial: "Q",
+    logoGradient: "linear-gradient(135deg,#4834d4,#2c1e9e)",
+    logoRadius: "8px",
+    thumb: "linear-gradient(135deg,#4834d4 0%,#6c5ce7 55%,#fbbf24 130%)",
+    duration: "9:31",
+    meta: "760 watched · 2 months ago",
   },
 ];
 

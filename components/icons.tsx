@@ -214,6 +214,15 @@ export function TargetIcon({ size, ...props }: IconProps) {
   );
 }
 
+export function SendIcon({ size, ...props }: IconProps) {
+  return (
+    <svg {...base(size, 16)} fill="none" stroke="currentColor" strokeWidth={2.2} strokeLinecap="round" strokeLinejoin="round" {...props}>
+      <path d="M21 3L10.5 13.5" />
+      <path d="M21 3l-6.8 18-3.7-7.5L3 9.8z" />
+    </svg>
+  );
+}
+
 export function GlobeIcon({ size, ...props }: IconProps) {
   return (
     <svg {...base(size, 15)} fill="none" stroke="currentColor" strokeWidth={2.2} strokeLinecap="round" {...props}>

@@ -2044,13 +2044,19 @@ a.pdf-row:hover .pdf-download {
   padding: 40px 56px 32px;
 }
 
-.stream-hero {
+/* Stage spotlight hero — the next stream as an event banner */
+.stream-hero2 {
   margin-top: 20px;
-  padding: 18px 24px;
+  border-radius: 24px;
+  background: var(--header-gradient);
+  padding: 22px 26px;
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 22px;
   flex-wrap: wrap;
+  color: #ffffff;
+  position: relative;
+  overflow: hidden;
 }
 
 .date-tile {
@@ -2063,6 +2069,11 @@ a.pdf-row:hover .pdf-download {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+
+.date-tile.on-gradient {
+  background: rgba(255, 255, 255, 0.16);
+  border: 1px solid rgba(255, 255, 255, 0.28);
 }
 
 .date-month {
@@ -2086,13 +2097,61 @@ a.pdf-row:hover .pdf-download {
   color: var(--muted);
 }
 
-.stream-title {
-  font-weight: 900;
-  font-size: 22px;
-  color: var(--ink);
+.date-tile.on-gradient .date-month {
+  color: rgba(255, 255, 255, 0.85);
 }
 
-.stream-meta {
+.date-tile.on-gradient .date-day {
+  color: #ffffff;
+}
+
+.date-tile.on-gradient .date-dow {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.hero2-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background: rgba(255, 255, 255, 0.16);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 999px;
+  padding: 4px 12px;
+  font-size: 10.5px;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.hero2-badge i {
+  width: 7px;
+  height: 7px;
+  border-radius: 999px;
+  background: #ffd166;
+  animation: badge-pulse 1.8s ease-out infinite;
+}
+
+@keyframes badge-pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(255, 209, 102, 0.6);
+  }
+  70% {
+    box-shadow: 0 0 0 7px rgba(255, 209, 102, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 209, 102, 0);
+  }
+}
+
+.stream-title2 {
+  margin-top: 8px;
+  font-weight: 900;
+  font-size: 24px;
+  color: #ffffff;
+}
+
+.stream-meta2 {
   margin-top: 6px;
   display: flex;
   align-items: center;
@@ -2100,20 +2159,282 @@ a.pdf-row:hover .pdf-download {
   flex-wrap: wrap;
 }
 
-.stream-meta span {
+.stream-meta2 span {
   font-weight: 700;
   font-size: 13px;
-  color: var(--secondary);
+  color: rgba(255, 255, 255, 0.85);
 }
 
-.spots-chip {
-  background: var(--amber-tint);
-  color: var(--amber-text);
+.hero2-chips {
+  margin-top: 12px;
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.countdown-chip {
+  background: rgba(20, 17, 31, 0.3);
+  color: #ffd166;
   font-weight: 800;
   font-size: 13px;
   border-radius: 999px;
-  padding: 9px 18px;
+  padding: 8px 16px;
   white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+
+.hero2-chip {
+  background: rgba(255, 255, 255, 0.16);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: #ffffff;
+  font-weight: 800;
+  font-size: 13px;
+  border-radius: 999px;
+  padding: 8px 16px;
+  white-space: nowrap;
+}
+
+.hero2-mascot {
+  flex: 0 0 auto;
+  margin: -8px 0 -22px;
+}
+
+.btn-remind {
+  background: #ffffff;
+  color: var(--purple);
+  font-weight: 900;
+  font-size: 14px;
+  border-radius: 999px;
+  padding: 12px 24px;
+  transition: transform 150ms ease, background 150ms ease;
+}
+
+.btn-remind:hover {
+  background: #f1efff;
+  transform: translateY(-1px);
+}
+
+/* How it works — three friendly steps */
+.hiw {
+  margin-top: 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.hiw-step {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--card);
+  border: 1px solid var(--hairline);
+  border-radius: 20px;
+  padding: 13px 16px;
+  box-shadow: var(--card-shadow-sm);
+}
+
+.hiw-icon {
+  width: 40px;
+  height: 40px;
+  flex: 0 0 40px;
+  border-radius: 14px;
+  background: var(--lavender);
+  color: var(--chip-purple-text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hiw-title {
+  font-weight: 900;
+  font-size: 13.5px;
+  color: var(--ink);
+}
+
+.hiw-sub {
+  margin-top: 1px;
+  font-size: 11.5px;
+  font-weight: 700;
+  color: var(--muted);
+}
+
+/* Chat teaser chips in the request form */
+.teaser-chips {
+  margin-top: 8px;
+  display: flex;
+  gap: 7px;
+  flex-wrap: wrap;
+}
+
+.teaser-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--wash);
+  color: var(--chip-purple-text);
+  font-weight: 800;
+  font-size: 11.5px;
+  border-radius: 999px;
+  padding: 6px 12px;
+}
+
+/* Request button success state + sparkles */
+.request-btn {
+  position: relative;
+  overflow: visible;
+}
+
+.request-btn.requested,
+.request-btn.requested:hover {
+  background: var(--emerald-tint);
+  color: var(--emerald-text);
+}
+
+.spark {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  pointer-events: none;
+  color: #ffd166;
+  animation: spark-fly 700ms ease-out forwards;
+}
+
+@keyframes spark-fly {
+  0% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(0.5);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(calc(-50% + var(--dx)), calc(-50% + var(--dy))) scale(1.15);
+  }
+}
+
+/* Lineup meter + row pulse */
+.spots-meter {
+  margin-top: 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 11px;
+  font-weight: 800;
+  color: var(--faint);
+  white-space: nowrap;
+}
+
+.lineup-sub-row {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: 2px;
+}
+
+.lineup-row.pulse {
+  animation: row-pulse 900ms ease-out;
+}
+
+@keyframes row-pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(108, 92, 231, 0.45);
+  }
+  100% {
+    box-shadow: 0 0 0 14px rgba(108, 92, 231, 0);
+  }
+}
+
+/* Past pitch nights — replay cards */
+.replay-grid {
+  margin-top: 14px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+}
+
+.replay-card {
+  background: var(--card);
+  border: 1px solid var(--hairline);
+  border-radius: 20px;
+  padding: 10px;
+  box-shadow: var(--card-shadow-sm);
+  cursor: pointer;
+  transition: transform 150ms ease, box-shadow 150ms ease;
+}
+
+.replay-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--card-shadow-lg);
+}
+
+.replay-thumb {
+  position: relative;
+  height: 118px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.replay-play {
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.92);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 150ms ease;
+}
+
+.replay-card:hover .replay-play {
+  transform: scale(1.1);
+}
+
+.replay-duration {
+  position: absolute;
+  right: 9px;
+  bottom: 8px;
+  background: rgba(20, 17, 31, 0.55);
+  color: #ffffff;
+  font-weight: 800;
+  font-size: 10.5px;
+  border-radius: 999px;
+  padding: 3px 9px;
+}
+
+.replay-info {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 10px 6px 4px;
+}
+
+.replay-logo {
+  width: 26px;
+  height: 26px;
+  flex: 0 0 26px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-weight: 900;
+  font-size: 11px;
+}
+
+.replay-title {
+  font-weight: 800;
+  font-size: 12.5px;
+  color: var(--ink);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.replay-meta {
+  font-size: 10.5px;
+  font-weight: 700;
+  color: var(--faint);
 }
 
 .stage-grid {
@@ -2390,6 +2711,19 @@ a.pdf-row:hover .pdf-download {
   }
   .stage-grid {
     grid-template-columns: 1fr;
+  }
+  .replay-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .hiw {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .hiw > svg {
+    display: none;
+  }
+  .hero2-mascot {
+    display: none;
   }
 }
 

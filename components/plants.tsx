@@ -350,6 +350,48 @@ export function PotMascot({ width = 140, height = 112 }: { width?: number; heigh
   );
 }
 
+/* ------------------------------------------------------------------ */
+/* Stage mascot — a flowering plant being interviewed at the mic       */
+/* (drawn for the gradient hero, so pot & mic read white)              */
+/* ------------------------------------------------------------------ */
+
+export function StageMascot({ width = 190, height = 122 }: { width?: number; height?: number }) {
+  return (
+    <svg width={width} height={height} viewBox="0 0 200 128">
+      <ellipse cx="92" cy="120" rx="80" ry="7" fill="rgba(20,17,31,0.2)" />
+      <circle cx="92" cy="54" r="50" fill="rgba(255,209,102,0.18)" />
+      {/* plant */}
+      <path d="M92 92V52" stroke="#2eb872" strokeWidth={5} strokeLinecap="round" />
+      <path d="M92 80c0-10-6.5-14-16-14 0 10 6.5 14 16 14z" fill="#3ecf8e" stroke="#27a06b" strokeWidth={3} strokeLinejoin="round" />
+      <path d="M92 68c0-10 6.5-14 16-14 0 10-6.5 14-16 14z" fill="#2eb872" stroke="#219660" strokeWidth={3} strokeLinejoin="round" />
+      {/* flower */}
+      <circle cx="92" cy="31" r="8.5" fill="#fbbf24" stroke="#f59e0b" strokeWidth={2.5} />
+      <circle cx="102" cy="41" r="8.5" fill="#fbbf24" stroke="#f59e0b" strokeWidth={2.5} />
+      <circle cx="92" cy="51" r="8.5" fill="#fbbf24" stroke="#f59e0b" strokeWidth={2.5} />
+      <circle cx="82" cy="41" r="8.5" fill="#fbbf24" stroke="#f59e0b" strokeWidth={2.5} />
+      <circle cx="92" cy="41" r="7.5" fill="#ffd166" stroke="#f59e0b" strokeWidth={2.5} />
+      {/* pot with a happy face */}
+      <rect x="72" y="86" width="40" height="10" rx="5" fill="#ffffff" opacity={0.95} />
+      <path d="M76 96h32l-3.8 20a5.5 5.5 0 0 1-5.4 4.6h-13.6a5.5 5.5 0 0 1-5.4-4.6z" fill="#ffffff" opacity={0.92} />
+      <circle cx="86" cy="106" r="2.2" fill="#4834d4" />
+      <circle cx="98" cy="106" r="2.2" fill="#4834d4" />
+      <path d="M86 111q6 5 12 0" stroke="#4834d4" strokeWidth={2.2} fill="none" strokeLinecap="round" />
+      {/* microphone leaning in for the interview */}
+      <g transform="rotate(-14 148 92)">
+        <path d="M148 122V88" stroke="rgba(255,255,255,0.9)" strokeWidth={4} strokeLinecap="round" />
+        <path d="M137 122h22" stroke="rgba(255,255,255,0.9)" strokeWidth={4} strokeLinecap="round" />
+        <rect x="138" y="56" width="20" height="32" rx="10" fill="#2d2a45" stroke="rgba(255,255,255,0.9)" strokeWidth={3} />
+        <path d="M142 66h12M142 72h12" stroke="rgba(255,255,255,0.45)" strokeWidth={2} strokeLinecap="round" />
+      </g>
+      {/* sparkles */}
+      <circle cx="34" cy="32" r="3" fill="#ffd166" opacity={0.9} />
+      <circle cx="156" cy="28" r="2.4" fill="#ffd166" opacity={0.7} />
+      <circle cx="22" cy="74" r="2.2" fill="#ffffff" opacity={0.6} />
+      <circle cx="176" cy="52" r="2" fill="#ffffff" opacity={0.5} />
+    </svg>
+  );
+}
+
 /* Pending seed sprout used in the approval banner plant tile */
 export function SeedSprout({ size = 34 }: { size?: number }) {
   return (
