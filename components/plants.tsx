@@ -253,106 +253,131 @@ export function HeroPlant({
       <circle cx="118" cy="280" r="4" fill={soilA} />
       <circle cx="176" cy="286" r="3.4" fill={soilA} />
 
-      {flowerGlow > 0 && <circle cx="150" cy={glowY} r={flowerGlow + (dark ? 6 : 0)} fill={`url(#${flowId})`} />}
+      {/* Keyed by stage: changing tier remounts this group, replaying the
+          staggered grow animation — stem rises, leaves pop, bloom opens,
+          sparkles fade in. Respects prefers-reduced-motion via globals. */}
+      <g key={stage}>
+        {flowerGlow > 0 && (
+          <g className="hp-grow hp-bloom">
+            <circle cx="150" cy={glowY} r={flowerGlow + (dark ? 6 : 0)} fill={`url(#${flowId})`} />
+          </g>
+        )}
 
-      {stem && (
-        <path d={stem.d} fill="none" stroke={`url(#${stemId})`} strokeWidth={stem.w} strokeLinecap="round" />
-      )}
+        {stem && (
+          <g className="hp-grow hp-stem">
+            <path d={stem.d} fill="none" stroke={`url(#${stemId})`} strokeWidth={stem.w} strokeLinecap="round" />
+          </g>
+        )}
 
-      {stage === 1 && (
-        <g>
-          {/* seed body half-tucked into the soil, with a hopeful little nub */}
-          <ellipse cx="150" cy="262" rx="17" ry="14" fill="#a07850" stroke="#8a6248" strokeWidth={4} />
-          <path d="M143 256q7-6 14 0" fill="none" stroke="#8a6248" strokeWidth={3} strokeLinecap="round" />
-          <path d="M150 248v-10" fill="none" stroke="#2eb872" strokeWidth={5.5} strokeLinecap="round" />
-          <path d={SMALL_L} transform={pin(0.55, 148, 268, 149, 240)} fill="#3ecf8e" stroke="#27a06b" strokeWidth={4.5} strokeLinejoin="round" />
-        </g>
-      )}
+        {stage === 1 && (
+          <g className="hp-grow hp-leaves">
+            {/* seed body half-tucked into the soil, with a hopeful little nub */}
+            <ellipse cx="150" cy="262" rx="17" ry="14" fill="#a07850" stroke="#8a6248" strokeWidth={4} />
+            <path d="M143 256q7-6 14 0" fill="none" stroke="#8a6248" strokeWidth={3} strokeLinecap="round" />
+            <path d="M150 248v-10" fill="none" stroke="#2eb872" strokeWidth={5.5} strokeLinecap="round" />
+            <path d={SMALL_L} transform={pin(0.55, 148, 268, 149, 240)} fill="#3ecf8e" stroke="#27a06b" strokeWidth={4.5} strokeLinejoin="round" />
+          </g>
+        )}
 
-      {stage === 2 && (
-        <g>
-          <LeafSmallL t={pin(0.9, 148, 268, 148, 252)} />
-          <LeafSmallR t={pin(0.9, 152, 262, 152, 243)} />
-        </g>
-      )}
+        {stage === 2 && (
+          <g className="hp-grow hp-leaves">
+            <LeafSmallL t={pin(0.9, 148, 268, 148, 252)} />
+            <LeafSmallR t={pin(0.9, 152, 262, 152, 243)} />
+          </g>
+        )}
 
-      {stage === 3 && (
-        <g>
-          <LeafBigL t={pin(0.7, 147, 240, 147, 250)} />
-          <LeafBigR t={pin(0.7, 152, 206, 152, 230)} />
-        </g>
-      )}
+        {stage === 3 && (
+          <g className="hp-grow hp-leaves">
+            <LeafBigL t={pin(0.7, 147, 240, 147, 250)} />
+            <LeafBigR t={pin(0.7, 152, 206, 152, 230)} />
+          </g>
+        )}
 
-      {stage === 4 && (
-        <g>
-          <LeafBigL t={pin(0.85, 147, 240, 147, 250)} />
-          <LeafBigR t={pin(0.85, 152, 206, 152, 226)} />
-          <LeafSmallL t={pin(0.9, 148, 268, 148, 270)} />
-          {/* young bud */}
-          <circle cx="150" cy="192" r="11" fill="#fbbf24" stroke="#f59e0b" strokeWidth={3.5} />
-          <circle cx="150" cy="192" r="4.5" fill="#ffd166" />
-        </g>
-      )}
-
-      {stage >= 5 && (
-        <g>
-          <LeafBigL />
-          <LeafBigR />
-          <LeafSmallL />
-          <LeafSmallR />
-          <Flower scale={stage === 5 ? 1 : stage === 6 ? 1.04 : stage === 7 ? 1.12 : 1.24} />
-          {/* Tiers 7–8 grow side branches instead of extra leaves — buds first,
-              then mini blooms at full bloom. Drawn after the flower so they
-              stay visible, spread wide of its petals. */}
-          {stage >= 7 && (
-            <g>
-              <path
-                d="M147 194c-12-8-26-20-38-36"
-                fill="none"
-                stroke="#2eb872"
-                strokeWidth={5.5}
-                strokeLinecap="round"
-              />
-              <path
-                d="M153 172c14-6 29-17 44-36"
-                fill="none"
-                stroke="#2eb872"
-                strokeWidth={5.5}
-                strokeLinecap="round"
-              />
-              <SideBloom x={106} y={154} bloom={stage === 8} />
-              <SideBloom x={199} y={132} bloom={stage === 8} />
+        {stage === 4 && (
+          <>
+            <g className="hp-grow hp-leaves">
+              <LeafBigL t={pin(0.85, 147, 240, 147, 250)} />
+              <LeafBigR t={pin(0.85, 152, 206, 152, 226)} />
+              <LeafSmallL t={pin(0.9, 148, 268, 148, 270)} />
             </g>
-          )}
-          {stage >= 6 && (
-            <g className="particles" opacity={particles ? 1 : 0}>
-              {/* pollen drifting off the bloom */}
-              <circle cx="176" cy="76" r="3" fill="#ffd166" opacity={0.85} />
-              <circle cx="196" cy="58" r="2.4" fill="#fbbf24" opacity={0.7} />
-              <circle cx="124" cy="70" r="2.6" fill="#ffd166" opacity={0.75} />
-              {stage === 8 && <circle cx="212" cy="98" r="3.4" fill="#fbbf24" opacity={0.6} />}
+            {/* young bud */}
+            <g className="hp-grow hp-bloom">
+              <circle cx="150" cy="192" r="11" fill="#fbbf24" stroke="#f59e0b" strokeWidth={3.5} />
+              <circle cx="150" cy="192" r="4.5" fill="#ffd166" />
             </g>
-          )}
-        </g>
-      )}
+          </>
+        )}
 
-      {stage >= 5 && (
-        <g opacity={particles ? 1 : 0} className="particles">
-          <circle cx="64" cy="120" r="4" fill="#fbbf24" opacity={p[0]} />
-          <circle cx="236" cy="70" r="3" fill="#fbbf24" opacity={p[1]} />
-          <circle cx="216" cy="176" r="5" fill="#ffd166" opacity={p[2]} />
-          <circle cx="84" cy="210" r="3" fill="#ffd166" opacity={p[3]} />
-          <circle cx="252" cy="238" r="4" fill="#fbbf24" opacity={p[4]} />
-          <circle cx="44" cy="176" r="2.6" fill="#fbbf24" opacity={p[5]} />
-          <circle cx="196" cy="34" r="2.6" fill="#ffd166" opacity={p[6]} />
-        </g>
-      )}
-      {stage === 4 && (
-        <g opacity={particles ? 1 : 0} className="particles">
-          <circle cx="96" cy="200" r="3" fill="#ffd166" opacity={0.6} />
-          <circle cx="208" cy="188" r="3.4" fill="#fbbf24" opacity={0.5} />
-        </g>
-      )}
+        {stage >= 5 && (
+          <>
+            <g className="hp-grow hp-leaves">
+              <LeafBigL />
+              <LeafBigR />
+              <LeafSmallL />
+              <LeafSmallR />
+            </g>
+            <g className="hp-grow hp-bloom">
+              <Flower scale={stage === 5 ? 1 : stage === 6 ? 1.04 : stage === 7 ? 1.12 : 1.24} />
+              {/* Tiers 7–8 grow side branches instead of extra leaves — buds first,
+                  then mini blooms at full bloom. Drawn after the flower so they
+                  stay visible, spread wide of its petals. */}
+              {stage >= 7 && (
+                <g>
+                  <path
+                    d="M147 194c-12-8-26-20-38-36"
+                    fill="none"
+                    stroke="#2eb872"
+                    strokeWidth={5.5}
+                    strokeLinecap="round"
+                  />
+                  <path
+                    d="M153 172c14-6 29-17 44-36"
+                    fill="none"
+                    stroke="#2eb872"
+                    strokeWidth={5.5}
+                    strokeLinecap="round"
+                  />
+                  <SideBloom x={106} y={154} bloom={stage === 8} />
+                  <SideBloom x={199} y={132} bloom={stage === 8} />
+                </g>
+              )}
+            </g>
+            {stage >= 6 && (
+              <g className="hp-sparkle">
+                <g className="particles" opacity={particles ? 1 : 0}>
+                  {/* pollen drifting off the bloom */}
+                  <circle cx="176" cy="76" r="3" fill="#ffd166" opacity={0.85} />
+                  <circle cx="196" cy="58" r="2.4" fill="#fbbf24" opacity={0.7} />
+                  <circle cx="124" cy="70" r="2.6" fill="#ffd166" opacity={0.75} />
+                  {stage === 8 && <circle cx="212" cy="98" r="3.4" fill="#fbbf24" opacity={0.6} />}
+                </g>
+              </g>
+            )}
+          </>
+        )}
+
+        {stage >= 5 && (
+          <g className="hp-sparkle">
+            <g opacity={particles ? 1 : 0} className="particles">
+              <circle cx="64" cy="120" r="4" fill="#fbbf24" opacity={p[0]} />
+              <circle cx="236" cy="70" r="3" fill="#fbbf24" opacity={p[1]} />
+              <circle cx="216" cy="176" r="5" fill="#ffd166" opacity={p[2]} />
+              <circle cx="84" cy="210" r="3" fill="#ffd166" opacity={p[3]} />
+              <circle cx="252" cy="238" r="4" fill="#fbbf24" opacity={p[4]} />
+              <circle cx="44" cy="176" r="2.6" fill="#fbbf24" opacity={p[5]} />
+              <circle cx="196" cy="34" r="2.6" fill="#ffd166" opacity={p[6]} />
+            </g>
+          </g>
+        )}
+        {stage === 4 && (
+          <g className="hp-sparkle">
+            <g opacity={particles ? 1 : 0} className="particles">
+              <circle cx="96" cy="200" r="3" fill="#ffd166" opacity={0.6} />
+              <circle cx="208" cy="188" r="3.4" fill="#fbbf24" opacity={0.5} />
+            </g>
+          </g>
+        )}
+      </g>
     </svg>
   );
 }

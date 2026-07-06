@@ -3184,6 +3184,51 @@ a.lineup-row:hover .lineup-name {
 
 /* ---------- Motion & responsive ---------- */
 
+/* Grow animation — replays whenever the hero plant changes tier.
+   Stem rises from the soil with a springy overshoot, leaves pop next,
+   the bloom opens last, then sparkles fade in. */
+.hp-grow {
+  transform-box: view-box;
+  transform-origin: 150px 282px; /* base of the stem, in viewBox units */
+  animation: hp-grow 620ms cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+
+.hp-leaves {
+  animation-delay: 140ms;
+}
+
+.hp-bloom {
+  animation-delay: 290ms;
+  animation-duration: 560ms;
+}
+
+.hp-sparkle {
+  animation: hp-sparkle-in 500ms ease 500ms both;
+}
+
+@keyframes hp-grow {
+  0% {
+    transform: scale(0.08);
+    opacity: 0;
+  }
+  55% {
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes hp-sparkle-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 .particles circle {
   animation: particle-bob 5s ease-in-out infinite alternate;
 }
