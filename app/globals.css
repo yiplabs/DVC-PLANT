@@ -523,6 +523,9 @@ p {
 }
 
 .filter-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
   background: var(--card);
   border: 1px solid var(--border);
   color: var(--secondary);
@@ -2013,6 +2016,7 @@ a.pdf-row:hover .pdf-download {
 }
 
 .submission-card {
+  position: relative;
   background: var(--card);
   border: 1px solid var(--hairline);
   border-radius: 20px;
@@ -2020,19 +2024,46 @@ a.pdf-row:hover .pdf-download {
   box-shadow: var(--card-shadow-sm);
   display: flex;
   gap: 14px;
+  transition: transform 150ms ease, box-shadow 150ms ease;
 }
 
-.submission-avatar {
-  width: 38px;
-  height: 38px;
-  flex: 0 0 38px;
+.submission-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--card-shadow-lg);
+}
+
+/* Status accent bar on the card's left edge */
+.submission-card.has-accent {
+  padding-left: 26px;
+}
+
+.sub-accent {
+  position: absolute;
+  left: 10px;
+  top: 18px;
+  bottom: 18px;
+  width: 4px;
   border-radius: 999px;
-  color: #ffffff;
-  font-weight: 900;
-  font-size: 14px;
-  display: flex;
+}
+
+/* The community's loudest open ask */
+.submission-card.spotlight {
+  background: linear-gradient(160deg, var(--wash), var(--lavender));
+  border: 1.5px solid var(--wash-border);
+}
+
+.most-wanted-chip {
+  display: inline-flex;
   align-items: center;
-  justify-content: center;
+  gap: 5px;
+  background: var(--amber-tint);
+  color: var(--amber-text);
+  font-weight: 800;
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  border-radius: 999px;
+  padding: 4px 11px;
 }
 
 .submission-author {
@@ -2057,12 +2088,20 @@ a.pdf-row:hover .pdf-download {
 
 .founder-reply {
   margin-top: 10px;
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
   background: var(--wash);
-  border-radius: 12px;
-  padding: 8px 12px;
+  border-radius: 4px 14px 14px 14px;
+  padding: 9px 13px;
   font-size: 12.5px;
   font-weight: 700;
   color: var(--chip-purple-text);
+  line-height: 1.4;
+}
+
+.submission-card.spotlight .founder-reply {
+  background: var(--card);
 }
 
 .submission-side {
@@ -2072,34 +2111,94 @@ a.pdf-row:hover .pdf-download {
   gap: 8px;
 }
 
-.upvote-pill {
-  display: inline-flex;
+/* Vertical vote button — chevron over count */
+.vote-btn {
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 5px;
-  background: var(--lavender);
+  gap: 1px;
+  width: 48px;
+  padding: 8px 0 7px;
+  border-radius: 14px;
+  border: 1.5px solid var(--border);
+  background: var(--card);
+  color: var(--secondary);
+  font-weight: 900;
+  font-size: 13px;
+  transition: background 150ms ease, color 150ms ease, border-color 150ms ease, transform 150ms ease;
+}
+
+.vote-btn:hover {
+  background: var(--wash);
+  border-color: var(--wash-border);
   color: var(--chip-purple-text);
-  font-weight: 800;
-  font-size: 12px;
-  border-radius: 999px;
-  padding: 6px 13px;
-  transition: background 150ms ease, color 150ms ease, transform 150ms ease;
 }
 
-.upvote-pill:hover {
-  background: var(--lavender-hover);
+.vote-btn:active {
+  transform: scale(0.93);
 }
 
-.upvote-pill:active {
-  transform: scale(0.94);
-}
-
-.upvote-pill.voted {
+.vote-btn.voted,
+.vote-btn.voted:hover {
   background: var(--purple);
+  border-color: var(--purple);
   color: #ffffff;
 }
 
-.upvote-pill.voted:hover {
-  background: var(--purple-hover);
+.chip-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 999px;
+  display: inline-block;
+}
+
+.composer-as {
+  margin-top: 12px;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--muted);
+}
+
+.composer-as b {
+  color: var(--secondary);
+}
+
+.teaser-chip.starter {
+  cursor: pointer;
+  transition: background 150ms ease;
+}
+
+.teaser-chip.starter:hover {
+  background: var(--lavender-hover);
+}
+
+.sub-empty {
+  background: var(--card);
+  border: 2px dashed var(--field-border);
+  border-radius: 20px;
+  padding: 36px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.sub-empty-title {
+  margin-top: 10px;
+  font-weight: 900;
+  font-size: 16px;
+  color: var(--ink);
+}
+
+.sub-empty-sub {
+  margin-top: 3px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--muted);
 }
 
 .composer-card {
