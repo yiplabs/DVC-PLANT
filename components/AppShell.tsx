@@ -21,7 +21,12 @@ import {
   TrophyIcon,
 } from "@/components/icons";
 
-// The whole showcase lives under one tab — the host app will bring its own nav.
+// HANDOFF NOTE — navigation contract with the host app:
+// The whole showcase occupies exactly ONE tab in the host sidebar. Its label
+// will likely be just "Projects" (the host menu is already crowded); the pages
+// below are sub-pages of that single tab, reached by clicking through it.
+// The disclosure nav here models that; swap it for the host's own pattern
+// (accordion, secondary nav, breadcrumbs) without touching the pages.
 const SECTION = [
   { label: "All Projects", href: "/garden", icon: HomeIcon },
   { label: "Quests", href: "/quests", icon: QuestIcon },

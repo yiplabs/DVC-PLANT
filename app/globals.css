@@ -389,14 +389,15 @@ p {
   gap: 3px;
   margin: 2px 0 4px;
   position: relative;
-  padding-left: 14px;
+  /* pills start right of the guide line's gutter so they never paint over it */
+  padding-left: 26px;
   animation: nav-drop 160ms ease;
 }
 
 .nav-sub::before {
   content: "";
   position: absolute;
-  left: 22px;
+  left: 12px;
   top: 8px;
   bottom: 8px;
   width: 2.5px;
@@ -405,7 +406,7 @@ p {
 }
 
 .nav-sub-pill {
-  padding: 10px 16px 10px 26px;
+  padding: 10px 16px;
   font-size: 14px;
   gap: 10px;
 }

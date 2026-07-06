@@ -53,6 +53,19 @@ they should survive contact with a real schema mostly unchanged. Past pitch
 nights deliberately link out to the stream channel (`streamChannel` in
 `lib/data.ts`) rather than per-project recordings.
 
+## Navigation — one "Projects" tab in the host app
+
+The showcase is designed to occupy **exactly one tab** in the host app's
+sidebar — probably labeled just **"Projects"** (the host menu already has a
+lot of tabs; "Garden / Project Showcase" is the long form). Clicking that tab
+leads through the sub-pages: All Projects → a project's Garden → Quests →
+Stage → Submissions, plus the founder Admin panel. They are sub-pages of each
+other, not siblings in the main nav.
+
+The current sidebar (one disclosure tab + pinned Admin/Settings) is a working
+model of that contract — keep the routes and swap the chrome for the host's
+own nav pattern when integrating.
+
 ## Roles — who sees what
 
 The prototype has no auth, so everything is visible to everyone. In production
